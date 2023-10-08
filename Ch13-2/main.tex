@@ -181,7 +181,9 @@ a.
     \vec T\;'(t) &= -\frac{5t}{(1+5t^2)^{\frac 3 2}}\langle 1, t, 2t\rangle + \frac{1}{(1+5t^2)^\frac 1 2}\langle 0, 1, 2 \rangle \\
                  &= \frac{1}{(1+5t^2)^{\frac 3 2}}\left(-5t \langle 1, t, 2t \rangle + (1+5t^2)\langle 0, 1, 2 \rangle\right) \\
                  &= \frac{1}{(1+5t^2)^{\frac 3 2}}\left(\langle -5t, -5t^2, -10t^2 \rangle + \langle 0, 1+5t^2, 2+10t^2 \rangle\right) = \frac{1}{(1+5t^2)^{\frac 3 2}} \langle -5t, 1, 2 \rangle \\
-    \|\vec T\;'(t)\| &= 
+    \|\vec T\;'(t)\| &= \frac{1}{(1+5t^2)^{\frac 3 2}}\sqrt{(-5t)^2 + 1^2 + 2^2} = \frac{1}{(1+5t^2)^{\frac 3 2}}\sqrt{25t^2 + 5} = \frac{1}{(1+5t^2)^{\frac 3 2}}\sqrt{5(5t^2 + 1)} \\
+                     &= \frac{\sqrt 5 (1+5t^2)^{\frac 1 2}}{(1+5t^2)^{\frac 3 2}} = \frac{\sqrt 5}{1+5t^2} \\
+    \|\vec N(t) &=  \frac{\vec T\;'(t)}{\|\vec T\;'(t)\|} = \frac{1}{(1+5t^2)^{\frac 3 2}} \langle -5t, 1, 2 \rangle \; \cdot \; \frac{1+5t^2}{\sqrt 5} = \frac{1}{\sqrt 5} \langle -5t, 1, 2 \rangle \\
 \end{align*}
 \subsection*{Problem 27}
 Use Theorem 10 to find the curvature
