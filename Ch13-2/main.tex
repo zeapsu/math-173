@@ -1,0 +1,297 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[]{amsthm}
+\usepackage[]{amssymb}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{blindtext}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\usepackage{pgfplots}
+
+\pgfplotsset{width=7cm,compat=1.9}
+
+% We will externalize the figures
+\usepgfplotslibrary{external}
+\tikzexternalize
+
+\newcommand{\ihat}{\;\hat{\textbf{\i}}}
+\newcommand{\jhat}{\;\hat{\textbf{\j}}}
+\newcommand{\khat}{\;\hat{\textbf{k}}}
+\newcommand{\rvec}{\vec{r}(t)}
+\newcommand{\drvec}{\vec{r}\;'(t)}
+
+\title{Chapter 13 Section 3 \& 4 Problem Set}
+\author{Andry Paez}
+
+\begin{document}
+\maketitle
+
+\section*{Section 3: Arc Length and Curvature}
+
+\subsection*{Problem 1a}
+
+Use Equation 2 to compute the length of the given line segment.
+
+\[
+    \vec{r}(t)  = \langle{3-t, 2t, 4t + 1}\rangle \quad 1 \leq{t} \leq{3}
+\]
+
+\subsection*{Solution}
+
+Let the length of the line segment be 
+
+\begin{align*}
+    L = \int_{a}^{b} \sqrt{(\frac{dx}{dt})^2 + (\frac{dy}{dt})^2 + (\frac{dz}{dt})^2} \;dt 
+    \Rightarrow L = \int_{a}^{b} \|\vec{r}\;'(t)\| \;dt
+\end{align*}
+
+\[
+    D: \{\:t \;|\; 1 \leq t \leq 3\:\}
+\]
+
+\begin{align*}
+    \vec{r}\:'(t)  = \langle{-1, 2, 4}\rangle \Rightarrow
+    L &= \int_{1}^{3} \sqrt{(-1)^2 + (2)^2 + (4)^2} dt
+      &= \int_{1}^{3} \sqrt{21} dt &= \sqrt{21}t \; \Big|_{1}^{3} = \sqrt{21}(3) - \sqrt{21}(1) = 2\sqrt{21}
+\end{align*}
+
+   
+\subsection*{Problems 3-7 odd}
+
+Find the length of the curve.
+
+\subsubsection*{3. $\vec{r}\;(t) = \langle{t, 3\cos{t}, 3\sin{t}} \rangle \quad 25 \leq t \leq 5$}
+\subsubsection*{Solution}
+
+\begin{align*}
+    \vec{r}\;'(t) = \langle{1, -3\sin{t}, 3\cos{t}} \rangle \Rightarrow
+    L &= \int_{-5}^{5} \sqrt{1^2 + (-3\sin{t})^2 + (3\cos t)^2}\;dt \\
+    &= \int_{-5}^{5} \sqrt{1 + 9\sin^2t + 9\cos^2t}\; dt\\ 
+    &= \int_{-5}^{5} \sqrt{1 + 9(1)}\; dt \\
+    &= \int_{-5}^{5} \sqrt{10}\; dt \\ 
+    &= \sqrt{10}t\; \Big|_{-5}^{5} dt = \sqrt{10}(5) - \sqrt{10}(-5) = 10\sqrt{10}
+\end{align*}
+
+
+\[
+\]
+
+\subsubsection*{5. $\vec{r}\;(t) = \langle{\sqrt{2}t, e^{t}, e^{-t}} \rangle \quad 0 \leq t \leq 1$}
+\subsubsection*{Solution}
+
+\begin{align*}
+    \vec{r}\; '(t) = \langle{\sqrt{2}, e^{t}, -e^{-t}} \rangle \Rightarrow
+    L &= \int_{0}^{1} \sqrt{(\sqrt{2})^2 + (e^{t})^{2} + (-e^{-t})^{2}}\; dt \\
+      &= \int_{0}^{1} \sqrt{2 + e^{2t} + e^{-2t}}\; dt \\ 
+      &= \int_{0}^{1} \sqrt{(e^{t} + e^{-t})^2}\; dt \\
+      &= \int_{0}^{1} e^{t} + e^{-t}\; dt \\
+      &= e^{t} - e^{-t}\; \Big|_{0}^{1} = (e^{1} - \frac{1}{e^1}) - (e^{0} - \frac{1}{e^0}) = e - \frac{1}{e} - 1 + 1 = e - \frac{1}{e}
+\end{align*}
+
+
+
+\subsubsection*{7. $\vec{r}\;(t) = \langle{1, t^2, t^3} \rangle \quad 0 \leq t \leq 1$}
+\subsubsection*{Solution}
+
+\begin{align*}
+    \vec{r}\; '(t) = \langle{0, 2t, 3t^2} \rangle \Rightarrow
+    L &= \int_{0}^{1} \sqrt{(0)^2 + (2t)^2 + (3t^2)^2}\; dt \\
+      &= \int_{0}^{1} \sqrt{4t^2 + 9t^4}\; dt \\
+      &= \int_{0}^{1} \sqrt{t^2(4 + 9t^2)}\; dt \\
+      &= \int_{0}^{1} t\sqrt{4 + 9t^2}\; dt \\
+\end{align*}
+Using u-substitution,
+\begin{align*}
+    u^2 &= 4 + 9t^2 \\
+    2udu &= 18t\; dt \\
+    \frac{u\;du}{9} &= t\; dt \\
+    \int_{0}^{1} t\sqrt{4 + 9t^2}\; dt
+                    &= \int_{0}^{1} u \cdot(\frac{1}{9} u) \; du
+                    &= \frac{1}{9} \int_{0}^{1} u^2\; du
+                    &= \frac{1}{9} (\frac{1}{3} u^3) \Big|_{2}^{\sqrt{13}}
+                    &= \frac{1}{27} (u^3) \Big|_{2}^{\sqrt{13}}
+                    &= \frac{1}{27} (13^{\frac{3}{2}} - 2^3) = \frac{13\sqrt{13}}{27} - 3
+\end{align*}
+
+\subsection*{Problems 19-23 odd}
+
+(a) Find the unit tangent and unit normal vectors $\vec{T}(t)$ and $\vec{N}(t)$. \\
+(b) Use Formula 9 to find the curvature.
+
+
+\subsubsection*{19. $\vec{r}(t) = \langle{t^2,\; \sin{t} - t\cos{t},\; \cos{t} + t\sin{t}} \rangle, \quad t > 0$}
+\subsubsection*{Solution}
+a. 
+\[
+    \vec{T}(t) = \frac{\drvec}{\|\drvec\|}   
+\]
+\begin{align*}
+    \drvec &= \langle 2t, \cos t - \cos t + t\sin t, -\sin t + \sin t + t\cos t \rangle = \langle 2t, t\sin t, t\cos t \rangle \\
+    \|\drvec\| &= \sqrt{4t^2 + t^2\sin^2t + t^2\cos^2t} = \sqrt{4t^2 + t^2} = \sqrt{5t^2} = \sqrt{5}t \quad [\cos^2t + \sin^2t = 1] \\ 
+    \vec{T}(t) &= \frac{\langle 2t, t\sin t, t\cos t \rangle}{\sqrt{5}t} = \frac{1}{\sqrt{5}}\langle 2, \sin t, \cos t \rangle
+\end{align*}
+\[
+    \vec{N}(t) = \frac{\vec{T}\;'(t)}{\|\vec{T}\;'(t)\|}
+\]
+\begin{align*}
+    \vec{T}\;'(t) &= \frac{1}{\sqrt{5}}\langle 0, \cos t, -\sin t \rangle \\
+    \|\vec{T}\;'(t)\| &= \frac {1}{\sqrt 5} \sqrt{0^2 + \cos^2t + \sin^2t} = \sqrt{1} = \frac{1}{\sqrt 5} \\
+    \vec{N}(t) &= \frac{ \frac{1}{\sqrt{5}} \langle 0, \cos t, -\sin t \rangle}{\frac{1}{\sqrt{5}}} = \langle 0, \cos t, -\sin t \rangle 
+\end{align*}
+b. 
+\begin{align*}
+    \kappa(t) &= \frac{\|\vec{T}\;'(t)\|}{\|\rvec\|} = \frac{\frac{1}{\sqrt 5}}{\sqrt 5t} = \frac{1}{5t}
+\end{align*}
+
+\subsubsection*{21. $\vec{r}(t) = \langle{t, t^2, 4} \rangle$}
+
+\subsubsection*{Solution}
+a. 
+\begin{align*}
+    \drvec &=  \ihat +  2t\jhat \\ 
+    \|\drvec\| &= \sqrt{1^2 + (2t)^2} = \sqrt{1 + 4t^2}  \\
+    \vec T (t) &=  \frac{\ihat + 2t\jhat}{\sqrt{1 + 4t^2}} = \frac{1}{\sqrt{1 + 4t^2}}(\ihat + 2t\jhat) \\
+    \vec T \;'(t) &= \frac{1}{\sqrt{1+4t^2}}(2\jhat)
+\end{align*}
+\subsubsection*{23. $\vec{r}(t) = \langle{t, \frac{1}{2}t^2, t^2} \rangle$}
+\subsubsection*{Solution}
+\subsection*{Problem 27}
+Use Theorem 10 to find the curvature
+\[
+    \rvec = \sqrt{6}t^2\ihat + 2t\jhat + 2t^3\khat
+\]
+\subsection*{Solution}
+\subsection*{Problem 28}
+
+Find the curvature of $\rvec = \langle{t^2, ln\:t, t\:ln\:t}\rangle$ at the point $(1, 0, 0)$.
+
+\subsection*{Solution}
+\subsection*{Problem 31 \& 33}
+
+Use Formula 11 to find the curvature.
+
+\subsubsection*{31. $y = x^4$}
+\subsubsection*{Solution}
+\subsubsection*{33. $y = xe^x$}
+\subsubsection*{Solution}
+\subsection*{Problem 51}
+Find the vectors \textbf{T}, \textbf{N}, and \textbf{B} at the given point.
+\[
+    \rvec = \langle{t^2, \frac{2}{3}t^3, t}\rangle, \quad (1, \frac{2}{3}, 1)
+\]
+\subsection*{Solution}
+\subsection*{Problem 53}
+
+Find equations of the normal plane and osculating plane of the curve at the given point.
+\[
+    x = \sin{2t},\; y = -\cos{2t},\; z = 4t; \quad (0, 1, 2\pi)
+\]
+
+\subsection*{Solution}
+\subsection*{Problem 66}
+
+Use Formula 14 to find the torsion at the given value of t.
+\[
+    \rvec = \langle{\sin{t}, 3t, \cos{t}}\rangle, \quad t = \frac{\pi}{2}
+\]
+
+\subsection*{Solution}
+\subsection*{Problem 70}
+
+Use Theorem 15 to find the torsion of the given curve at a general point and at the point corresponding to $t = 0$
+\[
+    \rvec = \langle{\cos{t}, \sin{t}, \sin{t}}\rangle
+\]
+\subsection*{Solution}
+
+\section*{Section 4: Motion in Space - Velocity and Acceleration}
+\subsection*{Problem 3-7 odd}
+
+Find the velocity, acceleration, and speed of a particle with the given position function. Sketch the path of the particle and draw the velocity and acceleration vectors for the specified value of $t$.
+
+\subsubsection*{3. $\rvec = \langle -\frac 1 2 t^2, t \rangle, \quad t = 2$}
+\subsubsection*{Solution}
+\begin{align*}
+    \drvec &= \vec v (t) = \langle -t, 1 \rangle \quad \Rightarrow \quad \vec v (2) = \langle -2, 1 \rangle \\
+    \vec r \;''(t) &= \vec a (t) = \langle -1, 0 \rangle \quad\Rightarrow \quad \vec a (2) = \langle -1, 0\rangle 
+\end{align*}
+\begin{tikzpicture}
+    \begin{axis}[
+        axis lines = left,
+        xlabel = \(x\),
+        ylabel = {\(y\)},
+    ]
+    % draw the path
+    \addplot[
+        color=black,
+        samples = 100,
+    ]
+    {sqrt(-2 * x)};
+    % draw the velocity vector at t = 2
+    \draw[->, thick] (axis cs: -2, 2) -- (axis cs: -4, 3);
+    \node at (axis cs: -3, 2.8) {$\vec v (2)$};
+    % draw the acceleration vector at t = 2
+    \draw[->, thick] (axis cs: -2, 2) -- (axis cs: -3, 2);
+    \node at (axis cs: -2.5, 1.8) {$\vec a (2)$};
+    % draw the point at t = 2
+    \draw[fill=black] (axis cs: -2, 2) circle[radius=1pt];
+    \end{axis}
+\end{tikzpicture}
+
+\subsubsection*{5. $\rvec = 3 \cos t \ihat + 2 \sin t \jhat \quad t = \frac \pi 3 $}
+\subsubsection*{7. $\rvec = t\ihat + t^2\jhat + 2\khat \quad t = 1$}
+\subsection*{Problems 9-13 odd}
+        
+Find the velocity, acceleration, and speed of a particle with the given position function.
+
+\subsubsection*{9. $\rvec = \langle t^2+ t, t^2 - t, t^3 \rangle $}
+\subsubsection*{11. $\rvec = \sqrt 2 t\ihat + e^t\jhat + e^{-t} \khat$}
+\subsubsection*{13. $\rvec = e^t(\cos t\ihat + \sin t\jhat + t\khat)$}
+\subsection*{Problem 15}
+
+Find the velocity and position vectors of a particle that has the given acceleration and the given initial velocity and position.
+\[
+    a(t) = 2\ihat + 2t\khat, \quad v(0) = 3\ihat - \jhat, \quad r(0) = \jhat + \khat
+\]
+
+\subsection*{Problem 17a}
+
+Find the position vector of a particle that has the given acceleration and the specified initial velocity and position.
+\[
+    a(t) = 2t\ihat + \sin t\jhat + \cos 2t\khat, \quad v(0) = \ihat, \quad r(0) = \jhat
+\]
+
+\subsection*{Problem 23}
+
+A projectile is fired with an initial speed of $200\frac m s$ and angle of elevation $60 \degree$. Find $(a)$ the range of the projectile, $(b)$ the maximum height reached, and $(c)$ the speed at impact.
+
+\subsection*{Problem 26}
+
+A projectile is fired from a tank with initial speed $400 \frac m s$. Find two angles of elevation that can be used to hit a target $3000m$ away.
+
+\subsection*{Problem 27}
+
+A rifle is fired with angle of elevation $36\degree$. What is the initial speed if the maximum height of the bullet is $1600 ft$?
+
+\subsection*{Problem 37 \& 39}
+
+Find the tangential and normal components of the acceleration vector.
+
+\subsubsection*{37. $\rvec = (t^2 + 1)\ihat + t^3\jhat, \quad t \geq 0    $}
+\subsubsection*{39. $\rvec = \cos t\ihat + \sin t\jhat + t\khat$}
+\subsection*{Problem 41}
+
+Find the tangential and normal components of the acceleration vector at the given point.
+\[
+    \rvec = \ln t\ihat + (t^2 + 3t)\jhat + 4\sqrt t\khat, \quad (0, 4, 4)
+\]
+
+
+\end{document}

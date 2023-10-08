@@ -1,0 +1,9 @@
+*.db
+*.db.lock
+*.md5
+*.aux
+*.auxlock
+*.fls
+*.log
+*synctex.gz
+
