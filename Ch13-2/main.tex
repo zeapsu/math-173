@@ -147,7 +147,7 @@ a.
 \end{align*}
 b. 
 \begin{align*}
-    \kappa(t) &= \frac{\|\vec{T}\;'(t)\|}{\|\rvec\|} = \frac{\frac{1}{\sqrt 5}}{\sqrt 5t} = \frac{1}{5t}
+    \kappa(t) &= \frac{\|\vec{T}\;'(t)\|}{\|\drvec\|} = \frac{\frac{1}{\sqrt 5}}{\sqrt 5t} = \frac{1}{5t}
 \end{align*}
 
 \subsubsection*{21. $\vec{r}(t) = \langle{t, t^2, 4} \rangle$}
@@ -158,10 +158,31 @@ a.
     \drvec &=  \ihat +  2t\jhat \\ 
     \|\drvec\| &= \sqrt{1^2 + (2t)^2} = \sqrt{1 + 4t^2}  \\
     \vec T (t) &=  \frac{\ihat + 2t\jhat}{\sqrt{1 + 4t^2}} = \frac{1}{\sqrt{1 + 4t^2}}(\ihat + 2t\jhat) \\
-    \vec T \;'(t) &= \frac{1}{\sqrt{1+4t^2}}(2\jhat)
+    \frac{d}{dt} &= [f(t)\vec u (t)] = f'(t)\vec u (t) + f(t)\vec u \;'(t) \quad [vector\;product\;rule] \\  
+    \vec T \;'(t) &= -\frac{4t}{(1+4t^2)^{\frac 3 2}}(\ihat + 2t\jhat) + \frac{1}{(1 + 4t^2)^{\frac 1 2}}(2\jhat) \\
+                  &= \frac{1}{(1 + 4t^2)^{\frac 3 2}}\left(-4t(\ihat + 2t\jhat) + (1+4t^2)(2\jhat)\right) = \frac{1}{(1 + 4t^2)^{\frac 3 2}}(-4t\ihat - 8t^2\jhat + 2\jhat + 8t^2\jhat) \\
+                  &= \frac{1}{(1 + 4t^2)^{\frac 3 2}}(-4t\ihat + 2\jhat) \\
+    \| \vec T \;'(t)\| &= \frac{1}{\left(1+4t^2\right)^{\frac 3 2}}\sqrt{(-4t)^2 + 2^2} = \frac{1}{(1 + 4t^2)^{\frac 3 2}} \sqrt{16t^2 + 4} = \frac{1}{(1 + 4t^2)^{\frac 3 2}}\sqrt{4(4t^2 + 1)} = \frac{2}{(1 + 4t^2)^{\frac 3 2}}\sqrt{1+4t^2} \\
+                       &= \frac{2}{1+4t^2} \\
+    \vec N (t) &=  \frac{\vec T\;'(t)}{\|\vec T\;'(t)\|} = \frac{1}{(1+4t^2)^{\frac 3 2}}(-4t\ihat + 2\jhat) \; \cdot \; \frac{1+4t^2}{2} = \frac{(1+4t^2)^1}{2(1+4t^2)^{\frac 3 2}}(-4t\ihat + 2\jhat) = \frac{1}{\sqrt{1+4t^2}}(-2t\ihat + \jhat)
+\end{align*}
+b.
+\begin{align*}
+    \kappa (t) = \frac{\|\vec T\;'(t)\|}{\|\drvec\|} = \frac{2}{1+4t^2} \;\cdot\; \frac{1}{(1+4t^2)^\frac 1 2} = \frac{2}{(1+4t^2)^{\frac 3 2}}
 \end{align*}
 \subsubsection*{23. $\vec{r}(t) = \langle{t, \frac{1}{2}t^2, t^2} \rangle$}
 \subsubsection*{Solution}
+a. 
+\begin{align*}
+    \drvec &= \langle 1, t, 2t \rangle \\
+    \|\drvec\| &= \sqrt{1^2 + t^2 + (2t)^2} \\ 
+    \vec T(t) &= \frac{\drvec}{\|\drvec\|} = \frac{\langle 1, t, 2t \rangle}{\sqrt{1 + t^2 + 4t^2}} = \frac{1}{\sqrt{1 + 5t^2}}\langle 1, t, 2t \rangle \\
+    \frac{d}{dt} &= [f(t)\vec u (t)] = f'(t)\vec u (t) + f(t)\vec u \;'(t) \quad [vector\;product\;rule] \\  
+    \vec T\;'(t) &= -\frac{5t}{(1+5t^2)^{\frac 3 2}}\langle 1, t, 2t\rangle + \frac{1}{(1+5t^2)^\frac 1 2}\langle 0, 1, 2 \rangle \\
+                 &= \frac{1}{(1+5t^2)^{\frac 3 2}}\left(-5t \langle 1, t, 2t \rangle + (1+5t^2)\langle 0, 1, 2 \rangle\right) \\
+                 &= \frac{1}{(1+5t^2)^{\frac 3 2}}\left(\langle -5t, -5t^2, -10t^2 \rangle + \langle 0, 1+5t^2, 2+10t^2 \rangle\right) = \frac{1}{(1+5t^2)^{\frac 3 2}} \langle -5t, 1, 2 \rangle \\
+    \|\vec T\;'(t)\| &= 
+\end{align*}
 \subsection*{Problem 27}
 Use Theorem 10 to find the curvature
 \[
@@ -170,7 +191,7 @@ Use Theorem 10 to find the curvature
 \subsection*{Solution}
 \subsection*{Problem 28}
 
-Find the curvature of $\rvec = \langle{t^2, ln\:t, t\:ln\:t}\rangle$ at the point $(1, 0, 0)$.
+Find the curvature of $\rvec = \langle{t^2, \ln t, t\ln t}\rangle$ at the point $(1, 0, 0)$.
 
 \subsection*{Solution}
 \subsection*{Problem 31 \& 33}
