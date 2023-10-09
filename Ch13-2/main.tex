@@ -29,6 +29,8 @@
 \newcommand\vv[1]{\langle #1 \rangle}
 \newcommand\vc[2]{\vec{#1}(#2)}
 \newcommand\vcd[2]{\vec{#1}\;'(#2)}
+\newcommand\vcdd[2]{\vec{#1}\;''(#2)}
+\newcommand\vcddd[2]{\vec{#1}\;'''(#2)}
 \newcommand\mgv[1]{\|#1\|}
 \newcommand\mgvv[2]{\sqrt{\left(#1\right)^2 + \left(#2\right)^2}}
 \newcommand\mgvvv[3]{\sqrt{\left(#1\right)^2 + \left(#2\right)^2 + \left(#3\right)^2}}
@@ -244,12 +246,14 @@ Find the curvature of $\rvec = \langle t^2, \ln t, t\ln t \rangle$ at the point 
 $ \vec r \;' (1) \times \vec r \;''(1) $ \Rightarrow $
 \begin{vmatrix}
     \ihat & \jhat & \khat \\ 
+    \\
     2 & 1 & 1 \\
+    \\
     2 & -1 & 1
 \end{vmatrix} =
-$\ihat\begin{vmatrix}1&1\\-1&1\end{vmatrix}  
-- \jhat \begin{vmatrix}2&1\\2&1\end{vmatrix}
-\khat \begin{vmatrix}2&1\\2&-1\end{vmatrix} \\
+$\ihat\begin{vmatrix}1&1\\\\-1&1\end{vmatrix}  
+- \jhat \begin{vmatrix}2&1\\\\2&1\end{vmatrix}
+\khat \begin{vmatrix}2&1\\\\2&-1\end{vmatrix} \\
 = (1-(-1))\ihat - (2-2)\jhat + (-2-2)\khat = 2\ihat - 4\khat \Rightarrow \langle 2, 0, -4 \rangle \\
 
 \begin{align*}
@@ -309,10 +313,12 @@ Find the vectors \textbf{T}, \textbf{N}, and \textbf{B} at the given point.
     \vc N 1 &= \frac{\vv{-\frac 2 9, \frac 4 9, -\frac 4 9 }}{\mgvvv{-\frac 2 9}{\frac 4 9}{-\frac 4 9}} = \frac{\vv{-\frac 2 9, \frac 4 9, -\frac 4 9 }}{\sqrt{\frac{36}{81}}} = \frac 9 6\vv{-\frac 2 9, \frac 4 9, -\frac 4 9} = \vv{-\frac 1 3, \frac 2 3, -\frac 2 3}
 \end{align*}
 \begin{align*}
-    \vc B 1 = \vc T 1 \times \vc N 1 
+    \vc B 1 = \vc T 1 \times \vc N 1 =
     \begin{vmatrix}
         \ihat & \jhat & \khat \\ 
+        \\
         \frac 2 3 & \frac 2 3 & \frac 1 3 \\ 
+        \\
         -\frac 1 3 & \frac 2 3 & -\frac 2 3
     \end{vmatrix} = (-\frac 4 9 - \frac 2 9)\ihat + (-\frac 1 9 + \frac 4 9)\jhat + (\frac 4 9 - (-\frac 2 9))\khat = \vv{-\frac 2 3, \frac 1 3, \frac 2 3}
 \end{align*}
@@ -355,9 +361,9 @@ To find the osculating plane at $(0, 1, 2\pi)$ we need vectors $\vc T t$ and $\v
     \vc{N}{\frac \pi 2} &= \frac{\frac{1}{\sqrt 5}\vv{0, -2, 0}}{\frac {2}{\sqrt 5}} = \frac 1 2 \vv {0, -2, 0} = \vv{0. -1. 0}
 \end{align*}
 A vector normal to the osculating plane would be $\vc B t = \vc T t \times \vc N t \rr \vc{B}{\frac \pi 2} = \vc {T}{\frac \pi 2} \times \vc{N}{\frac \pi 2} \\
-=
-\begin {vmatrix} \ihat & \jhat & \khat \\
-    \frac 1 {\sqrt 5} & 0 & 2 \\
+= $$\frac{1}{\sqrt 5}$$
+\begin {vmatrix} \ihat & \jhat & \khat \\\\
+    -1 & 0 & 2 \\\\
     0 & -1 & 0
 \end{vmatrix} = $$ \frac {1}{\sqrt 5} \vv{0-(-2), 0-0, 1-0} = \frac{1}{\sqrt 5}\vv{2, 0, 1}$$ \\ \\
 
@@ -374,6 +380,45 @@ Use Formula 14 to find the torsion at the given value of t.
 \]
 
 \subsection*{Solution}
+The torsion of a curve with the paramater t is defined as 
+\[
+    \tau = -\frac{\vcd B t \cdot \vc N t}{\mgv{\vcd r t}}
+\]
+
+We need to find $\vc T t$, $\vc N t$, and $\vc B t$ \\
+\begin{align*}
+    \vc r t = \vv{\sin t, 3t, \cost t } \rr \vcd r t = \vv{\cos t, 3, -\sin t} \rr \mgv{\vcd r t} = \sqrt{\cos^2 t + 9 + \sin^2 t} = \sqrt{10}
+\end{align*}
+\begin{align*}
+    \vc T t &= \frac{\vcd r t}{\mgv{\vc r t}} 
+    = \frac{\vv{\cos t, 3, -\sin t}}{\sqrt{10}}
+    = \frac{1}{\sqrt{10}}\vv{\cos t, 3, -\sin t}
+\end{align*}
+\begin{align*}
+    \vcd T t &= \frac{1}{\sqrt{10}}\vv{-\sin t, 0, -\cos t} 
+    \rr \mgv{\vcd T t} = \frac{1}{\sqrt{10}}\sqrt{\sin^2 t + \cos^2 t} = \frac{1}{\sqrt{10}} \\
+    \vc N t &= \frac{\vcd T t}{\mgv{\vcd T t}} = \frac 1 1 \vv{-\sin t, 0, -\cos t} = \vv{-\sin t, 0, -\cos t}
+\end{align*}
+
+$\vc B t = \vc T t \times \vc N t = \frac{1}{\sqrt{10}}$
+\begin{vmatrix}
+    \ihat & \jhat & \khat \\
+    \\
+    \cos t & 3 & -\sin t \\
+    \\
+    -\sin t & 0 & -\cos t 
+\end{vmatrix}  = $\frac 1 {\sqrt{10}} \vv{-3\cos t - 0, \sin^2 t - (-\cos^2 t), 0 - (-3\sin t)}$ \\
+
+= $\frac 1 {\sqrt{10}} \vv{-3\cos t, 1, 3\sin t}$ \\\\
+\begin{align*}
+    \vcd B t = \frac 1 {\sqrt{10}} \vv{3\sin t, 0, 3\cos t} \rr \vcd B t \cdot \vc N t &= \frac 1 {\sqrt{10}} \vv{3\sin t, 0, 3\cos t} \cdot \vv{-\sin t, 0, -\cos t} \\ 
+                                                                                    &= \frac 1 {\sqrt{10}}(-3\sin^2 t - 3\cos^2 t) = \frac{-3}{\sqrt{10}} \\
+\end{align*}
+
+$\therefore$ The torsion of the curve at $t = \frac \pi 2$ is
+$$\tau = -\frac{-\frac {3}{\sqrt{10}}}{\sqrt{10}} = \frac {3}{10}$$
+
+
 \subsection*{Problem 70}
 
 Use Theorem 15 to find the torsion of the given curve at a general point and at the point corresponding to $t = 0$
@@ -381,7 +426,35 @@ Use Theorem 15 to find the torsion of the given curve at a general point and at 
     \rvec = \langle{\cos{t}, \sin{t}, \sin{t}}\rangle
 \]
 \subsection*{Solution}
+Theorem 15 states that 
+\begin{align*}
+    \tau (t) = \frac {[\vcd r t \times \vcdd r t] \cdot \vcddd r t  }{\mgv{\vcd r t \times \vcdd r t}^2}
+\end{align*}
+\begin{align*}
+    \vcd r t = \vv{-\sin t, \cos t, \cos t} \qquad \vcdd r t = \vv{-\cos t, -\sin t, -\sin t} \qquad \vcddd r t = \vv{\sin t, -\cos t, -\cos t} \\
+\end{align*}
+\begin{align*}
+    \vcd r 0 = \vv{0, 1, 1} \qquad \vcdd r 0 = \vv{-1, 0, 0} \qquad \vcddd r 0 = \vv{0, -1, -1} \\
+\end{align*}
+\begin{align*}
 
+    $[\vcd r 0 \times \vcdd r 0] \cdot \vcddd r 0 = $
+    \begin{vmatrix}
+        \ihat & \jhat & \khat \\
+        \\
+        0 & 1 & 1 \\
+        \\
+        -1 & 0 & 0
+    \end{vmatrix}
+    $ = \vv{0-0, -1 - 0, 0 -(-1)} = \vv{0, -1, 1}\cdot \vv{0, -1, -1}$ \\
+    $ = 0 + 1 - 1 = 0$\\
+\\
+$\therefore$ The torsion of the curve at $t = 0$ is 
+\[
+    \tau (0) = \frac{0}{\sqrt{2}^2} = 0
+\]
+
+\end{align*}
 \section*{Section 4: Motion in Space - Velocity and Acceleration}
 \subsection*{Problem 3-7 odd}
 
