@@ -35,6 +35,8 @@
 \newcommand\mgvv[2]{\sqrt{\left(#1\right)^2 + \left(#2\right)^2}}
 \newcommand\mgvvv[3]{\sqrt{\left(#1\right)^2 + \left(#2\right)^2 + \left(#3\right)^2}}
 \newcommand\rr{\quad\Rightarrow\quad}
+\newcommand\par[1]{\left(#1\right)}
+\newcommand\brac[1]{\left[#1\right]}
 
 
 \title{Chapter 13 Section 3 \& 4 Problem Set}
@@ -242,7 +244,7 @@ Find the curvature of $\rvec = \langle t^2, \ln t, t\ln t \rangle$ at the point 
     \drvec &= \langle 2t, \frac 1 t, \ln t + 1 \rangle,\quad \vec r \;''(t) = \langle 2, -\frac{1}{t^2}, \frac 1 t \rangle \\ 
     \vec r \;'(1) &= \langle 2, 1, 1 \rangle, \quad \|\vec r \;'(1)\| = \sqrt{2^2+1^2+1^2}  = \sqrt 6, \quad \vec r \;''(1) = \langle 2, -1, 1 \rangle \\ 
 \end{flalign*}
-$ \vec r \;' (1) \times \vec r \;''(1) $ \Rightarrow $
+$ \vec r \;' (1) \times \vec r \;''(1) \Rightarrow $
 \begin{vmatrix}
     \ihat & \jhat & \khat \\ 
     \\
@@ -250,10 +252,10 @@ $ \vec r \;' (1) \times \vec r \;''(1) $ \Rightarrow $
     \\
     2 & -1 & 1
 \end{vmatrix} =
-$\ihat\begin{vmatrix}1&1\\\\-1&1\end{vmatrix}  
+$\ihat\begin{vmatrix}1&1\\\\-1&1\end{vmatrix}
 - \jhat \begin{vmatrix}2&1\\\\2&1\end{vmatrix}
 \khat \begin{vmatrix}2&1\\\\2&-1\end{vmatrix} \\
-= (1-(-1))\ihat - (2-2)\jhat + (-2-2)\khat = 2\ihat - 4\khat \Rightarrow \langle 2, 0, -4 \rangle \\
+= (1-(-1))\ihat - (2-2)\jhat + (-2-2)\khat = 2\ihat - 4\khat \Rightarrow \langle 2, 0, -4 \rangle $ \\
 
 \begin{align*}
     \kappa(1) &= \frac{\| \langle 2, 0, -4 \rangle \|}{\sqrt 6^3} = \frac{\sqrt{2^2 + 0^2 + (-4)^2}}{6^{\frac 3 2}} = \frac{\sqrt 20}{6\sqrt 6} = \frac{2\sqrt 5}{6\sqrt 6} = \frac{\sqrt 5}{3\sqrt 6} = \frac{\sqrt 30}{18} \\
@@ -594,8 +596,14 @@ Find the velocity, acceleration, and speed of a particle with the given position
 \begin{align*}
     \vc v t &= e^t(\cos t\ihat + \sin t\jhat + t\khat) + e^t(-\sin t\ihat + \cos t\jhat + \khat)  \\
             &= e^t\left[(\cos t - \sin t)\ihat + (\sin t + \cos t)\jhat + (t + 1)\khat\right] \qquad [\text{vector product rule}] \\
-    \vc a t &= e^t(-\cos t\ihat - \sin t\jhat) \\
-    \mgv{\vc v t} &= \mgvvv{-\sin t}{\cos t}{1} = \sqrt{\sin^2 t + \cos^2 t + 1} = \sqrt 2
+            &= e^t(\cos t - \sin t)\ihat + e^t(\sin t + \cos t)\jhat + e^t(t + 1)\khat \\
+    \vc a t &= \left[e^t(\cos t - \sin t) + e^t(-\sin t - \cos t)\right]\ihat + \left[e^t(\sin t + \cos t) + e^t(\cos t - \sin t)\right]\jhat \\
+            &+ \left[e^t(t + 1) + e^t\right]\khat \\
+            &= e^t(-2\sin t)\ihat + e^t(2\cos t)\jhat + e^t(t + 2)\khat \\
+            &= e^t\left[-2\sin t\ihat + 2\cos t\jhat + (t + 2)\khat \right] \\
+    \mgv{\vc v t} &= \mgvvv{(e^t) (\cos t - \sin t}{-\sin t - \cos t}{t + 1} \\
+                  &= \sqrt{e^{2t}}\sqrt{\cos^2 t - 2\cos t \sin t + \sin^2 t + \sin^2 t + 2\cos t \sin t + \cos^2 t + t^2 + 2t + 1} \\ 
+                  &= e^t\sqrt{t^2 + 2t + 3} \\
 \end{align*}
 \subsection*{Problem 15}
 
@@ -604,6 +612,17 @@ Find the velocity and position vectors of a particle that has the given accelera
     a(t) = 2\ihat + 2t\khat, \quad v(0) = 3\ihat - \jhat, \quad r(0) = \jhat + \khat
 \]
 \centerline{\textbf{Solution}} \\
+\begin{align*}
+    \vc v t &= \int \vc a t \; dt  =  \int 2\;dt\ihat + \int 2t\;dt\khat  = (2t + c_1)\ihat + (t^2 + c_2)\khat \\
+    \text{If $\vc v 0$ = $3\ihat - \jhat$ then} \\
+            &= 2(0) + c_1 = 3 \rr c_1 = 3, \quad t^2 + c_2 = 0 \rr c_2 = 0 \\
+            &\Rightarrow\quad \vc v t = (2t + 3)\ihat - \jhat + t^2\khat
+\end{align*}
+\begin{align*}
+    \vc r t &= \int \vc v t = \int (2t + 3)\;dt\ihat - \int 1\;dt\jhat + \int t^2\;dt\khat = (t^2 + 3t)\ihat - t\jhat + \frac 1 3 t^3\khat \\
+    \text{If $\vc r 0 = \jhat + \khat$ then} \\
+            &(0^2 + 3(0))\ihat  - 0\jhat + \frac 1 3(0)^3\khat = \jhat + \khat \rr (t^2 + 3t)\ihat + (1 - t)\jhat + (\frac 1 3 t^2 + 1)\khat \\ 
+\end{align*}
 \subsection*{Problem 17a}
 
 Find the position vector of a particle that has the given acceleration and the specified initial velocity and position.
@@ -611,29 +630,167 @@ Find the position vector of a particle that has the given acceleration and the s
     a(t) = 2t\ihat + \sin t\jhat + \cos 2t\khat, \quad v(0) = \ihat, \quad r(0) = \jhat
 \]
 \centerline{\textbf{Solution}} \\
+\begin{align*}
+    \vc v t &= \int \vc a t = \int 2t\ihat + \sin t\jhat + \cos 2t\khat \;dt = t^2\ihat -\cos t\jhat + \frac 1 2\sin 2t\khat + \vec C \\
+    \text{If $\vc v 0 = \ihat$ then} \\
+            &0\ihat - \jhat + 0\khat = \ihat \rr \vec C = \ihat + \jhat \rr \vc v t = (t^2 + 1)\ihat + (1 - \cos t)\jhat + \frac 1 2\sin 2t \khat \\
+\end{align*}
+\begin{align*}
+    \vc r t &= \int \vc v t = \int (t^2 + 1)\ihat + (1 - \cos t)\jhat + \left( \frac 1 2 \sin 2t \right)\khat\;dt \\
+            &= \left(\frac 1 3 t^3 + t\right)\ihat + \left(t -\sin t\right)\jhat - \left(\frac 1 4 \cos 2t\right)\khat + \vec C \\
+            \text{If $\vc r 0 = \jhat$ then} \\
+            &  \left(\frac 1 3 0^3 + 0\right)\ihat + \left(0 -\sin 0\right)\jhat - \left(\frac 1 4 \cos 2(0)\right)\khat = \jhat \\
+            &\vec C = \jhat - \frac 1 4 \khat \rr \vc r t = \left(\frac 1 3 t^3 + t\right)\ihat + (t - \sin t + 1)\jhat - \left(\frac 1 4 \cos 2t - \frac 1 4\right)\khat
+\end{align*}
 \subsection*{Problem 23}
 
 A projectile is fired with an initial speed of $200\frac m s$ and angle of elevation $60 \degree$. Find $(a)$ the range of the projectile, $(b)$ the maximum height reached, and $(c)$ the speed at impact.
 
 \centerline{\textbf{Solution}} \\
+\begin{align*}
+\begin{tikzpicture}
+    % diagram of problem 
+    \draw (0, 0) -- (4, 0) -- (4, 2) -- (0, 0); 
+    \node at (1.5, 1) [left] {$\vec v_0 = 200\frac m s$};
+    \node at (1.5, 0.5) [below] {$\theta = 60 \degree$};
+    \node at (2, 0) [below] {$\Delta x$}
+    \node at (4, 1) [right] {$\Delta y$}
+\end{tikzpicture}
+\end{align*}
+\begin{align*}
+    \intertext{\textbf{a.}} 
+    \begin{cases}
+        \Delta x = v_0 t \cos \theta \\
+        \Delta y = v_0 t \sin \theta - \frac 1 2 g t^2
+    \end{cases} \rr 
+    \begin{cases}
+        \Delta x = 100t \\
+        \Delta y = 100\sqrt 3 t - 4.9t^2
+    \end{cases} \\
+    \\
+    \intertext{The range of the projectile is the value of $t$ when $y = 0$}
+    0 = 100\sqrt 3 t - 4.9t^2 \rr 0 = t(100\sqrt 3 - 4.9t) \rr t = \frac{100\sqrt 3}{4.9} \approx 35.3\:s && \\
+    \Delta x = 100(35.3) \approx 3530\:m && \\
+\end{align*}
+\begin{align*}
+    \intertext{\textbf{b.}} 
+    \intertext{The maximum height reached is the value of $y$ when $y \;'(t) =  0 \;\text{or}\;\vc {v_y}{t} = 0$} \\
+    &\vc {v_y}{t} = 100\sqrt 3 - 9.8t \rr 0 = 100\sqrt 3 - 9.8t \rr t = \frac{100\sqrt 3}{9.8} \approx 17.7\:s \\
+    & y_{max} = y(17.7\:s) = 100\sqrt 3(17.7\:s) - 4.9(17.7\:s)^2 \approx 1531\:m
+\end{align*}
+\begin{align*}
+    \intertext{\textbf{c.}} 
+    \intertext{The speed at impact is the value of $v$ when $y = 0$ which we have the time as $t \approx 35.3\:s$ (from part a)} \\
+    \vc r t &= \vv{100t, 100\sqrt 3 t - 4.9t^2} \rr \vc v t = \vv{100, 100\sqrt 3 - 9.8t} \\
+    \vc v {35.3\:s} &= \vv{100, 100\sqrt 3 - 9.8(35.3)} \approx \vv{100, -172.7} \\
+    \text{speed at impact} &= \mgv{\vc v {35.3\:s}} = \mgvv{100}{-172.7} \approx 200\frac m s\\
+\end{align*}
 \subsection*{Problem 26}
 
 A projectile is fired from a tank with initial speed $400 \frac m s$. Find two angles of elevation that can be used to hit a target $3000m$ away.
 
 \centerline{\textbf{Solution}} \\
+\begin{align*}
+\begin{tikzpicture}
+    % diagram of problem 
+    \draw (-4, 0) .. controls (0, 4) .. (4, 0); 
+    \draw (-4,0) -- (4, 0);
+    \draw[-> ,thick] (-4,0) -- (-2, 2);
+    \draw[dashed] (4, 0) -- (4, 3);
+    \node at (-3.2, 1) [left] {$\vec v_0 = 400\frac m s$};
+    \node at (-3, 0.7) [below] {$\theta ?$};
+    \node at (0, 0) [below] {$\Delta x = 3000m$};
+    \node at (4, 1.5) [right] {$\Delta y$};
+\end{tikzpicture}
+\end{align*}
+\begin{align*}
+    \intertext{Let the horizontal distance of the projectile be $\Delta x = \displaystyle\frac {\vec{v_0}^2 \sin{2\theta}}{g}$} \\ 
+    3000\:m &= \frac{(400\:\frac m s)^2 \sin 2\theta}{9.8\:\frac m {s^2}} \\
+    \sin 2\theta &= \frac{(3000\:m)(9.8\:\frac{m}{s^2})}{160000\:\frac{m^2}{s^2}} \\
+    2\theta &= \frac{\sin^{-1}{(0.18375)}} 2 \\
+    2\theta \approx 10.6\degree &\rr 2\theta \approx 169.4\degree \qquad[180\degree - 10.6\degree] \\
+    \intertext{$\therefore$ The angles of elevation are $5.3\degree$ and $84.7\degree$}
+\end{align*}
 \subsection*{Problem 27}
 
 A rifle is fired with angle of elevation $36\degree$. What is the initial speed if the maximum height of the bullet is $1600 ft$?
 
 \centerline{\textbf{Solution}} \\
+\begin{align*}
+\begin{tikzpicture}
+    % diagram of problem 
+    \draw (-4, 0) .. controls (0, 4) .. (4, 0); 
+    \draw (-4,0) -- (4, 0);
+    \draw[-> ,thick] (-4,0) -- (-2, 2);
+    \draw[dashed] (0, 0) -- (0, 3);
+    \node at (-3.2, 1) [left] {$\vec v_0 = ?$};
+    \node at (-2.7, 0.7) [below] {$\theta = 36\degree$};
+    \node at (0, 0) [below] {$\Delta x$};
+    \node at (0, 1.3) [right] {$y_{max} = 1600ft$}; 
+\end{tikzpicture}
+\end{align*}
+\begin{align*}
+    \intertext{The maximum height will be when the velocity in the $y$ direction is 0} \\
+    \vc r t &= (\vec v_0 \cos 36)t \ihat + \left((\vec v_0  \sin 36)t - \frac 1 2 g t^2\right)\jhat \\
+    \vc v t &= \vec v_0 \cos 36 \ihat + \left(\vec v_0 \sin 36 - g t\right)\jhat \\
+    \intertext{So the maximum height will be when $(\vec v_0 \sin 36) - gt = 0$} \\
+    \vec v_0 \sin 36 &= gt \rr t = \frac{\vec v_0 \sin 36}{g} \\
+    \intertext{Substituting this value of $t$ into the $y$ component of the position vector} \\
+    y_{max} &= \left(\vec v_0 \sin 36\right)\left(\frac{\vec v_0 \sin 36}{g}\right) - \frac 1 2 g \left(\frac{\vec v_0 \sin 36}{g}\right)^2 \\ 
+    \intertext{Solving for $\vec v_0$} \\
+    1600 &= \left(\vec v_0 \sin 36\right)\left(\frac{\vec v_0 \sin 36}{g}\right) - \frac 1 2 g \left(\frac{\vec v_0 \sin 36}{g}\right)^2 \\
+    1600 &= \frac{\vec v_0^2 \sin^2 36}{g} - \frac 1 2 \left(\frac{\vec v_0^2 \sin^2 36}{g}\right) \\
+    1600 &= \frac{\vec v_0^2 \sin^2 36}{2g} \rr \vec v_0 = \sqrt{\frac{3200(32\:\frac {ft}{s^2})}{\sin^2 36}} \approx 544\: \frac {ft}{s}\\
+    \intertext{$\therefore$ The initial speed of the bullet would be about $544\:\frac {ft}{s}$}
+\end{align*}
 \subsection*{Problem 37 \& 39}
 
 Find the tangential and normal components of the acceleration vector.
 
 \subsubsection*{37. $\rvec = (t^2 + 1)\ihat + t^3\jhat, \quad t \geq 0    $}
 \centerline{\textbf{Solution}} \\
+\begin{align*}
+    \intertext{Let the tangential component of acceleration be} \\
+    a_T &= \frac {\vc v t \cdot \vc a t}{\mgv{\vc v t}} \\
+    \intertext{And the normal component of acceleration} \\
+    a_N &= \frac {\vc v t \times \vc a t}{\mgv{\vc v t}}
+    \intertext{First we need to find $\vc v t$, $\vc a t$, $\mgv{\vc v t}$, and $\vc v t \times \vc a t$} \\
+    \vc v t = 2t\ihat + 3t^2\jhat& \rr \vc a t = 2\ihat + 6t\jhat \\
+    \mgv{\vc v t}  = \sqrt{4t^2 + 9t^4} = t\sqrt{4 + 9t^2}& \rr \vc v t \times \vc a t \\
+    &=  \begin{vmatrix}
+        \ihat & \jhat & \khat \\
+        \\
+        2t & 3t^2 & 0 \\
+        \\
+        2 & 6t & 0
+        \end{vmatrix} = (12t^2 - 6t^2)\khat = 6t^2\khat \\
+    \intertext{Now we can find the tangential and normal components of acceleration} \\
+    a_T &= \frac{2t(2) + 3t^2(6t)}{t\sqrt{4 + 9t^2}} = \frac{4t + 18t^3}{t\sqrt{4 + 9t^2}} = \frac {4 + 18t^2}{\sqrt{4 + 9t^2}} \\
+    a_N &= \frac {\sqrt{36t^4}}{t\sqrt{4 + 9t^2}} = \frac{6t^2}{t\sqrt{4 + 9t^2}} = \frac {6t}{\sqrt{4 + 9t^2}}
+\end{align*}
 \subsubsection*{39. $\rvec = \cos t\ihat + \sin t\jhat + t\khat$}
 \centerline{\textbf{Solution}} \\
+\begin{align*}
+    \intertext{Let the tangential component of acceleration be} \\
+    a_T = \frac {\vc v t \cdot \vc a t}{\mgv{\vc v t}} \\
+    \intertext{And the normal component of acceleration} \\
+    a_N = \frac {\vc v t \times \vc a t}{\mgv{\vc v t}}
+    \intertext{First we need to find $\vc v t$, $\vc a t$, $\mgv{\vc v t}$, and $\vc v t \times \vc a t$} \\
+    \vc v t = -\sin t\ihat + \cos t\jhat + \khat& \rr \vc a t = -\cos t\ihat -\sin t\jhat \\
+    \mgv{\vc v t} = \sqrt{\sin^2 t + \cos^ t + 1} = \sqrt 2& \rr \vc v t \times \vc a t \\
+    &= \begin{vmatrix} 
+        \ihat & \jhat & \khat \\
+        \\
+        -\sin t & \cos t & 1 \\
+        \\
+        -\cos t & -\sin t & 0 \\
+    \end{vmatrix} \\
+    &= (0 - (-\sin t))\ihat + (-\cos t - 0)\jhat + (\sin^2 t - (-\cos^2 t))\khat \\
+    &= \sin t \ihat -\cos t \jhat + \khat 
+    \intertext{Now we can find the tangential and normal components of acceleration} \\
+    a_T &= \frac{(-\sin t)(-\cos t) + (\cos t)(-\sin t)}{\sqrt 2} = \frac{\cos t \sin t - \cos t \sin t}{\sqrt 2} = 0\\
+    a_N &= \frac{\sqrt{(\sin t)^2 + (-\cos t)^2 + 1^2}}{\sqrt 2} = \frac{\sqrt 2}{\sqrt 2} = 1
+\end{align*}
 \subsection*{Problem 41}
 
 Find the tangential and normal components of the acceleration vector at the given point.
@@ -641,4 +798,29 @@ Find the tangential and normal components of the acceleration vector at the give
     \rvec = \ln t\ihat + (t^2 + 3t)\jhat + 4\sqrt t\khat, \quad (0, 4, 4)
 \]
 \centerline{\textbf{Solution}} \\
+\begin{align*}
+    \intertext{Let the tangential component of acceleration be} \\
+    a_T = \frac {\vc v t \cdot \vc a t}{\mgv{\vc v t}} \\
+    \intertext{And the normal component of acceleration} \\
+    a_N = \frac {\vc v t \times \vc a t}{\mgv{\vc v t}}
+    \intertext{First we need to find which value of $t$ the point $(0, 4, 4)$ corresponds to, $\vc v t$, and $\vc a t$} \\
+    \vc r t = \ln t\ihat + (t^2 + 3t)\jhat + 4\sqrt t\khat& \rr \vc v t = \frac 1 t \ihat + (2t + 3)\jhat + \frac 2 {\sqrt t}\khat \\
+    \vc a t &= -\frac 1 {t^2} \ihat + 2\jhat - \frac 1 {\sqrt {t^3}}\khat \\
+    \intertext{Since $\ln t = 0$ given by the point $(0, 4, 4)$, then $t$ must be 1} \\
+    \intertext{Then we evaluate $\mgv{\vc v t}$ and $\mgv{\vc v t \times \vc a t}$ at t = 1} \\
+    \mgv{\vc v t} &= \mgvvv{1}{5}{2} = \sqrt{30} \\
+    \vc v 1 \times \vc a 1 &=
+    \begin{vmatrix} 
+        \ihat & \jhat & \khat \\
+        \\
+        1 & 5 & 2 \\ 
+        \\
+        -1 & 2 & -1 \\
+    \end{vmatrix} = (-5 - 4)\ihat + (-2 - (-1))\jhat + (2 - (-5))\khat \\
+    &=  -9\ihat - \jhat + 7\khat 
+    \intertext{Now we can find the tangential and normal components of acceleration} \\
+    \vc v 1 = \ihat + 5\jhat + 2\khat& \rr \vc a 1 = -\ihat + 2\jhat -\khat \\
+    a_T &= \frac {-1 + 10 -2}{\sqrt{30}} = \frac 7 {\sqrt{30}} \\
+    a_N &= \frac {\mgvvv{-9}{-1}{7}}{\sqrt{30}} = \sqrt{\frac {131}{30}}
+\end{align*}
 \end{document}
