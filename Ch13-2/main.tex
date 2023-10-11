@@ -35,26 +35,21 @@
 \newcommand\mgvv[2]{\sqrt{\left(#1\right)^2 + \left(#2\right)^2}}
 \newcommand\mgvvv[3]{\sqrt{\left(#1\right)^2 + \left(#2\right)^2 + \left(#3\right)^2}}
 \newcommand\rr{\quad\Rightarrow\quad}
-\newcommand\par[1]{\left(#1\right)}
-\newcommand\brac[1]{\left[#1\right]}
-
 
 \title{Chapter 13 Section 3 \& 4 Problem Set}
 \author{Andry Paez}
+\date{}
 
 \begin{document}
 \maketitle
 \section*{Section 3: Arc Length and Curvature}
-
 \subsection*{Problem 1a}
 
 Use Equation 2 to compute the length of the given line segment.
-
 \[
     \vec{r}(t)  = \langle{3-t, 2t, 4t + 1}\rangle \quad 1 \leq{t} \leq{3}
 \]
 \centerline{\textbf{Solution}} \\
-
 Let the length of the line segment be 
 
 \begin{align*}
@@ -122,23 +117,18 @@ Using u-substitution,
     u^2 &= 4 + 9t^2 \\
     2udu &= 18t\; dt \\
     \frac{u\;du}{9} &= t\; dt \\
-    \int_{0}^{1} t\sqrt{4 + 9t^2}\; dt
-                    &= \int_{0}^{1} u \cdot(\frac{1}{9} u) \; du
-                    &= \frac{1}{9} \int_{0}^{1} u^2\; du
-                    &= \frac{1}{9} (\frac{1}{3} u^3) \Big|_{2}^{\sqrt{13}}
-                    &= \frac{1}{27} (u^3) \Big|_{2}^{\sqrt{13}}
-                    &= \frac{1}{27} (13^{\frac{3}{2}} - 2^3) = \frac{13\sqrt{13}}{27} - 3
+    \int_{0}^{1} t\sqrt{4 + 9t^2}\; dt &= \int_{0}^{1} u \cdot(\frac{1}{9} u) \; du \\
+                    &= \frac{1}{9} \int_{0}^{1} u^2\; du = \frac{1}{9} (\frac{1}{3} u^3) \Big|_{2}^{\sqrt{13}} \\
+                    &= \frac{1}{27} (u^3) \Big|_{2}^{\sqrt{13}} = \frac{1}{27} (13^{\frac{3}{2}} - 2^3) = \frac{13\sqrt{13}}{27} - 3
 \end{align*}
-
 \subsection*{Problems 19-23 odd}
 
 (a) Find the unit tangent and unit normal vectors $\vec{T}(t)$ and $\vec{N}(t)$. \\
 (b) Use Formula 9 to find the curvature.
 
-
 \subsubsection*{19. $\vec{r}(t) = \langle{t^2,\; \sin{t} - t\cos{t},\; \cos{t} + t\sin{t}} \rangle, \quad t > 0$}
 \centerline{\textbf{Solution}}
-a. 
+\intertext{\textbf{a.}} 
 \[
     \vec{T}(t) = \frac{\drvec}{\|\drvec\|}   
 \]
@@ -155,15 +145,13 @@ a.
     \|\vec{T}\;'(t)\| &= \frac {1}{\sqrt 5} \sqrt{0^2 + \cos^2t + \sin^2t} = \sqrt{1} = \frac{1}{\sqrt 5} \\
     \vec{N}(t) &= \frac{ \frac{1}{\sqrt{5}} \langle 0, \cos t, -\sin t \rangle}{\frac{1}{\sqrt{5}}} = \langle 0, \cos t, -\sin t \rangle 
 \end{align*}
-b. 
+\intertext{\textbf{b}}. 
 \begin{align*}
     \kappa(t) &= \frac{\|\vec{T}\;'(t)\|}{\|\drvec\|} = \frac{\frac{1}{\sqrt 5}}{\sqrt 5t} = \frac{1}{5t}
 \end{align*}
-
 \subsubsection*{21. $\vec{r}(t) = \langle{t, t^2, 4} \rangle$}
 \centerline{\textbf{Solution}}
-
-a. 
+\intertext{\textbf{a}}. 
 \begin{align*}
     \drvec &=  \ihat +  2t\jhat \\ 
     \|\drvec\| &= \sqrt{1^2 + (2t)^2} = \sqrt{1 + 4t^2}  \\
@@ -176,16 +164,15 @@ a.
                        &= \frac{2}{1+4t^2} \\
     \vec N (t) &=  \frac{\vec T\;'(t)}{\|\vec T\;'(t)\|} = \frac{1}{(1+4t^2)^{\frac 3 2}}(-4t\ihat + 2\jhat) \; \cdot \; \frac{1+4t^2}{2} = \frac{(1+4t^2)^1}{2(1+4t^2)^{\frac 3 2}}(-4t\ihat + 2\jhat) = \frac{1}{\sqrt{1+4t^2}}(-2t\ihat + \jhat)
 \end{align*}
-b.
+\intertext{\textbf{b}}.
 \begin{align*}
     \kappa (t) = \frac{\|\vec T\;'(t)\|}{\|\drvec\|} = \frac{2}{1+4t^2} \;\cdot\; \frac{1}{(1+4t^2)^\frac 1 2} = \frac{2}{(1+4t^2)^{\frac 3 2}}
 \end{align*}
 \subsubsection*{23. $\vec{r}(t) = \langle{t, \frac{1}{2}t^2, t^2} \rangle$}
 \centerline{\textbf{Solution}}
-a. 
+\intertext{\textbf{a}}. 
 \begin{align*}
-    \drvec &= \langle 1, t, 2t \rangle \\
-    \|\drvec\| &= \sqrt{1^2 + t^2 + (2t)^2} = \sqrt{1 + 5t^2} \\ 
+    \drvec &= \langle 1, t, 2t \rangle \rr \|\drvec\| = \sqrt{1^2 + t^2 + (2t)^2} = \sqrt{1 + 5t^2} \\ 
     \vec T(t) &= \frac{\drvec}{\|\drvec\|} = \frac{\langle 1, t, 2t \rangle}{\sqrt{1 + t^2 + 4t^2}} = \frac{1}{\sqrt{1 + 5t^2}}\langle 1, t, 2t \rangle \\
     \frac{d}{dt} &= [f(t)\vec u (t)] = f'(t)\vec u (t) + f(t)\vec u \;'(t) \quad [vector\;product\;rule] \\  
     \vec T\;'(t) &= -\frac{5t}{(1+5t^2)^{\frac 3 2}}\langle 1, t, 2t\rangle + \frac{1}{(1+5t^2)^\frac 1 2}\langle 0, 1, 2 \rangle \\
@@ -195,7 +182,7 @@ a.
                      &= \frac{\sqrt 5 (1+5t^2)^{\frac 1 2}}{(1+5t^2)^{\frac 3 2}} = \frac{\sqrt 5}{1+5t^2} \\
     \|\vec N(t)\| &=  \frac{\vec T\;'(t)}{\|\vec T\;'(t)\|} = \frac{1}{(1+5t^2)^{\frac 3 2}} \langle -5t, 1, 2 \rangle \; \cdot \; \frac{1+5t^2}{\sqrt 5} = \frac{1}{\sqrt 5\sqrt{1+5t^2}} \langle -5t, 1, 2 \rangle  = \frac{1}{\sqrt{5+25t^2}}\langle -5t, 1, 2 \rangle\\ 
 \end{align*}
-b.
+\intertext{\textbf{b}}.
 \begin{align*}
     \kappa(t) = \frac{\|\vec T\;'(t)\|}{\|\drvec\|} = \frac{\sqrt 5}{1+5t^2} \; \cdot \; \frac{1}{\sqrt{1+5t^2}} = \frac{\sqrt 5}{(1+5t^2)^{\frac 3 2}}
 \end{align*}
@@ -207,21 +194,27 @@ Use Theorem 10 to find the curvature
 \centerline{\textbf{Solution}} \\
 Theorem 10 states that $$\kappa(t) = \frac{\|\drvec \times \vec r \;''(t)\|}{\|\drvec\|^3}$$ \\
 \begin{align*}
-    \vec r \;'(t) &= 2\sqrt 6t \ihat + 2\jhat + 6t^2\khat \\
-    \vec r \;''(t) &= 2\sqrt 6\ihat + 12t\khat \\
-    \|\drvec\| &= \sqrt{(2\sqrt 6t)^2 + 2^2 + (6t^2)^2} = \sqrt{24t^2 + 4 + 36t^4} = \sqrt{4(9t^4 + 6t^2 + 1)} = 2\sqrt{(3t^2 +1)^2} = 2(3t^2+1) \\
+    \vec r \;'(t) &= 2\sqrt 6t \ihat + 2\jhat + 6t^2\khat \rr \vec r \;''(t) = 2\sqrt 6\ihat + 12t\khat \\
+    \|\drvec\| &= \sqrt{(2\sqrt 6t)^2 + 2^2 + (6t^2)^2} = \sqrt{24t^2 + 4 + 36t^4} \\ 
+               &= \sqrt{4(9t^4 + 6t^2 + 1)} = 2\sqrt{(3t^2 +1)^2} = 2(3t^2+1) \\
 \end{align*}
-$ \drvec \times \vec r \;''(t) $ \Rightarrow 
+
+\begin{align*}
+    \drvec \times \vec r \;''(t)&  \Rightarrow 
 \begin{vmatrix}
     \ihat & \jhat & \khat \\
+    \\
     2\sqrt 6t & 2 & 6t^2 \\
+    \\
     2\sqrt 6 & 0 & 12t
-    \end{vmatrix} = \ihat \begin{vmatrix} 2 & 6t^2 \\ 0 & 12t \end{vmatrix} - \jhat \begin{vmatrix} 2\sqrt 6t & 6t^2 \\ 2\sqrt 6 & 12t \end{vmatrix} + \khat \begin{vmatrix} 2\sqrt 6t & 2 \\ 2\sqrt 6 & 0 \end{vmatrix} \\ 
-                                             &= (24t - 0)\ihat - (24t^2\sqrt{6} - 12t^2\sqrt{6})\jhat + (0 - 4\sqrt 6)\khat = 24t\ihat - 12t^2\sqrt 6\jhat - 4\sqrt 6\khat \\
-                                             \\
-                                             $\| \drvec \times \vec r \;''(t) \| = \sqrt{ (24t)^2 + (-12t^2\sqrt 6)^2 + (-4\sqrt 6)^2} = \sqrt{576t^2 + 864t^4 + 96} = \sqrt{96(9t^4 + 6t^2 + 1)} = \sqrt{16 \cdot 6(3t^2 + 1)^2} \\
-                                            $\| \drvec \times \vec r \;''(t) \| = 4\sqrt 6(3t^2 + 1) \\
-
+    \end{vmatrix} \\ 
+&= \ihat \begin{vmatrix} 2 & 6t^2 \\\\ 0 & 12t \end{vmatrix} - \jhat \begin{vmatrix} 2\sqrt 6t & 6t^2 \\\\ 2\sqrt 6 & 12t \end{vmatrix} + \khat \begin{vmatrix} 2\sqrt 6t & 2 \\\\ 2\sqrt 6 & 0 \end{vmatrix} \\ 
+&= (24t - 0)\ihat - (24t^2\sqrt{6} - 12t^2\sqrt{6})\jhat + (0 - 4\sqrt 6)\khat \\ 
+&= 24t\ihat - 12t^2\sqrt 6\jhat - 4\sqrt 6\khat \\
+    \| \drvec \times \vec r \;''(t) \| &= \sqrt{ (24t)^2 + (-12t^2\sqrt 6)^2 + (-4\sqrt 6)^2} = \sqrt{576t^2 + 864t^4 + 96} \\ 
+                                       &= \sqrt{96(9t^4 + 6t^2 + 1)} = \sqrt{16 \cdot 6(3t^2 + 1)^2} \\
+                                       &= 4\sqrt 6(3t^2 + 1) \\
+\end{align*}
 \begin{align*}
     \kappa(t) &= \frac{\|\drvec \times \vec r \;''(t)\|}{\|\drvec\|^3} = \frac{4\sqrt 6(3t^2 + 1)}{(2(3t^2+1))^3} = \frac{4\sqrt 6(3t^2 + 1)}{8(3t^2+1)^3} = \frac{\sqrt 6}{2(3t^2+1)^2}
 \end{align*}
@@ -244,7 +237,8 @@ Find the curvature of $\rvec = \langle t^2, \ln t, t\ln t \rangle$ at the point 
     \drvec &= \langle 2t, \frac 1 t, \ln t + 1 \rangle,\quad \vec r \;''(t) = \langle 2, -\frac{1}{t^2}, \frac 1 t \rangle \\ 
     \vec r \;'(1) &= \langle 2, 1, 1 \rangle, \quad \|\vec r \;'(1)\| = \sqrt{2^2+1^2+1^2}  = \sqrt 6, \quad \vec r \;''(1) = \langle 2, -1, 1 \rangle \\ 
 \end{flalign*}
-$ \vec r \;' (1) \times \vec r \;''(1) \Rightarrow $
+\begin{align*}
+    \vec r \;' (1) \times \vec r \;''(1) &\Rightarrow
 \begin{vmatrix}
     \ihat & \jhat & \khat \\ 
     \\
@@ -252,16 +246,15 @@ $ \vec r \;' (1) \times \vec r \;''(1) \Rightarrow $
     \\
     2 & -1 & 1
 \end{vmatrix} =
-$\ihat\begin{vmatrix}1&1\\\\-1&1\end{vmatrix}
+\ihat\begin{vmatrix}1&1\\\\-1&1\end{vmatrix}
 - \jhat \begin{vmatrix}2&1\\\\2&1\end{vmatrix}
 \khat \begin{vmatrix}2&1\\\\2&-1\end{vmatrix} \\
-= (1-(-1))\ihat - (2-2)\jhat + (-2-2)\khat = 2\ihat - 4\khat \Rightarrow \langle 2, 0, -4 \rangle $ \\
-
+                      &= (1-(-1))\ihat - (2-2)\jhat + (-2-2)\khat \\ 
+                      &= 2\ihat - 4\khat \Rightarrow \langle 2, 0, -4 \rangle \\
+\end{align*}
 \begin{align*}
     \kappa(1) &= \frac{\| \langle 2, 0, -4 \rangle \|}{\sqrt 6^3} = \frac{\sqrt{2^2 + 0^2 + (-4)^2}}{6^{\frac 3 2}} = \frac{\sqrt 20}{6\sqrt 6} = \frac{2\sqrt 5}{6\sqrt 6} = \frac{\sqrt 5}{3\sqrt 6} = \frac{\sqrt 30}{18} \\
 \end{align*}
-
-
 \subsection*{Problem 31 \& 33}
 
 Use Formula 11 to find the curvature.
@@ -273,7 +266,7 @@ Formula 11 states that
     \kappa = \frac{|f''(x)|}{[1 + (f'(x)^2)]^{\frac 3 2}}
 \]
 \begin{align*}
-    y &= x^4 \Rightarrow y' = 4x^3 \Rightarrow y'' = 12x^2 \\
+    y &= x^4 \rr y' = 4x^3 \rr y'' = 12x^2 \\
     \kappa &= \frac{|12x^2|}{[1+(4x^3)^2]^{\frac 3 2}} = \frac{12x^2}{(1+16x^6)^{\frac{3}{2}}}
 \end{align*}
 \subsubsection*{33. $y = xe^x$}
@@ -283,7 +276,7 @@ Formula 11 states that
     \kappa = \frac{|f''(x)|}{[1 + (f'(x)^2)]^{\frac 3 2}}
 \]
 \begin{align*}
-    y' &= e^x + xe^x \Rightarrow y'' = e^x + e^x + xe^x = 2e^x + xe^x \\
+    y' &= e^x + xe^x \rr y'' = e^x + e^x + xe^x = 2e^x + xe^x \\
     \kappa &= \frac {|2e^x + xe^x|} {[1+ (e^x + xe^x)^2]^{\frac 3 2}} = \frac {e^x(2 + x)} {[1+ (e^x + xe^x)^2]^{\frac 3 2}}
 \end{align*}
 \subsection*{Problem 51}
@@ -299,18 +292,22 @@ Find the vectors \textbf{T}, \textbf{N}, and \textbf{B} at the given point.
     z = t \Rightarrow t = 1?, \quad 1^2 \equiv 1,\; \frac 2 3 1^3 \equiv \frac 2 3,\; 1 \equiv 1 \quad \therefore t= 1
 \]
 \begin{align*}
-    \vcd r t &= \vv{2t, 2t^2, 1}, \quad \mgv{\vcd r t} = \mgvvv{2t}{2t^2}{1} = \sqrt{4t^2 + 4t^4 + 1} = \sqrt{(2t^2 + 1)^2} = 2t^2 + 1 \\
-    \vc T t &= \frac{\vv{2t, 2t^2, 1}}{2t^2+1} \Rightarrow \vc T 1 = \vv{\frac 2 3, \frac 2 3, \frac 1 3}, \quad f(t) = \frac{1}{2t^2 + 1}, \; \vec u = \vv{2t, 2t^2, 1} \Rightarrow \vcd T t = f\;'(t)\;\vec u + f(t)\;\vec u\;' \\
+    \vcd r t &= \vv{2t, 2t^2, 1} \rr \mgv{\vcd r t} = \mgvvv{2t}{2t^2}{1} = \sqrt{4t^2 + 4t^4 + 1} = \sqrt{(2t^2 + 1)^2} = 2t^2 + 1 \\
+    \vc T t &= \frac{\vv{2t, 2t^2, 1}}{2t^2+1} \rr \vc T 1 = \vv{\frac 2 3, \frac 2 3, \frac 1 3} \\ 
+    \quad f(t) &= \frac{1}{2t^2 + 1}, \; \vec u = \vv{2t, 2t^2, 1} \rr \vcd T t = f\;'(t)\;\vec u + f(t)\;\vec u\;' \\
 \end{align*}
 \begin{align*}
-    \vcd T t = -4t(2t^2+1)^{-2}\vv{2t,2t^2,1} + (2t^2+1)^{-1}\vv{2,4t,0} &= (2t^2+1)^{-2}(-4t\vv{2t, 2t^2, 1}+(2t^2+1)\vv{2,4t,0}) \\
+    \vcd T t &= -4t(2t^2+1)^{-2}\vv{2t,2t^2,1} + (2t^2+1)^{-1}\vv{2,4t,0} \\ 
+             &= (2t^2+1)^{-2}(-4t\vv{2t, 2t^2, 1}+(2t^2+1)\vv{2,4t,0}) \\
              &= (2t^2+1)^{-2}(\vv{-8t^2,-8t^3,-4t}+\vv{4t^2+2,8t^3+4t,0}) \\
              &= (2t^2 + 1)^{-2}\vv{-4t^2 + 2, 4t, -4t} \\
              &= 2(2t^2+1)^{-2}\vv{-2t^2+1, 2t, -2t} 
 \end{align*}
 \begin{align*}
-    \vcd T 1 &= 2(2(1)^2+1)^{-2}\vv{-2(1)^2+1, 2(1), -2(1)} = 2(2+1)^{-2}\vv{-2+1, 2, -2} = \frac 2 9 \vv{-1, 2, -2} = \vv{-\frac{2}{9}, \frac 4 9, -\frac 4 9} \\
-    \vc N 1 &= \frac{\vv{-\frac 2 9, \frac 4 9, -\frac 4 9 }}{\mgvvv{-\frac 2 9}{\frac 4 9}{-\frac 4 9}} = \frac{\vv{-\frac 2 9, \frac 4 9, -\frac 4 9 }}{\sqrt{\frac{36}{81}}} = \frac 9 6\vv{-\frac 2 9, \frac 4 9, -\frac 4 9} = \vv{-\frac 1 3, \frac 2 3, -\frac 2 3}
+    \vcd T 1 &= 2(2(1)^2+1)^{-2}\vv{-2(1)^2+1, 2(1), -2(1)} = 2(2+1)^{-2}\vv{-2+1, 2, -2} \\ 
+             &= \frac 2 9 \vv{-1, 2, -2} = \vv{-\frac{2}{9}, \frac 4 9, -\frac 4 9} \\
+    \vc N 1 &= \frac{\vv{-\frac 2 9, \frac 4 9, -\frac 4 9 }}{\mgvvv{-\frac 2 9}{\frac 4 9}{-\frac 4 9}} = \frac{\vv{-\frac 2 9, \frac 4 9, -\frac 4 9 }}{\sqrt{\frac{36}{81}}} \\ 
+            &= \frac 9 6\vv{-\frac 2 9, \frac 4 9, -\frac 4 9} = \vv{-\frac 1 3, \frac 2 3, -\frac 2 3}
 \end{align*}
 \begin{align*}
     \vc B 1 = \vc T 1 \times \vc N 1 =
@@ -342,20 +339,19 @@ The point $(0, 1, 2\pi)$ corresponds to $t=\frac \pi 2$
 \end{align*}
 So, the normal plane has normal vector $\vcd {r}{\frac \pi 2} = \vv{-2, 0, 4}$ \\ \\
 \\
-
-$\therefore$ The equation of the normal plane is
+\intertext{$\therefore$ The equation of the normal plane is}
 \begin{align*}
     -2(x-0)+0(y-1)+4(z-2\pi) = 0 \rr -2x + 4z - 8\pi = 0 \quad or \quad 4z - x = 4\pi
 \end{align*}
 
-To find the osculating plane at $(0, 1, 2\pi)$ we need vectors $\vc T t$ and $\vc N t$
+\intertext{To find the osculating plane at $(0, 1, 2\pi)$ we need vectors $\vc T t$ and $\vc N t$}
 
 \begin{align*}
-    \vc T t &= \frac{\vcd r t}{\mgv{\vcd r t}} = \frac{\vv{2\cos 2t, 2\sin 2t, 4}}{\sqrt{4\cos^2 2t + 4\sin^2 2t + 16}} = \frac{\vv{2\cos 2t, 2\sin 2t, 4}}{\sqrt{20}} = \frac{1}{2\sqrt 5}\vv{2\cos 2t, 2\sin 2t, 2} \\
+    \vc T t &= \frac{\vcd r t}{\mgv{\vcd r t}} = \frac{\vv{2\cos 2t, 2\sin 2t, 4}}{\sqrt{4\cos^2 2t + 4\sin^2 2t + 16}} = \frac{\vv{2\cos 2t, 2\sin 2t, 4}}{\sqrt{20}} = \frac{1}{2\sqrt 5}\vv{2\cos 2t, 2\sin 2t, 4} \\
             &=  \frac{1}{\sqrt 5}\vv{\cos 2t, \sin 2t, 2} \\ \\
     \vc{T}{\frac \pi 2} &=  \frac{1}{\sqrt 5}\vv{-1, 0, 2} \qquad
     \vcd T t = \frac{1}{\sqrt 5}\vv{-2\sin 2t, 2\cos 2t, 0} \qquad
-    \mgv{\vcd{T}{t}} = \sqrt{4\sin^2 2t + 4\cos^2 2t} = \frac{2}{\sqrt 5}
+    \mgv{\vcd{T}{t}} = \frac 1 {\sqrt 5} \sqrt{4\sin^2 2t + 4\cos^2 2t} = \frac{2}{\sqrt 5}
 \end{align*}
 \begin{align*}
     \vc{N}{\frac \pi 2} &= \frac{\frac{1}{\sqrt 5}\vv{0, -2, 0}}{\frac {2}{\sqrt 5}} = \frac 1 2 \vv {0, -2, 0} = \vv{0. -1. 0}
@@ -386,7 +382,7 @@ The torsion of a curve with the paramater t is defined as
 
 We need to find $\vc T t$, $\vc N t$, and $\vc B t$ \\
 \begin{align*}
-    \vc r t = \vv{\sin t, 3t, \cost t } \rr \vcd r t = \vv{\cos t, 3, -\sin t} \rr \mgv{\vcd r t} = \sqrt{\cos^2 t + 9 + \sin^2 t} = \sqrt{10}
+    \vc r t = \vv{\sin t, 3t, \cos t } \rr \vcd r t = \vv{\cos t, 3, -\sin t} \rr \mgv{\vcd r t} = \sqrt{\cos^2 t + 9 + \sin^2 t} = \sqrt{10}
 \end{align*}
 \begin{align*}
     \vc T t &= \frac{\vcd r t}{\mgv{\vc r t}} 
@@ -411,7 +407,7 @@ $\vc B t = \vc T t \times \vc N t = \frac{1}{\sqrt{10}}$
 = $\frac 1 {\sqrt{10}} \vv{-3\cos t, 1, 3\sin t}$ \\\\
 \begin{align*}
     \vcd B t = \frac 1 {\sqrt{10}} \vv{3\sin t, 0, 3\cos t} \rr \vcd B t \cdot \vc N t &= \frac 1 {\sqrt{10}} \vv{3\sin t, 0, 3\cos t} \cdot \vv{-\sin t, 0, -\cos t} \\ 
-                                                                                    &= \frac 1 {\sqrt{10}}(-3\sin^2 t - 3\cos^2 t) = \frac{-3}{\sqrt{10}} \\
+                                                                                    &= \frac 1 {\sqrt{10}}(-3\sin^2 t - 3\cos^2 t) = -\frac{3}{\sqrt{10}} \\
 \end{align*}
 
 $\therefore$ The torsion of the curve at $t = \frac \pi 2$ is
@@ -500,7 +496,6 @@ Find the velocity, acceleration, and speed of a particle with the given position
     \vcdd rt &= \vc a t = \vv{-3\cos t, -2\sin t} \rr  \vc a {\frac \pi 2} = \vv{-3(\frac 1 2), -2(\frac {\sqrt 3} 2)} = \vv{\frac {-3} 2, -\sqrt 3} \\
     \mgv{\vc v t} &= \sqrt{(-3\sin t)^2 + (2\cos t)^2} = \sqrt{9\sin^2 t + 4\cos^2 t} = \sqrt{9(1-\cos^2 t) + 4\cos^2 t} = \sqrt{9 - 5\cos^2 t} \\
 \end{align*}
-% fix this plot, the vectors and point are not rendering correctly 
 \begin{align*}
 \begin{tikzpicture}
     \begin{axis}[
@@ -515,16 +510,19 @@ Find the velocity, acceleration, and speed of a particle with the given position
     \addplot[
         color=black,
         samples = 100,
+        domain = 0:2*pi
     ]
     ({3 * cos(deg(x))}, {2 * sin(deg(x))}); % parametric function
     % draw the point at t = pi/3 
-    \draw[fill=black] (axis cs: 1.5, sqrt(3)) circle[radius=1pt];
+    \draw[fill=black] (axis cs: 1.5, {sqrt(3)}) circle[radius=1pt];
     % draw the velocity vector at t = pi/3
-    \draw[->, thick] (axis cs: 1.5, sqrt(3)) -- (axis cs: 1.5 - 1.5*sqrt(3), sqrt(3) + 1);
-    \node at (axis cs: 1.8, 3) {$\vec v (\frac \pi 3)$};
+\draw[->, thick] (axis cs: 1.5, {sqrt(3)}) -- (axis cs: {1.5 - 1.5*sqrt(3)}, {sqrt(3) + 1}) node[above, sloped] {$\vec v (\frac \pi 3)$};
     % draw the acceleration vector at t = pi/3
-    \draw (axis cs: 1.5, sqrt(3)) -- (axis cs: 0, 0);
-    \node at (axis cs: 0.6, 1.3) {$\vec a (\frac \pi 3)$};
+\draw[->, thick] (axis cs: 1.5, {sqrt(3)}) -- (axis cs: 0, 0);
+    \node at (axis cs: 0.6, 1.4) {$\vec a (\frac \pi 3)$};
+    % orientation arrows
+    \draw[->, thick] (axis cs: 0, 2) -- (axis cs: -0.1, 2);
+    \draw[->, thick] (axis cs: 0, -2) -- (axis cs: 0.1, -2);
     \end{axis}
 \end{tikzpicture}
 \end{align*}
@@ -561,11 +559,9 @@ Find the velocity, acceleration, and speed of a particle with the given position
     % draw the point at t = 1
     \draw[fill=black] (axis cs: 1, 1, 2) circle[radius=1pt]);
     % draw the velocity vector at t = 1
-    \draw[->, thick] (axis cs: 1, 1, 2) -- (axis cs: 2, 3, 2);
-    \node at (axis cs: 3, 2, 1) {$\vec v (1)$};
+    \draw[->, thick] (axis cs: 1, 1, 2) -- (axis cs: 2, 3, 2) node[below,sloped] {$\vec v (1)$};
     % draw the acceleration vector at t = 1
-    \draw[->, thick] (axis cs: 1, 1, 2) -- (axis cs: 1, 3, 2);
-    \node at (axis cs: 1, 3, 2.7) {$\vec a (1)$};
+    \draw[->, thick] (axis cs: 1, 1, 2) -- (axis cs: 1, 3, 2) node[above, sloped] {$\vec a (1)$};
     \end{axis}
 \end{tikzpicture}
 \end{align*}
@@ -614,13 +610,13 @@ Find the velocity and position vectors of a particle that has the given accelera
 \centerline{\textbf{Solution}} \\
 \begin{align*}
     \vc v t &= \int \vc a t \; dt  =  \int 2\;dt\ihat + \int 2t\;dt\khat  = (2t + c_1)\ihat + (t^2 + c_2)\khat \\
-    \text{If $\vc v 0$ = $3\ihat - \jhat$ then} \\
-            &= 2(0) + c_1 = 3 \rr c_1 = 3, \quad t^2 + c_2 = 0 \rr c_2 = 0 \\
+    \intertext{If $\vc v 0$ = $3\ihat - \jhat$ then}
+            &2(0) + c_1 = 3 \rr c_1 = 3, \quad t^2 + c_2 = 0 \rr c_2 = 0 \\
             &\Rightarrow\quad \vc v t = (2t + 3)\ihat - \jhat + t^2\khat
 \end{align*}
 \begin{align*}
     \vc r t &= \int \vc v t = \int (2t + 3)\;dt\ihat - \int 1\;dt\jhat + \int t^2\;dt\khat = (t^2 + 3t)\ihat - t\jhat + \frac 1 3 t^3\khat \\
-    \text{If $\vc r 0 = \jhat + \khat$ then} \\
+    \intertext{If $\vc r 0 = \jhat + \khat$ then}
             &(0^2 + 3(0))\ihat  - 0\jhat + \frac 1 3(0)^3\khat = \jhat + \khat \rr (t^2 + 3t)\ihat + (1 - t)\jhat + (\frac 1 3 t^2 + 1)\khat \\ 
 \end{align*}
 \subsection*{Problem 17a}
@@ -668,19 +664,19 @@ A projectile is fired with an initial speed of $200\frac m s$ and angle of eleva
         \Delta y = 100\sqrt 3 t - 4.9t^2
     \end{cases} \\
     \\
-    \intertext{The range of the projectile is the value of $t$ when $y = 0$}
+    \intertext{The range of the projectile is the value of $t$ when $y = 0$ (this is when it hits the ground)}
     0 = 100\sqrt 3 t - 4.9t^2 \rr 0 = t(100\sqrt 3 - 4.9t) \rr t = \frac{100\sqrt 3}{4.9} \approx 35.3\:s && \\
     \Delta x = 100(35.3) \approx 3530\:m && \\
 \end{align*}
 \begin{align*}
     \intertext{\textbf{b.}} 
-    \intertext{The maximum height reached is the value of $y$ when $y \;'(t) =  0 \;\text{or}\;\vc {v_y}{t} = 0$} \\
+    \intertext{The maximum height reached is the value of $y$ when $y \;'(t) =  0 \;\text{or}\;\vc {v_y}{t} = 0$ (this is when it's about to switch direction)}
     &\vc {v_y}{t} = 100\sqrt 3 - 9.8t \rr 0 = 100\sqrt 3 - 9.8t \rr t = \frac{100\sqrt 3}{9.8} \approx 17.7\:s \\
     & y_{max} = y(17.7\:s) = 100\sqrt 3(17.7\:s) - 4.9(17.7\:s)^2 \approx 1531\:m
 \end{align*}
 \begin{align*}
     \intertext{\textbf{c.}} 
-    \intertext{The speed at impact is the value of $v$ when $y = 0$ which we have the time as $t \approx 35.3\:s$ (from part a)} \\
+    \intertext{The speed at impact is the value of $v$ when $y = 0$ which we have the time as $t \approx 35.3\:s$ (from part a)}
     \vc r t &= \vv{100t, 100\sqrt 3 t - 4.9t^2} \rr \vc v t = \vv{100, 100\sqrt 3 - 9.8t} \\
     \vc v {35.3\:s} &= \vv{100, 100\sqrt 3 - 9.8(35.3)} \approx \vv{100, -172.7} \\
     \text{speed at impact} &= \mgv{\vc v {35.3\:s}} = \mgvv{100}{-172.7} \approx 200\frac m s\\
@@ -698,13 +694,13 @@ A projectile is fired from a tank with initial speed $400 \frac m s$. Find two a
     \draw[-> ,thick] (-4,0) -- (-2, 2);
     \draw[dashed] (4, 0) -- (4, 3);
     \node at (-3.2, 1) [left] {$\vec v_0 = 400\frac m s$};
-    \node at (-3, 0.7) [below] {$\theta ?$};
+    \node at (-3, 0.7) [below] {$\theta = ?$};
     \node at (0, 0) [below] {$\Delta x = 3000m$};
     \node at (4, 1.5) [right] {$\Delta y$};
 \end{tikzpicture}
 \end{align*}
 \begin{align*}
-    \intertext{Let the horizontal distance of the projectile be $\Delta x = \displaystyle\frac {\vec{v_0}^2 \sin{2\theta}}{g}$} \\ 
+    \intertext{Let the horizontal distance of the projectile be $\Delta x = \displaystyle\frac {\vec{v_0}^2 \sin{2\theta}}{g}$}
     3000\:m &= \frac{(400\:\frac m s)^2 \sin 2\theta}{9.8\:\frac m {s^2}} \\
     \sin 2\theta &= \frac{(3000\:m)(9.8\:\frac{m}{s^2})}{160000\:\frac{m^2}{s^2}} \\
     2\theta &= \frac{\sin^{-1}{(0.18375)}} 2 \\
@@ -730,14 +726,14 @@ A rifle is fired with angle of elevation $36\degree$. What is the initial speed 
 \end{tikzpicture}
 \end{align*}
 \begin{align*}
-    \intertext{The maximum height will be when the velocity in the $y$ direction is 0} \\
+    \intertext{The maximum height will be when the velocity in the $y$ direction is 0}
     \vc r t &= (\vec v_0 \cos 36)t \ihat + \left((\vec v_0  \sin 36)t - \frac 1 2 g t^2\right)\jhat \\
     \vc v t &= \vec v_0 \cos 36 \ihat + \left(\vec v_0 \sin 36 - g t\right)\jhat \\
-    \intertext{So the maximum height will be when $(\vec v_0 \sin 36) - gt = 0$} \\
+    \intertext{So the maximum height will be when $(\vec v_0 \sin 36) - gt = 0$}
     \vec v_0 \sin 36 &= gt \rr t = \frac{\vec v_0 \sin 36}{g} \\
-    \intertext{Substituting this value of $t$ into the $y$ component of the position vector} \\
+    \intertext{Substituting this value of $t$ into the $y$ component of the position vector}
     y_{max} &= \left(\vec v_0 \sin 36\right)\left(\frac{\vec v_0 \sin 36}{g}\right) - \frac 1 2 g \left(\frac{\vec v_0 \sin 36}{g}\right)^2 \\ 
-    \intertext{Solving for $\vec v_0$} \\
+    \intertext{Solving for $\vec v_0$}
     1600 &= \left(\vec v_0 \sin 36\right)\left(\frac{\vec v_0 \sin 36}{g}\right) - \frac 1 2 g \left(\frac{\vec v_0 \sin 36}{g}\right)^2 \\
     1600 &= \frac{\vec v_0^2 \sin^2 36}{g} - \frac 1 2 \left(\frac{\vec v_0^2 \sin^2 36}{g}\right) \\
     1600 &= \frac{\vec v_0^2 \sin^2 36}{2g} \rr \vec v_0 = \sqrt{\frac{3200(32\:\frac {ft}{s^2})}{\sin^2 36}} \approx 544\: \frac {ft}{s}\\
@@ -750,32 +746,32 @@ Find the tangential and normal components of the acceleration vector.
 \subsubsection*{37. $\rvec = (t^2 + 1)\ihat + t^3\jhat, \quad t \geq 0    $}
 \centerline{\textbf{Solution}} \\
 \begin{align*}
-    \intertext{Let the tangential component of acceleration be} \\
+    \intertext{Let the tangential component of acceleration be}
     a_T &= \frac {\vc v t \cdot \vc a t}{\mgv{\vc v t}} \\
-    \intertext{And the normal component of acceleration} \\
+    \intertext{And the normal component of acceleration}
     a_N &= \frac {\vc v t \times \vc a t}{\mgv{\vc v t}}
-    \intertext{First we need to find $\vc v t$, $\vc a t$, $\mgv{\vc v t}$, and $\vc v t \times \vc a t$} \\
+    \intertext{First we need to find $\vc v t$, $\vc a t$, $\mgv{\vc v t}$, and $\vc v t \times \vc a t$}
     \vc v t = 2t\ihat + 3t^2\jhat& \rr \vc a t = 2\ihat + 6t\jhat \\
     \mgv{\vc v t}  = \sqrt{4t^2 + 9t^4} = t\sqrt{4 + 9t^2}& \rr \vc v t \times \vc a t \\
-    &=  \begin{vmatrix}
+    &= \begin{vmatrix}
         \ihat & \jhat & \khat \\
         \\
         2t & 3t^2 & 0 \\
         \\
         2 & 6t & 0
-        \end{vmatrix} = (12t^2 - 6t^2)\khat = 6t^2\khat \\
-    \intertext{Now we can find the tangential and normal components of acceleration} \\
-    a_T &= \frac{2t(2) + 3t^2(6t)}{t\sqrt{4 + 9t^2}} = \frac{4t + 18t^3}{t\sqrt{4 + 9t^2}} = \frac {4 + 18t^2}{\sqrt{4 + 9t^2}} \\
-    a_N &= \frac {\sqrt{36t^4}}{t\sqrt{4 + 9t^2}} = \frac{6t^2}{t\sqrt{4 + 9t^2}} = \frac {6t}{\sqrt{4 + 9t^2}}
+    \end{vmatrix} = (12t^2 - 6t^2)\khat = 6t^2\khat \\
+    \intertext{Now we can find the tangential and normal components of acceleration}
+    a_T = \frac{2t(2) + 3t^2(6t)}{t\sqrt{4 + 9t^2}} &= \frac{4t + 18t^3}{t\sqrt{4 + 9t^2}} = \frac {4 + 18t^2}{\sqrt{4 + 9t^2}} \\
+    a_N = \frac {\sqrt{36t^4}}{t\sqrt{4 + 9t^2}} &= \frac{6t^2}{t\sqrt{4 + 9t^2}} = \frac {6t}{\sqrt{4 + 9t^2}}
 \end{align*}
 \subsubsection*{39. $\rvec = \cos t\ihat + \sin t\jhat + t\khat$}
 \centerline{\textbf{Solution}} \\
 \begin{align*}
-    \intertext{Let the tangential component of acceleration be} \\
+    \intertext{Let the tangential component of acceleration be}
     a_T = \frac {\vc v t \cdot \vc a t}{\mgv{\vc v t}} \\
-    \intertext{And the normal component of acceleration} \\
+    \intertext{And the normal component of acceleration}
     a_N = \frac {\vc v t \times \vc a t}{\mgv{\vc v t}}
-    \intertext{First we need to find $\vc v t$, $\vc a t$, $\mgv{\vc v t}$, and $\vc v t \times \vc a t$} \\
+    \intertext{First we need to find $\vc v t$, $\vc a t$, $\mgv{\vc v t}$, and $\vc v t \times \vc a t$}
     \vc v t = -\sin t\ihat + \cos t\jhat + \khat& \rr \vc a t = -\cos t\ihat -\sin t\jhat \\
     \mgv{\vc v t} = \sqrt{\sin^2 t + \cos^ t + 1} = \sqrt 2& \rr \vc v t \times \vc a t \\
     &= \begin{vmatrix} 
@@ -787,7 +783,7 @@ Find the tangential and normal components of the acceleration vector.
     \end{vmatrix} \\
     &= (0 - (-\sin t))\ihat + (-\cos t - 0)\jhat + (\sin^2 t - (-\cos^2 t))\khat \\
     &= \sin t \ihat -\cos t \jhat + \khat 
-    \intertext{Now we can find the tangential and normal components of acceleration} \\
+    \intertext{Now we can find the tangential and normal components of acceleration}
     a_T &= \frac{(-\sin t)(-\cos t) + (\cos t)(-\sin t)}{\sqrt 2} = \frac{\cos t \sin t - \cos t \sin t}{\sqrt 2} = 0\\
     a_N &= \frac{\sqrt{(\sin t)^2 + (-\cos t)^2 + 1^2}}{\sqrt 2} = \frac{\sqrt 2}{\sqrt 2} = 1
 \end{align*}
@@ -799,26 +795,26 @@ Find the tangential and normal components of the acceleration vector at the give
 \]
 \centerline{\textbf{Solution}} \\
 \begin{align*}
-    \intertext{Let the tangential component of acceleration be} \\
+    \intertext{Let the tangential component of acceleration be}
     a_T = \frac {\vc v t \cdot \vc a t}{\mgv{\vc v t}} \\
-    \intertext{And the normal component of acceleration} \\
+    \intertext{And the normal component of acceleration}
     a_N = \frac {\vc v t \times \vc a t}{\mgv{\vc v t}}
-    \intertext{First we need to find which value of $t$ the point $(0, 4, 4)$ corresponds to, $\vc v t$, and $\vc a t$} \\
+    \intertext{First we need to find which value of $t$ the point $(0, 4, 4)$ corresponds to, $\vc v t$, and $\vc a t$}
     \vc r t = \ln t\ihat + (t^2 + 3t)\jhat + 4\sqrt t\khat& \rr \vc v t = \frac 1 t \ihat + (2t + 3)\jhat + \frac 2 {\sqrt t}\khat \\
     \vc a t &= -\frac 1 {t^2} \ihat + 2\jhat - \frac 1 {\sqrt {t^3}}\khat \\
-    \intertext{Since $\ln t = 0$ given by the point $(0, 4, 4)$, then $t$ must be 1} \\
-    \intertext{Then we evaluate $\mgv{\vc v t}$ and $\mgv{\vc v t \times \vc a t}$ at t = 1} \\
+    \intertext{Since $\ln t = 0$ given by the point $(0, 4, 4)$, then $t$ must be 1}
+    \intertext{Then we evaluate $\mgv{\vc v t}$ and $\mgv{\vc v t \times \vc a t}$ at t = 1}
     \mgv{\vc v t} &= \mgvvv{1}{5}{2} = \sqrt{30} \\
-    \vc v 1 \times \vc a 1 &=
+    \vc v 1 \times \vc a 1 =
     \begin{vmatrix} 
         \ihat & \jhat & \khat \\
         \\
         1 & 5 & 2 \\ 
         \\
         -1 & 2 & -1 \\
-    \end{vmatrix} = (-5 - 4)\ihat + (-2 - (-1))\jhat + (2 - (-5))\khat \\
+    \end{vmatrix} &= (-5 - 4)\ihat + (-2 - (-1))\jhat + (2 - (-5))\khat \\
     &=  -9\ihat - \jhat + 7\khat 
-    \intertext{Now we can find the tangential and normal components of acceleration} \\
+    \intertext{Now we can find the tangential and normal components of acceleration}
     \vc v 1 = \ihat + 5\jhat + 2\khat& \rr \vc a 1 = -\ihat + 2\jhat -\khat \\
     a_T &= \frac {-1 + 10 -2}{\sqrt{30}} = \frac 7 {\sqrt{30}} \\
     a_N &= \frac {\mgvvv{-9}{-1}{7}}{\sqrt{30}} = \sqrt{\frac {131}{30}}
