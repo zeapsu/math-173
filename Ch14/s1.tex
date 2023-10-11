@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[]{amsthm}
+\usepackage[]{amssymb}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{blindtext}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\usepackage{pgfplots}
+
+\pgfplotsset{width=7cm,compat=1.9}
+
+% We will externalize the figures
+\usepgfplotslibrary{external}
+\tikzexternalize
+
+\newcommand{\ihat}{\;\hat{\textbf{\i}}}
+\newcommand{\jhat}{\;\hat{\textbf{\j}}}
+\newcommand{\khat}{\;\hat{\textbf{k}}}
+\newcommand{\rvec}{\vec{r}(t)}
+\newcommand{\drvec}{\vec{r}\;'(t)}
+\newcommand\vv[1]{\langle #1 \rangle}
+\newcommand\vc[2]{\vec{#1}(#2)}
+\newcommand\vcd[2]{\vec{#1}\;'(#2)}
+\newcommand\vcdd[2]{\vec{#1}\;''(#2)}
+\newcommand\vcddd[2]{\vec{#1}\;'''(#2)}
+\newcommand\mgv[1]{\|#1\|}
+\newcommand\mgvv[2]{\sqrt{\left(#1\right)^2 + \left(#2\right)^2}}
+\newcommand\mgvvv[3]{\sqrt{\left(#1\right)^2 + \left(#2\right)^2 + \left(#3\right)^2}}
+\newcommand\rr{\quad\Rightarrow\quad}
+
+\title{Chapter 14 Section 1 \& 2 Problem Set}
+\author{Andry Paez}
+\date{}
+
+\begin{document}
+\maketitle
+\end{document}
