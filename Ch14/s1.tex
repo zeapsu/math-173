@@ -13,6 +13,7 @@
 \usepackage{gnuplottex}
 
 \pgfplotsset{width=7cm,compat=1.9}
+\usepgfplotslibrary{fillbetween}
 
 % We will externalize the figures
 % \usepgfplotslibrary{external}
@@ -55,6 +56,7 @@
 \newcommand\mgvvv[3]{\sqrt{\left(#1\right)^2 + \left(#2\right)^2 + \left(#3\right)^2}}
 \newcommand\rr{\quad\Rightarrow\quad}
 \newcommand{\limit}[4]{\lim_{(#1, #2) \to (#3, #4)}}
+\newcommand{\such}{\; | \;}
 %
 % Title Page
 %
@@ -83,18 +85,99 @@
 
 \subsection*{3. Let $g(x,y) = x^2\ln (x+y)$ \\ (\textit a) Evaluate $g(3, 1)$. \\ (\textit b) Find and sketch the domain of $g$. \\ (\textit c) Find the range of $g$.}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{\textit a) 9\ln 4}
+    \intertext{\textit b) $D:\{(x,y) \such y > -x\}$}
+    % graph and shade region of domain
+    \begin{tikzpicture}
+        \begin{axis} [
+            title={Domain of $g$},
+            axis lines=middle,
+            xlabel=$x$,
+            ylabel=$y$,
+            ymin=-5, ymax=5,
+            ticks=none,
+        ]
+        \addplot [
+            name path=line,
+            domain=-5:5,
+            dotted,
+            thick,
+        ]
+        {-x} node [left, pos=0.25] {$y=-x$};];  
+        \addplot[draw=none, name path=axis] {5};
+        \addplot [fill=gray!15] fill between[of=line and axis];
+        \end{axis}
+    \end{tikzpicture}
+    \intertext{\textit c) $\mathbb R$}
+\end{align*}
 \subsection*{7 - 15 (odd)}
 
 Find and sketch the domain of the function.
 
 \subsubsection*{7. $f(x,y)=\sqrt{x-2} + \sqrt{y-1}$}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{$D:\{(x,y)\such x\geq 2, y\geq 1\}$}
+    \begin{tikzpicture}
+        % Define the axis
+        \draw[->] (-1,0) -- (5,0) node[right] {$x$};
+        \draw[->] (0,-1) -- (0,5) node[above] {$y$};
+        % Draw the lines 
+        \draw (2, 5) -- (2, -1)
+        \draw (-1, 1) -- (5, 1) 
+        % Shade the region x >= 2 and y >= 1
+        \fill[gray!15] (2,1) rectangle (5,5);
+    \end{tikzpicture}
+\end{align*}
 \subsubsection*{9. $q(x,y)=\sqrt x + \sqrt{4- 4x^2 - y^2}$}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{$D:\{(x,y)\such x^2+\frac 1 4 y^2\leq 1, x\geq 0\}$}
+    \begin{tikzpicture}
+        % Draw the  ellipse 
+        \draw (0, 0) ellipse (1 and 2); 
+        \node at (1.5, 2) {$x^2 + \frac 1 4 y^2 = 1$};
+        % Define a custom clip path to fit the inside of the ellipse
+        \begin{scope}
+            \clip (0,-2) -- (2,-2) -- (2,0) -- (2,2) -- (0,2) -- cycle;
+            % Shade the region
+            \fill[gray!15] (0,0) ellipse (1 and 2);
+        \end{scope}
+        % Define the axis
+        \draw[->] (-1,0) -- (2,0) node[right] {$x$};
+        \draw[->] (0,-3) -- (0,3) node[above] {$y$};
+    \end{tikzpicture}
+\end{align*}
 \subsubsection*{11. $g(x,y) = \displaystyle\frac{x - y}{x + y}$}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{$D:\{(x,y)\such y\neq -x\}$}
+    \begin{tikzpicture}
+        % Shade the region y != -x
+        \fill[gray!15] (-3,-3) -- (-3,3) -- (3,3) -- (3,-3) -- cycle;
+        % Draw the lines 
+        \draw[dotted, thick] (-3, 3) -- (3,-3) node [left, pos=0.25] {$y=-x$};
+        % Define the axis
+        \draw[->] (-3,0) -- (3,0) node[right] {$x$};
+        \draw[->] (0,-3) -- (0,3) node[above] {$y$};
+    \end{tikzpicture}
+\end{align*}
 \subsubsection*{13. $p(x,y) = \displaystyle\frac{\sqrt{xy}}{x+1}$}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{$D:\{(x,y)\such x\neq 0, xy\geq 0\}$}
+    \begin{tikzpicture}
+        % Shade the region xy >= 0
+        \fill [gray!15] (0,0) -- (0,2) -- (2,2) -- (2,0) -- cycle;
+        \fill [gray!15] (0,0) -- (0,-2) -- (-2,-2) -- (-2,0) -- cycle;
+        % Draw the line x != -1
+        \draw[dotted, thick] (-1,2) -- (-1,-2) node [left, pos=0.25] {$x=-1$};
+        % Define the axis
+        \draw[->] (-2,0) -- (2,0) node[right] {$x$};
+        \draw[->] (0,-2) -- (0,2) node[above] {$y$};
+    \end{tikzpicture}
+\end{align*}
 \subsubsection*{15. $f(x,y,z) = \sqrt{4 - x^2} + \sqrt{9 - y^2} + \sqrt{1 - z^2}$}
 \centerline{\textbf{Solution}}
 \subsection*{17. A model for the surface area of a human body is given by the function \\
