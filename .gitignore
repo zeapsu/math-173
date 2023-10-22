@@ -7,4 +7,5 @@
 *.log
 *synctex.gz
 *.fdb_latexmk
-
+*.DS_Store
+tstex_modules

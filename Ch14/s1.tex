@@ -180,6 +180,40 @@ Find and sketch the domain of the function.
 \end{align*}
 \subsubsection*{15. $f(x,y,z) = \sqrt{4 - x^2} + \sqrt{9 - y^2} + \sqrt{1 - z^2}$}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{$D:\{(x, y, z)\such -2 \leq x \leq 2, -3 \leq y \leq 3, -1 \leq z \leq 1\}$}   
+\begin{tikzpicture}
+    % Define the coordinates of the vertices of the rectangular prism
+    \coordinate (A) at (2,3,1);
+    \coordinate (B) at (2,3,-1);
+    \coordinate (C) at (-2,3,-1);
+    \coordinate (D) at (-2,3,1);
+    \coordinate (E) at (2,-3,1);
+    \coordinate (F) at (2,-3,-1);
+    \coordinate (G) at (-2,-3,-1);
+    \coordinate (H) at (-2,-3,1);
+    % Shade the cube faces
+    % Square faces 
+    \fill[gray!15] (A) -- (B) -- (C) -- (D) -- cycle;
+    \fill[gray!15] (E) -- (F) -- (G) -- (H) -- cycle;
+    % Rectangle faces
+    \fill[gray!15] (A) -- (E) -- (F) -- (B) -- cycle;
+    \fill[gray!15] (D) -- (H) -- (G) -- (C) -- cycle;
+    \fill[gray!15] (D) -- (A) -- (E) -- (H) -- cycle;
+    \fill[gray!15] (C) -- (B) -- (F) -- (G) -- cycle;
+    % Draw the edges of the cube
+    \draw (A) -- (B) -- (C) -- (D) -- cycle;
+    \draw (E) -- (F) -- (G) -- (H) -- cycle;
+    \draw (A) -- (E);
+    \draw (B) -- (F);
+    \draw (C) -- (G);
+    \draw (D) -- (H);
+    % Define the axis
+    \draw[->] (-3,0,0) -- (3,0,0) node[right] {$x$};
+    \draw[->] (0,-4,0) -- (0,4,0) node[above] {$y$};
+    \draw[->] (0,0,-2) -- (0,0,2) node[above] {$z$};
+\end{tikzpicture}
+\end{align*}
 \subsection*{17. A model for the surface area of a human body is given by the function \\
     \begin{align*} S = f(w, h) = 0.1091w^{0.425}h^{0.725} \end{align*} \\
     where $w$ is the weight (in pounds), $h$ is the height (in inches), and $S$ is measured in square feet. \\
@@ -187,18 +221,131 @@ Find and sketch the domain of the function.
     (\textit b) What is your own surface area?
 $}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{\textit a)}
+    f(160, 70) = 0.1091(160^{0.425})(70^{0.725}) \approx 20.5 \\ 
+    \intertext{The surface area of a human body that weighs 160 pounds and is 70 inches tall is about 20.5 square feet.}
+\end{align*}
 \subsection*{23 - 31 (odd)}
 Sketch the graph of the function
 \subsubsection*{23. $f(x,y) = y$}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{This is an equation of the plane that goes through the origin and is parallel to the $x$-axis.}
+    % \begin{tikzpicture}
+    %     \begin{axis}[
+    %         title={$f(x,y) = y$},
+    %         axis lines=box,
+    %         xlabel=$x$,
+    %         ylabel=$y$,
+    %         zlabel=$z$,
+    %     ]
+    %     \addplot3 [
+    %         domain=-2:2,
+    %         samples=50,
+    %         mesh,
+    %         colormap/blackwhite,
+    %     ]
+    %     {y};
+    %     \end{axis} 
+    % \end{tikzpicture}
+\end{align*}
 \subsubsection*{25. $f(x,y) = 10 - 4x -5y$}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{Let $x=y=0 \rr z = 10$,\quad $x = z = 0 \rr y = 2$,\quad $y = z = 0 \rr x = 2.5$}
+    \intertext{This is an equation of a plane that goes through the points $(0,0,10), (0,2,0), (2.5,0,0)$ [imagine it is shaded in].}
+    % \begin{tikzpicture}
+    %     \begin{axis}[
+    %         title={$f(x,y) = 10 - 4x -5y$},
+    %         axis lines=middle,
+    %         xlabel=$x$,
+    %         ylabel=$y$,
+    %         zlabel=$z$,
+    %         view={135}{45},
+    %     ]
+    %     \addplot3[
+    %         name path=plane,
+    %         mesh,
+    %         colormap/blackwhite,
+    %     ] 
+    %     coordinates {
+    %         (0,0,0) (0,0,10) (0,2,0) (2.5,0,0) (0,0,10)
+    %     };
+    %     \addplot3[
+    %         name path =origin,
+    %         draw=none
+    %     ]
+    %     {0};
+    % \end{axis}
+    % \end{tikzpicture}
+\end{align*}
 \subsubsection*{27. $f(x,y) = \sin x$}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{This is an equation of a cylinder that goes through the origin and is parallel to the $x$-axis}
+    % \begin{tikzpicture}
+    %     \begin{axis}[
+    %         title={$f(x,y) = \sin x$},
+    %         axis lines=middle,
+    %         xlabel=$x$,
+    %         ylabel=$y$,
+    %         zlabel=$z$,
+    %     ]
+    %     \addplot3 [
+    %         mesh,
+    %         samples=50,
+    %         colormap/blackwhite
+    %     ]
+    %     {sin(deg(x))};
+    %     \end{axis} 
+    % \end{tikzpicture}
+\end{align*}
 \subsubsection*{29. $f(x,y) = x^2 + 4y^2 + 1$}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{This is an equation of an elliptic paraboloid that goes through the origin and is parallel to the $z$-axis.}
+    % \begin{tikzpicture}
+    %     \begin{axis}[
+    %         title={$f(x,y) = x^2 + 4y^2 + 1$},
+    %         axis lines=middle,
+    %         xlabel=$x$,
+    %         ylabel=$y$,
+    %         zlabel=$z$,
+    %         view={135}{45},
+    %     ]
+    %     \addplot3[
+    %         mesh,
+    %         samples=50,
+    %         domain=-2:2,
+    %         domain y=-2:2,
+    %         colormap/blackwhite,
+    %     ] 
+    %     {x^2 + 4*y^2 + 1};
+    %     \end{axis} 
+    % \end{tikzpicture}
+\end{align*}
 \subsubsection*{31. $f(x,y) = \sqrt{4 - 4x^2 - y^2}$}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    % \intertext{This is the top half of ellipsoid}
+    % \begin{tikzpicture}
+    %     \begin{axis} [
+    %         title={$f(x,y) = \sqrt{4 - 4x^2 - y^2}$},
+    %         axis lines=middle,
+    %         xlabel=$x$,
+    %         ylabel=$y$,
+    %         zlabel=$z$,
+    %     ] 
+    %     \addplot3 [
+    %         surf,
+    %         samples=50,
+    %         colormap/blackwhite,
+    %     ] 
+    %     {sqrt(4 - 4*x^2 - y^2)};
+    %     \end{axis}
+    % \end{tikzpicture}
+\end{align*}
 % Needs graphs or screenshot and insert as figure
 \subsection*{32. Match the function with its graph (labeled I–VI). Give reasons for your choices. \\
     (\textit a) $f(x,y) = \displaystyle\frac 1 {1 + x^2 + y^2} \qquad (\textit b)\; f(x,y) = \frac 1 {1 + x^2 y^2}$ \\\\
@@ -248,27 +395,27 @@ Sketch the graph of the function
         ] {cos(deg(x*y))};
     \end{axis} 
 \end{tikzpicture}
-\begin{tikzpicture}
-    \begin{axis}[
-        title={III},
-        axis lines=middle,
-        xlabel=$x$,
-        ylabel=$y$,
-        zlabel=$z$,
-        xmin=-4, xmax=4,
-        ymin=-4, ymax=4,
-        zmin=0, zmax=1.5,
-        view={135}{30},
-        ticks = none,
-        colormap/hot2,
-        ]
-        \addplot3[
-            surf,
-            samples = 50,
-            domain=-3:3,
-        ] {1/(1+x^2+y^2)};
-    \end{axis} 
-\end{tikzpicture}
+% \begin{tikzpicture}
+%     \begin{axis}[
+%         title={III},
+%         axis lines=middle,
+%         xlabel=$x$,
+%         ylabel=$y$,
+%         zlabel=$z$,
+%         xmin=-4, xmax=4,
+%         ymin=-4, ymax=4,
+%         zmin=0, zmax=1.5,
+%         view={135}{30},
+%         ticks = none,
+%         colormap/hot2,
+%         ]
+%         \addplot3[
+%             surf,
+%             samples = 50,
+%             domain=-3:3,
+%         ] {1/(1+x^2+y^2)};
+%     \end{axis} 
+% \end{tikzpicture}
 \begin{tikzpicture}
     \begin{axis}[
         title={IV},
@@ -333,7 +480,25 @@ Sketch the graph of the function
         ] {abs(x*y)};
     \end{axis} 
 \end{tikzpicture}
+\\
 \centerline{\textbf{Solution}}
+
+\begin{align*}
+    \intertext{\textit a)}
+    \intertext{The graph of $f(x,y) = \displaystyle\frac 1 {1 + x^2 + y^2}$ is III}
+    \intertext{When $x = y = 0 \rr z = 1$ so the graph intersects the $z$-axis at $(0,0,1)$.}
+    \intertext{If we solve for the $zx$ and $zy$ planes we get $z = \displaystyle\frac 1 {1 + x^2}$ and $z = \displaystyle\frac 1 {1 + y^2}$ respectively.}
+    \intertext{\textit{b)}}
+    \intertext{The graph of $f(x,y) = \displaystyle\frac 1 {1 + x^2 y^2}$ is I}
+    \intertext{When $x = y = 0 \rr z = 1$ so the graph intersects the $z$-axis at $(0,0,1)$.}
+    \intertext{\textit{c)}}
+    \intertext{The graph of $f(x,y) = \ln (x^2 + y^2)$ is IV}
+    \intertext{When $x = y = 0 \rr z = 0$ so the graph intersects the $z$-axis at $(0,0,0)$.}
+    \intertext{\textit{d)}}
+    \intertext{\textit{e)}}
+    \intertext{\textit{f)}}
+\end{align*}
+
 % I think this one needs a figure instead, the problem doesn't give a function 
 \subsection*{33. A contour map for a function $f$ is shown. Use it to estimate the values of $f(-3, 3)$ and $f(3, -2)$. What can you say about the shape of the graph?}
 \centerline{\textbf{Solution}}
@@ -351,13 +516,12 @@ Draw a contour map of the function showing several level curves.
 \subsection*{61 - 66} 
 Match the function (\textit a) with its graph (labeled A–F below) and (\textit b) with its contour map (labeled I–VI). Give reasons for your choices.
 
-\begin{figure}[h] %h = here, t = top, b = bottom, p = page of figures
-    \begin{center}
-        \includegraphics[width=0.95\textwidth]{figures/61-66.jpg}
-    \end{center}
-\end{figure}
+% \begin{figure}[h] %h = here, t = top, b = bottom, p = page of figures
+%     \begin{center}
+%         \includegraphics[width=0.95\textwidth]{figures/61-66.jpg}
+%     \end{center}
+% \end{figure}
 
-\end{tikzpicture}
 \subsubsection*{61. $z = \sin (xy)$}
 \centerline{\textbf{Solution}}
 \subsubsection*{62. $z = e^x \cos y$}
@@ -371,6 +535,8 @@ Match the function (\textit a) with its graph (labeled A–F below) and (\textit
 \subsubsection*{66. $z = \displaystyle\frac{x-y}{1+ x^2+ y^2}$}
 \centerline{\textbf{Solution}}
 \subsection*{67. Describe the level surfaces of the function. \\ \begin{align*} f(x, y, z) = 2y - z + 1 \end{align*}}
+\centerline{\textbf{Solution}}
+\newpage
 \begin{center}
     \section*{\underline{Section 2: Limits and Continuity}}
 \end{center}
@@ -386,9 +552,9 @@ Find the limit
 \centerline{\textbf{Solution}}
 \subsection*{13 - 17 (odd)}
 Show that the limit does not exist
-\subsubsection*{13. \limit x y 0 0 \displaystyle\frac {y^2}{x^2 + y^2}}
+\subsubsection*{13. $\limit x y 0 0 \displaystyle\frac {y^2}{x^2 + y^2}$}
 \centerline{\textbf{Solution}}
-\subsubsection*{15. \limit x y 0 0 \displaystyle\frac {(x+y)^2}{x^2 + y^2}}
+\subsubsection*{15. $\limit x y 0 0 \displaystyle\frac {(x+y)^2}{x^2 + y^2}$}
 \centerline{\textbf{Solution}}
 \subsubsection*{17. \limit x y 0 0 \displaystyle\frac{y^2 \sin^2 x}{x^4 + y^4}}
 \centerline{\textbf{Solution}}
@@ -406,7 +572,7 @@ Find the limit, if it exists, or show that the limit does not exist.
 Use the Squeeze Theorem to find the limit.
 \subsubsection*{31. \limit x y 0 0 xy\sin \displaystyle\frac 1 {x^2+y^2}}
 \centerline{\textbf{Solution}}
-\subsubsection*{33. \limit x y 0 0 \displaystyle\frac{xy^4}{x^4 + y^4}}
+\subsubsection*{33. $\limit x y 0 0 \displaystyle\frac{xy^4}{x^4 + y^4}$}
 \centerline{\textbf{Solution}}
 \subsection*{41, 43 \& 45}
 Determine the set of points at which the function is continuous.
@@ -416,4 +582,59 @@ Determine the set of points at which the function is continuous.
 \centerline{\textbf{Solution}}
 \subsubsection*{45. $G(x,y) = \sqrt x + \sqrt{1 - x^2 - y^2}$}
 \centerline{\textbf{Solution}}
+
+\newpage
+\begin{center}
+    \section*{\underline{Section 3: Partial Derivatives}}
+\end{center}
+\subsection*{9 - 25 (odd)}
+Find the first partial derivatives of the function.
+\subsubsection*{9. $f(x,y) = x^4 + 5xy^3$}
+\subsubsection*{11. $g(x,y) = x^3 \sin y$}
+\subsubsection*{13. $z = \ln (x + t^2)$}
+\subsubsection*{15. $f(x,y) = ye^{xy}$}
+\subsubsection*{17. $g(x,y) = y(x + x^2 y)^5$}
+\subsubsection*{19. $f(x,y) = \displaystyle\frac{ax + by}{cx + dy}$}
+\subsubsection*{21. $g(u, v) = (u^2v-v^3)^5$}
+\subsubsection*{23. $R(p, q) = \tan^{-1} (pq^2)$}
+\subsubsection*{25. $F(x,y) = \int_y^x \cos (e^t) dt$}
+\subsection*{37. Find the indicated partial derivative.}
+\[
+    R(s,t) = te^{s/t}; \qquad R_t (0,1)
+\]
+\subsection*{41 \& 43}
+Use implicit differentiation to find $\partial z / \partial x$ and $\partial z / \partial y$
+\subsubsection*{41. $x^2 + 2y^2 + 3x^2 = 1$}
+\subsubsection*{43. $e^z = xyz$}
+\subsection*{45. Find $\partial z / \partial x$ and $\partial z / \partial y$.}
+\[
+    (a)\; z = f(x) + g(y); \qquad (b)\; z = f(x + y) 
+\]
+\subsection*{47. Find all the second partial derivatives.}
+\[
+    f(x,y) = x^4y - 2x^3y^2
+\]
+\subsection*{57 - 61 (odd)}
+Find the indicated partial derivative(s).
+\subsubsection*{57. $f(x,y) = x^4y^2 - x^3y;\quad f_{xxx},\: f_{xyx}$}
+\subsubsection*{59. $f(x,y,z) = e^{xyz^2}; \quad f_{xyz}$}
+\subsubsection*{61. $W = \sqrt{u + v^2}; \quad \displaystyle\frac{\partial^3 W}{\partial u^2 \partial v}$}
+\newpage
+\begin{center}
+    \section*{\underline{Section 4: Tangent Planes and Linear Approximations}}
+\end{center}
+\subsection*{1. The graph of a function $f$ is shown. Find an equation of the tangent plane to the surface $z = f(x,y)$ at the specified point}
+\subsection*{3 - 9 (odd)}
+Find an equation of the tangent plane to the given surface at the specified point.
+\subsubsection*{3. $z = 2x^2 + y^5 - 5y, \quad (1, 2, -4)$}
+\subsubsection*{5. $z = e^{x-y},\quad (2,2,1)$}
+\subsubsection*{7. $z = 2\sqrt y / x,\quad (-1,1,-2)$}
+\subsubsection*{9. $z = x\sin (x+y),\quad (-1, 1, 0)$}
+\subsection*{15 - 19 odd}
+Explain why the function is differentiable at the given point. Then find the linearization $L(x,y)$ of the function at that point.
+\subsubsection*{15. $f(x,y) = x^3y^2,\quad (-2,1)$}
+\subsubsection*{17. $f(x,y) = 1 + x\ln (xy-5),\quad (2,3)$}
+\subsubsection*{19. $f(x,y) = x^2e^y,\quad (1,0)$}
+
 \end{document}
+
