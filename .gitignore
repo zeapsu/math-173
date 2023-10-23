@@ -9,3 +9,7 @@
 *.fdb_latexmk
 *.DS_Store
 tstex_modules
+
+# contour maps
+*.dat 
+*.script

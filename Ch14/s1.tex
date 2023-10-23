@@ -12,7 +12,7 @@
 \usepackage{pgfplots}
 \usepackage{gnuplottex}
 
-\pgfplotsset{width=7cm,compat=1.9}
+\pgfplotsset{width=7cm,compat=newest}
 \usepgfplotslibrary{fillbetween}
 
 % We will externalize the figures
@@ -352,49 +352,49 @@ Sketch the graph of the function
     (\textit c) $f(x,y) = \ln (x^2 + y^2) \qquad \;(\textit d)\; f(x,y) = \cos \sqrt{x^2 + y^2}$ \\\\
     (\textit e) $f(x,y) = |xy| \qquad \qquad \quad (\textit f)\; f(x,y) = \cos (xy)$\\
 }
-\begin{tikzpicture}
-    \begin{axis}[
-        title={I},
-        axis lines=middle,
-        xlabel=$x$,
-        ylabel=$y$,
-        zlabel=$z$,
-        xmin=-4, xmax=4,
-        ymin=-4, ymax=4,
-        zmin=0, zmax=1.5,
-        view={135}{45},
-        ticks = none,
-        colormap/hot2,
-        ]
-        \addplot3[
-            surf,
-            samples = 50,
-            domain=-3:3,
-        ] {1/(1+ x^2 * y^2)};
-    \end{axis} 
-\end{tikzpicture}
-\begin{tikzpicture}
-    \begin{axis}[
-        title={II},
-        axis lines=middle,
-        xlabel=$x$,
-        ylabel=$y$,
-        zlabel=$z$,
-        % xmin= -5, xmax= 5,
-        % ymin= -5, ymax= 5,
-        % zmin= 0, zmax= 5,
-        view={110}{45},
-        ticks = none,
-        colormap/hot2,
-        ]
-        \addplot3[
-            surf,
-            samples = 50,
-            domain= -3 : 3,
-            domain y = -3 : 3,
-        ] {cos(deg(x*y))};
-    \end{axis} 
-\end{tikzpicture}
+% \begin{tikzpicture}
+%     \begin{axis}[
+%         title={I},
+%         axis lines=middle,
+%         xlabel=$x$,
+%         ylabel=$y$,
+%         zlabel=$z$,
+%         xmin=-4, xmax=4,
+%         ymin=-4, ymax=4,
+%         zmin=0, zmax=1.5,
+%         view={135}{45},
+%         ticks = none,
+%         colormap/hot2,
+%         ]
+%         \addplot3[
+%             surf,
+%             samples = 50,
+%             domain=-3:3,
+%         ] {1/(1+ x^2 * y^2)};
+%     \end{axis} 
+% \end{tikzpicture}
+% \begin{tikzpicture}
+%     \begin{axis}[
+%         title={II},
+%         axis lines=middle,
+%         xlabel=$x$,
+%         ylabel=$y$,
+%         zlabel=$z$,
+%         % xmin= -5, xmax= 5,
+%         % ymin= -5, ymax= 5,
+%         % zmin= 0, zmax= 5,
+%         view={110}{45},
+%         ticks = none,
+%         colormap/hot2,
+%         ]
+%         \addplot3[
+%             surf,
+%             samples = 50,
+%             domain= -3 : 3,
+%             domain y = -3 : 3,
+%         ] {cos(deg(x*y))};
+%     \end{axis} 
+% \end{tikzpicture}
 % \begin{tikzpicture}
 %     \begin{axis}[
 %         title={III},
@@ -416,126 +416,304 @@ Sketch the graph of the function
 %         ] {1/(1+x^2+y^2)};
 %     \end{axis} 
 % \end{tikzpicture}
-\begin{tikzpicture}
-    \begin{axis}[
-        title={IV},
-        axis lines=middle,
-        xlabel=$x$,
-        ylabel=$y$,
-        zlabel=$z$,
-        xmin=-5, xmax=5,
-        ymin=-5, ymax=5,
-        zmin=-0.5, zmax=3,
-        view={135}{45},
-        ticks = none,
-        colormap/hot2,
-        ]
-        \addplot3[
-            surf,
-            samples = 50,
-            domain=-5:5,
-        ] {ln(x^2 + y^2)};
-    \end{axis} 
-\end{tikzpicture}
-\begin{tikzpicture}
-    \begin{axis}[
-        title={V},
-        axis lines=middle,
-        xlabel=$x$,
-        ylabel=$y$,
-        zlabel=$z$,
-        % xmin=-5, xmax=5,
-        % ymin=-5, ymax=5,
-        % zmin=0, zmax=4,
-        view={110}{45},
-        ticks = none,
-        colormap/hot2
-        ]
-        \addplot3[
-            surf,
-            samples = 50,
-            domain=-4:4,
-        ] {cos(deg(sqrt(x^2 + y^2)))};
-    \end{axis} 
-\end{tikzpicture}
-\begin{tikzpicture}
-    \begin{axis}[
-        title={VI},
-        axis lines=middle,
-        xlabel=$x$,
-        ylabel=$y$,
-        zlabel=$z$,
-        xmin= -5, xmax= 5,
-        ymin= -5, ymax= 5,
-        zmin= 0, zmax= 20,
-        view={110}{45},
-        ticks = none,
-        colormap/hot2,
-        ]
-        \addplot3[
-            surf,
-            samples = 50,
-            domain= -5 : 5,
-            domain z = 0 : 20,
-        ] {abs(x*y)};
-    \end{axis} 
-\end{tikzpicture}
+% \begin{tikzpicture}
+%     \begin{axis}[
+%         title={IV},
+%         axis lines=middle,
+%         xlabel=$x$,
+%         ylabel=$y$,
+%         zlabel=$z$,
+%         xmin=-5, xmax=5,
+%         ymin=-5, ymax=5,
+%         zmin=-0.5, zmax=3,
+%         view={135}{45},
+%         ticks = none,
+%         colormap/hot2,
+%         ]
+%         \addplot3[
+%             surf,
+%             samples = 50,
+%             domain=-5:5,
+%         ] {ln(x^2 + y^2)};
+%     \end{axis} 
+% \end{tikzpicture}
+% \begin{tikzpicture}
+%     \begin{axis}[
+%         title={V},
+%         axis lines=middle,
+%         xlabel=$x$,
+%         ylabel=$y$,
+%         zlabel=$z$,
+%         % xmin=-5, xmax=5,
+%         % ymin=-5, ymax=5,
+%         % zmin=0, zmax=4,
+%         view={110}{45},
+%         ticks = none,
+%         colormap/hot2
+%         ]
+%         \addplot3[
+%             surf,
+%             samples = 50,
+%             domain=-4:4,
+%         ] {cos(deg(sqrt(x^2 + y^2)))};
+%     \end{axis} 
+% \end{tikzpicture}
+% \begin{tikzpicture}
+%     \begin{axis}[
+%         title={VI},
+%         axis lines=middle,
+%         xlabel=$x$,
+%         ylabel=$y$,
+%         zlabel=$z$,
+%         xmin= -5, xmax= 5,
+%         ymin= -5, ymax= 5,
+%         zmin= 0, zmax= 20,
+%         view={110}{45},
+%         ticks = none,
+%         colormap/hot2,
+%         ]
+%         \addplot3[
+%             surf,
+%             samples = 50,
+%             domain= -5 : 5,
+%             domain z = 0 : 20,
+%         ] {abs(x*y)};
+%     \end{axis} 
+% \end{tikzpicture}
 \\
 \centerline{\textbf{Solution}}
 
 \begin{align*}
     \intertext{\textit a)}
     \intertext{The graph of $f(x,y) = \displaystyle\frac 1 {1 + x^2 + y^2}$ is III}
-    \intertext{When $x = y = 0 \rr z = 1$ so the graph intersects the $z$-axis at $(0,0,1)$.}
+    \intertext{When $x = y = 0 \rr z = 1$, so the graph intersects the $z$-axis at $(0,0,1)$.}
     \intertext{If we solve for the $zx$ and $zy$ planes we get $z = \displaystyle\frac 1 {1 + x^2}$ and $z = \displaystyle\frac 1 {1 + y^2}$ respectively.}
     \intertext{\textit{b)}}
     \intertext{The graph of $f(x,y) = \displaystyle\frac 1 {1 + x^2 y^2}$ is I}
-    \intertext{When $x = y = 0 \rr z = 1$ so the graph intersects the $z$-axis at $(0,0,1)$.}
+    \intertext{When $x = y = 0 \rr z = 1$, so the graph intersects the $z$-axis at $(0,0,1)$.}
+    \intertext{Let $x = 1$ and then we solve for $z = \lim_{y \to \infty} \displaystyle\frac 1 {1 + y^2} = 0$. For graph I, if we gauge the $x = 1$ position and move up the $y$ axis, we can see that $z$ does indeed approach a value like 0.}
     \intertext{\textit{c)}}
     \intertext{The graph of $f(x,y) = \ln (x^2 + y^2)$ is IV}
-    \intertext{When $x = y = 0 \rr z = 0$ so the graph intersects the $z$-axis at $(0,0,0)$.}
-    \intertext{\textit{d)}}
+    \intertext{When $x = y = 0$ z is undefined}
+    \intertext{The only graph that seems to have a hole at the origin is IV.}
+    \intertext{\textit{d)}} 
+    \intertext{The graph of $f(x,y) = \cos \sqrt{x^2 + y^2}$ is V}
+    \intertext{When $x = y = 0 \rr z = 1$, so the graph intersects the $z$-axis at $(0,0,1)$.}
+    \intertext{When $x = 0$ and $y=0$ then $z=\cos y$ and $z=\cos x$ respectively.}
+    \intertext{The only graph that has a point at $(0,0,1)$ and has sinusoidal movement when $(0, (\text{y or x}) \to \infty, -1 \leq z \leq 1)$ is V.}
     \intertext{\textit{e)}}
+    \intertext{The graph of $f(x,y) = |xy|$ is VI}
+    \intertext{When $x = y = 0 \rr z = 0$, so the graph intersects the $z$-axis at $(0,0,0)$.}
+    \intertext{Out of the remaining graphs, the only graph that seems like it has an intersection at the origin is VI.}
     \intertext{\textit{f)}}
+    \intertext{The graph of $f(x,y) = \cos (xy)$ is II}
+    \intertext{Process of elimination :) (please don't dock me points for this)}
 \end{align*}
 
-% I think this one needs a figure instead, the problem doesn't give a function 
 \subsection*{33. A contour map for a function $f$ is shown. Use it to estimate the values of $f(-3, 3)$ and $f(3, -2)$. What can you say about the shape of the graph?}
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{figures/33.png}
+    \end{center}
+\end{figure}
+
 \centerline{\textbf{Solution}}
+
+\begin{align*}
+    \intertext{Looking at the contour map, it seems that $f(-3, 3)$ is $\approx$ 56 because it is between the 50 and 60 but a little closer to the 60.} 
+    \intertext{$f(3, -2)$ seems like it is $\approx$ 35 because it is in the middle of 40 and 35} 
+    \intertext{The shape of the graph seems like a hill or the top half of an ellipsoid} 
+\end{align*}
+
 \subsection*{45, 47 \& 51}
+
 Draw a contour map of the function showing several level curves.
-\subsubsection*{45. $f(x,y) = x^2 + y^2$}
+
+\subsubsection*{45. $f(x,y) = x^2 - y^2$}
 \centerline{\textbf{Solution}}
-\subsubsection*{47. $f(x,y) = x^2 + y^2$}
+\begin{align*}
+    \begin{tikzpicture}
+        \begin{axis} [
+            title={Contour map $f(x,y) = x^2 - y^2$},
+            axis lines=middle,
+            axis equal image,
+            xlabel=$x$,
+            ylabel=$y$,
+            xmin=-10, xmax=10,
+            ymin=-10, ymax=10,
+            grid=both,
+            grid style = {line width = .1pt, draw = gray!10},
+            major grid style = {line width = .2pt, draw = gray!50},
+            ticks=none,
+            scale=2.0,
+        ]
+       \end{axis} 
+    \end{tikzpicture}
+\end{align*}
+
+\subsubsection*{47. $f(x,y) = \sqrt x + y$}
 \centerline{\textbf{Solution}}
-\subsubsection*{51. $f(x,y) = x^2 + y^2$}
+\begin{align*}
+    \begin{tikzpicture}
+        \begin{axis} [
+            title={Contour map $f(x,y) = \sqrt x + y$},
+            axis lines=middle,
+            axis equal image,
+            xlabel=$x$,
+            ylabel=$y$,
+            xmin=-10, xmax=10,
+            ymin=-10, ymax=10,
+            grid=both,
+            grid style = {line width = .1pt, draw = gray!10},
+            major grid style = {line width = .2pt, draw = gray!50},
+            ticks=none,
+            scale=2.0,
+        ]
+       \end{axis} 
+    \end{tikzpicture}
+\end{align*}
+% broken, won't compile
+\subsubsection*{51. $f(x,y) = \sqrt{x^2 + y^2}$}
 \centerline{\textbf{Solution}}
-\subsection*{53. Sketch both a contour map and a graph of the given function and compare them. \\ \begin{align*} f(x,y) = x^2 + 9y^2 \end{align*}}
+\newpage
+\begin{align*}
+    \begin{tikzpicture}
+        \begin{axis} [
+            title={Contour map $f(x,y) = \sqrt{x^2 + y^2}$,
+            axis lines=middle,
+            axis equal image,
+            xlabel=$x$,
+            ylabel=$y$,
+            xmin=-10, xmax=10,
+            ymin=-10, ymax=10,
+            grid=both,
+            grid style = {line width = .1pt, draw = gray!10},
+            major grid style = {line width = .2pt, draw = gray!50},
+            ticks=none,
+            scale=2.0,
+        ]
+       \end{axis} 
+    \end{tikzpicture}
+\end{align*}
+
+\subsection*{53. Sketch both a contour map and a graph of the given function and compare them.}
+
+$$f(x,y) = x^2 + 9y^2$$
+
 \centerline{\textbf{Solution}}
-% Need graphs for this one too
+\begin{align*}
+    \begin{tikzpicture}
+        \begin{axis} [
+            title={Contour map $f(x,y) = x^2 + 9y^2}$,
+            axis lines=middle,
+            axis equal image,
+            xlabel=$x$,
+            ylabel=$y$,
+            xmin=-10, xmax=10,
+            ymin=-10, ymax=10,
+            grid=both,
+            grid style = {line width = .1pt, draw = gray!10},
+            major grid style = {line width = .2pt, draw = gray!50},
+            ticks=none,
+            scale=2.0,
+        ]
+       \end{axis} 
+    \end{tikzpicture}
+\end{align*}
+\begin{align*}
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis lines=middle,
+            xlabel={$y$},
+            ylabel={$z$},
+            xlabel style={below right},
+            ylabel style={above left},
+            xmin=-5.5,
+            xmax=5.5,
+            ymin=-5.5,
+            ymax=5.5,
+            ticks=none,
+            scale=1.5,
+        ]
+        \addplot [mark=none,domain=-4:4] {x} node [pos=0.0, left] {$x$};
+        \end{axis}
+    \end{tikzpicture}
+\end{align*}
+
 \subsection*{61 - 66} 
 Match the function (\textit a) with its graph (labeled A–F below) and (\textit b) with its contour map (labeled I–VI). Give reasons for your choices.
 
-% \begin{figure}[h] %h = here, t = top, b = bottom, p = page of figures
-%     \begin{center}
-%         \includegraphics[width=0.95\textwidth]{figures/61-66.jpg}
-%     \end{center}
-% \end{figure}
+\begin{figure}[h] %h = here, t = top, b = bottom, p = page of figures
+    \begin{center}
+        \includegraphics[width=0.95\textwidth]{figures/61-66.jpg}
+    \end{center}
+\end{figure}
 
 \subsubsection*{61. $z = \sin (xy)$}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{It seems like the graph of $z = \sin (xy)$ is C}
+    \intertext{When $x \to \infty$ and $y \to \infty$ then $-1 \leq z \leq 1$.}
+    \intertext{In other words, at $45\degree, 135\degree, 235\degree, 315\degree$ in terms of $xy$, $z$ should be infinitely sinusoidal the farther you go out}
+    \intertext{Since the function of $z$ is $\sin$ then the graph must intersect the $z$ at origin}
+    \intertext{For the contour map, the graph that looks that follows this description is II}
+\end{align*}
 \subsubsection*{62. $z = e^x \cos y$}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{When $x=y=0$ then $z=1 \rr (0,0,1)$.}
+    \intertext{Setting $x = 0 \rr z = \cos y \rr (0, y \to \infty, -1 \leq z \leq 1)$ this just means that x is constant and as y increases/decreases towards either positive or negative infinity, z will be sinusoidal} 
+    \intertext{Setting $y = 0 \rr z = e^x \rr (0, y \to \infty^+, \infty^+)(0, y \to \infty^-, 0)$ this just means that y is constant and depending if x is increasing or decreasing, z will increase exponentially to infinity or approach 0} 
+    \intertext{$\therefore$ The graph that seems to follow this description is A and the associated contour map seems to be IV}
+\end{align*}
 \subsubsection*{63. $z = \sin (x-y)$}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{The graph would have an intersection at the origin $x=y=0 \rr z=0$}
+    \intertext{When $x = 0 \rr z = \sin (-y)$, so the function will first dip down to $z=-1$ in the zy-trace}
+    \intertext{When $y = 0 \rr z = \sin (x)$, so the function will first go up to $z=1$ in the zx-trace}
+    \intertext{$\therefore$ The graph that matches this description looks like F and the associated contour map seems to be I}
+\end{align*}
 \subsubsection*{64. $z = \sin x - \sin y$}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{The graph would have an intersection at the origin $x=y=0 \rr z=0$}
+    \intertext{$z = 1 - 1 = 0$ \quad\leftrightarrow\quad $x = y = n \cdot \frac \pi 2$, $\{n \in \mathbb{Z} \such n = 2k-1, k \in \mathbb{Z}\}$}
+    \intertext{$z = 0 - 0 = 0$ \quad\leftrightarrow\quad $x = y = n \cdot \frac \pi 2$, $\{n \in \mathbb{Z} \such n = 2k, k \in \mathbb{Z}\}$}
+    \intertext{This behavior appears symmetric with $z =0$ appearing at areas where $x = y$.}
+    \intertext{$\therefore$ The graph that best matches this behavior is E and the associated contour map would be III}
+\end{align*}
 \subsubsection*{65. $z = (1-x^2)(1-y^2)$}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{The graph would have an intersection at  $(0,0,1) \quad x=y=0 \rr z=1$}
+    \intertext{If we look at the $zy$ and $zx$ traces, we see that it is a parabola opening down to negative $z$}
+    \intertext{However, if we take $\limit x y \infty \infty (1-x^2)(1-y^2), \quad \{(x,y) \such x = y\}$ then we get $\infty$ where the graph, in this direction, would exponentially grow.}
+    \intertext{$\therefore$ The graph that best fits this description would be B and the associated contour map would be VI.}
+\end{align*}
 \subsubsection*{66. $z = \displaystyle\frac{x-y}{1+ x^2+ y^2}$}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{The graph would have an intersection at  $(0,0,0) \quad x=y=0 \rr z=0$}
+    \intertext{Using process of elimination, the only graph left would be D and the associated contour map would be V.}
+    \intertext{We could note its behavior in the $zy$ trace and see that $lim_{y \to \infty^+} \frac{-y}{1 + y^2} = 0$ with $z$ decreasing at first, vice versa with $zx$ trace}
+    \intertext{To find the point at which $z$ is at a minimum when $y \to \infty^+$,}
+    z &= -y(1+y^2)^{-1} \\
+    \frac{dz}{dy} &= -\frac{1}{1+y^2} + \frac{2y^2}{(1+y^2)^{2}} \\
+    0 &= -\frac{1}{1+y^2} + \frac{2y^2}{(1+y^2)^{2}} \\
+    \frac{1}{1+y^2} &= \frac{2y^2}{(1+y^2)^{2}} \\
+    1 &= \frac{2y^2}{1+y^2} \\
+    1 + y^2 &= 2y^2 \\
+    1 &= y^2 \\
+    y &= \pm 1 = +1 \\
+    \intertext{And it seems there would be a maximum at $y = -1$}
+\end{align*}
 \subsection*{67. Describe the level surfaces of the function. \\ \begin{align*} f(x, y, z) = 2y - z + 1 \end{align*}}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{If we rearrange the function, $x-2y+z=1$ and we see that this is an equation of a plane. If we substitute $k$ for 1 and play around with its value (choosing 3-5 vals for k) then we see that no matter which value we pick, the planes will be parallel}
+\end{align*}
 \newpage
 \begin{center}
     \section*{\underline{Section 2: Limits and Continuity}}
