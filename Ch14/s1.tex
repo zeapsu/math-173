@@ -285,7 +285,7 @@ Sketch the graph of the function
 \subsubsection*{27. $f(x,y) = \sin x$}
 \centerline{\textbf{Solution}}
 \begin{align*}
-    \intertext{This is an equation of a cylinder that goes through the origin and is parallel to the $x$-axis}
+    % \intertext{This is an equation of a cylinder that goes through the origin and is parallel to the $x$-axis}
     % \begin{tikzpicture}
     %     \begin{axis}[
     %         title={$f(x,y) = \sin x$},
@@ -307,30 +307,28 @@ Sketch the graph of the function
 \centerline{\textbf{Solution}}
 \begin{align*}
     \intertext{This is an equation of an elliptic paraboloid that goes through the origin and is parallel to the $z$-axis.}
-    % \begin{tikzpicture}
-    %     \begin{axis}[
-    %         title={$f(x,y) = x^2 + 4y^2 + 1$},
-    %         axis lines=middle,
-    %         xlabel=$x$,
-    %         ylabel=$y$,
-    %         zlabel=$z$,
-    %         view={135}{45},
-    %     ]
-    %     \addplot3[
-    %         mesh,
-    %         samples=50,
-    %         domain=-2:2,
-    %         domain y=-2:2,
-    %         colormap/blackwhite,
-    %     ] 
-    %     {x^2 + 4*y^2 + 1};
-    %     \end{axis} 
-    % \end{tikzpicture}
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis lines=middle,
+            xlabel={$y$},
+            ylabel={$z$},
+            xlabel style={below right},
+            ylabel style={above left},
+            xmin=-5.5,
+            xmax=5.5,
+            ymin=-5.5,
+            ymax=5.5,
+            ticks=none,
+            scale=1.5,
+        ]
+        \addplot [mark=none,domain=-4:4] {x} node [pos=0.0, left] {$x$};
+        \end{axis}
+    \end{tikzpicture}
 \end{align*}
 \subsubsection*{31. $f(x,y) = \sqrt{4 - 4x^2 - y^2}$}
 \centerline{\textbf{Solution}}
 \begin{align*}
-    % \intertext{This is the top half of ellipsoid}
+    \intertext{This is the top half of ellipsoid}
     % \begin{tikzpicture}
     %     \begin{axis} [
     %         title={$f(x,y) = \sqrt{4 - 4x^2 - y^2}$},
@@ -741,39 +739,97 @@ Find the limit
 \end{align*}
 \subsubsection*{11. $\limit x y 1 1 \left(\displaystyle\frac{x^2 y^3 - x^3 y^2}{x^2 - y^2}\right) }
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{Let $x = 1$,}
+    \limi x 1 \left(\displaystyle\frac{1^2 y^3 - 1^3 y^2}{1^2 - y^2}\right) &= \limi x 1 \left(\displaystyle\frac{y^3 - y^2}{1 - y^2}\right) \lh \limi x 1 \frac{3y^2 - 2y}{-2y} = \frac{1}{-2}\\
+    \intertext{Let $y = 1$,}
+    \limi y 1 \left(\displaystyle\frac{x^2 1^3 - x^3 1^2}{1^2 - y^2}\right) &= \limi y 1 \left(\displaystyle\frac{x^2 - x^3}{x^2 - 1}\right) \lh \limi x 1 \frac{2x - 3x^2}{2x} = \frac{-1}{2}\\
+    \intertext{$\therefore$ The limit = $\frac 1 2}
+\end{align*}
+
 \subsection*{13 - 17 (odd)}
 Show that the limit does not exist
 \subsubsection*{13. $\limit x y 0 0 \displaystyle\frac {y^2}{x^2 + y^2}$}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{Let $x = 0$,}
+    \limi y 0 \displaystyle\frac{y^2}{y^2} &= 1 \\
+    \intertext{Let $y = 0$,}
+    \limi x 0 \displaystyle\frac{0}{x^2} &= 0\\
+    \intertext{1 \neq 0 \quad  $\therefore$ The limit DNE}
+\end{align*}
 \subsubsection*{15. $\limit x y 0 0 \displaystyle\frac {(x+y)^2}{x^2 + y^2}$}
 \centerline{\textbf{Solution}}
-\subsubsection*{17. \limit x y 0 0 \displaystyle\frac{y^2 \sin^2 x}{x^4 + y^4}}
+    \intertext{Let $y = x$,}
+    \limi x 0 \displaystyle\frac {(x+x)^2}{x^2 + x^2} &= \limi x 0 \displaystyle\frac {4x^2}{2x^2} = 2 
+    \intertext{Let $y = -x$,}
+    \limi x 0 \displaystyle\frac {(0)^2}{x^2 + (-x)^2} &= \limi x 0 \displaystyle\frac {0}{2x^2} = 0 \\
+    \intertext{$\therefore$ The limit DNE}
+\subsubsection*{***17. \limit x y 0 0 \displaystyle\frac{y^2 \sin^2 x}{x^4 + y^4}}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{skip} 
+\end{align*}
 \subsection*{19 - 25 (odd)}
 Find the limit, if it exists, or show that the limit does not exist.
 \subsubsection*{19. \limit x y {-1} {-2} (x^2y-xy^2+3)^3}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{Using direct substitution}
+    ((-1)^2(-2) - (-1)(-2)^2 + 3)^3 &= (5)^3 = 125
+\end{align*}
 \subsubsection*{21. \limit x y 2 3 \displaystyle\frac{3x - 2y}{4x^2 - y^2}}
 \centerline{\textbf{Solution}}
-\subsubsection*{23. \limit x y 0 0 \displaystyle\frac{xy^2\cos y}{x^2 + y^4}}
+\begin{align*}
+    \intertext{Using direct substitution}
+    \displaystyle\frac{3(2) - 2(3)}{4(2)^2 - (3)^2} &= \displaystyle\frac{0}{7} = 0
+\end{align*}
+\subsubsection*{***23. \limit x y 0 0 \displaystyle\frac{xy^2\cos y}{x^2 + y^4}}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{skip} 
+\end{align*}
 \subsubsection*{25. \limit x y 0 0 \displaystyle\frac{x^2+y^2}{\sqrt{x^2+y^2+1}-1}}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{Rationalizing the denominator,}
+    \limit x y 0 0 \displaystyle\frac{x^2+y^2}{\sqrt{x^2+y^2+1} - 1} \cdot \frac{\sqrt{x^2+y^2 + 1}+1}{\sqrt{x^2+y^2+1}+1} = \frac{(x^2+y^2)\sqrt{x^2+y^2+1}+1}{x^2+y^2+1-1} = \sqrt{x^2+y^2+1}+1 = 2
+\end{align*}
 \subsection*{31 \& 33}
 Use the Squeeze Theorem to find the limit.
 \subsubsection*{31. \limit x y 0 0 xy\sin \displaystyle\frac 1 {x^2+y^2}}
 \centerline{\textbf{Solution}}
-\subsubsection*{33. $\limit x y 0 0 \displaystyle\frac{xy^4}{x^4 + y^4}$}
-\centerline{\textbf{Solution}}
+\begin{align*}
+    \limit x y 0 0 xy\sin \displaystyle\frac 1 {x^2+y^2} &\rr -xy \leq xy\sin \displaystyle\frac{1}{x^2+y^2} \leq xy \\
+    \limit x y 0 0 -xy \leq \limit x y 0 0 xy\sin \displaystyle\frac 1 {x^2+y^2} \leq \limit x y 0 0 xy &\rr 0 \leq \limit x y 0 0 xy \sin{\displaystyle\frac{1}{x^2+y^2}} \leq 0 \\
+    \intertext{$\therefore$ The limit = 0}
+\end{align*} \subsubsection*{33. $\limit x y 0 0 \displaystyle\frac{xy^4}{x^4 + y^4}$} \centerline{\textbf{Solution}}
+\begin{align*}
+    \limit x y 0 0 \displaystyle\frac{xy^4}{x^4+y^4} &\rr [x = r\cos \theta , y = r\sin \theta] \\
+    \limit x y 0 0 \displaystyle\frac{r\cos\theta r^4\sin\theta}{r^4\cos^4\theta + r^4\sin^4\theta} &= \displaystyle\frac{r^5\cos\theta\sin\theta}{r^4(1)} = r^4\cos\theta\sin\theta 
+    \intertext{Using Squeeze theorem,}
+    -r^4 \leq r^4\cos\theta\sin\theta \leq r^4 &\rr 0 \leq r^4\cos\theta\sin\theta \leq 0 \\
+    \intertext{$\therefore$ The limit = 0}
+\end{align*}
 \subsection*{41, 43 \& 45}
 Determine the set of points at which the function is continuous.
 \subsubsection*{41. $F(x,y) = \displaystyle\frac{xy}{1+e^{x-y}}$}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{We can see that $1 + e ^ {x-y} \neq 0 \rr e ^ {x-y} \neq -1$ which can never happen} 
+    \intertext{$\therefore$ the function is continuous in the set $\{(x,y) \such x \in \mathbb{R}, y \in \mathbb{R}\}$}
+\end{align*}
 \subsubsection*{43. $F(x,y) = \displaystyle\frac{1+x^2+y^2}{1-x^2-y^2}$}
 \centerline{\textbf{Solution}}
+\begin{align*}
+    \intertext{$1-x^2-y^2\neq 0 \rr x^2+y^2 \neq 1$ so the function is continuous in the set $\{(x,y)\such x^2+y^2\neq 1\}$}
+\end{align*}
 \subsubsection*{45. $G(x,y) = \sqrt x + \sqrt{1 - x^2 - y^2}$}
 \centerline{\textbf{Solution}}
-
+\begin{align*}
+    \intertext{We see that $x\geq 0$ and $1-x^2-y^2\geq 0$}
+    \intertext{$\therefore$ the function is continuous in the set $\{(x,y)\such x\geq 0, x^2+y^2\leq 1\}$}
+\end{align*}
 \newpage
 \begin{center}
     \section*{\underline{Section 3: Partial Derivatives}}
