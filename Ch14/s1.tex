@@ -59,6 +59,8 @@
 \newcommand{\limi}[2]{\lim_{#1 \to #2}}
 \newcommand{\such}{\; | \;}
 \newcommand{\lh}{\overset{L'H}{=}}
+\newcommand{\solution}{\centerline{\textbf{Solution}}}
+% \newcommand{\par}[2]{\frac{\partial #1}{\partial #2}}
 %
 % Title Page
 %
@@ -837,14 +839,59 @@ Determine the set of points at which the function is continuous.
 \subsection*{9 - 25 (odd)}
 Find the first partial derivatives of the function.
 \subsubsection*{9. $f(x,y) = x^4 + 5xy^3$}
+\solution
+\begin{align*}
+    \frac{\partial f}{\partial x} &= 4x^3+5y^3 \\
+    \frac{\partial f}{\partial y} &= 15xy^2
+\end{align*}
 \subsubsection*{11. $g(x,y) = x^3 \sin y$}
+\solution
+\begin{align*}
+    \frac{\partial g}{\partial x} &= 3x^2\sin y \\
+    \frac{\partial g}{\partial y} &= 3x^2\cos y 
+\end{align*}
 \subsubsection*{13. $z = \ln (x + t^2)$}
+\solution
+\begin{align*}
+    \frac{\partial z}{\partial x} &= \displaystyle\frac{1}{x+t^2} \\
+    \frac{\partial z}{\partial t} &= \displaystyle\frac{2t}{x+t^2} 
+\end{align*}
 \subsubsection*{15. $f(x,y) = ye^{xy}$}
+\solution
+\begin{align*}
+    \frac{\partial f}{\partial x} &= y^2e^{xy} \\
+    \frac{\partial f}{\partial y} &= e^{xy} + xye^{xy}
+\end{align*}
 \subsubsection*{17. $g(x,y) = y(x + x^2 y)^5$}
+\solution
+\begin{align*}
+    \frac{\partial g}{\partial x} &= 5y(x+x^2y)^4\cdot (1+2xy) \rr 5y(1+2xy) + (x+x^2y)^4 \\
+    \frac{\partial g}{\partial y} &= (x+x^2y)^5 + 5y(x+x^2y)^4 \cdot x^2 \rr 5x^2y(x+x^2y)^4 + (x+x^2y)^5
+\end{align*}
 \subsubsection*{19. $f(x,y) = \displaystyle\frac{ax + by}{cx + dy}$}
+\solution
+\begin{align*}
+    \frac{\partial f}{\partial x} &= \\
+    \frac{\partial f}{\partial y} &=
+\end{align*}
 \subsubsection*{21. $g(u, v) = (u^2v-v^3)^5$}
+\solution
+\begin{align*}
+    \frac{\partial g}{\partial u} &= \\
+    \frac{\partial g}{\partial v} &=
+\end{align*}
 \subsubsection*{23. $R(p, q) = \tan^{-1} (pq^2)$}
+\solution
+\begin{align*}
+    \frac{\partial R}{\partial p} &= \\
+    \frac{\partial R}{\partial q} &= 
+\end{align*}
 \subsubsection*{25. $F(x,y) = \int_y^x \cos (e^t) dt$}
+\solution
+\begin{align*}
+    \frac{\partial F}{\partial x} &= \\
+    \frac{\partial F}{\partial y} &=
+\end{align*}
 \subsection*{37. Find the indicated partial derivative.}
 \[
     R(s,t) = te^{s/t}; \qquad R_t (0,1)
