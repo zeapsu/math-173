@@ -238,74 +238,74 @@ Sketch the graph of the function
 \centerline{\textbf{Solution}}
 \begin{align*}
     \intertext{This is an equation of the plane that goes through the origin and is parallel to the $x$-axis.}
-    % \begin{tikzpicture}
-    %     \begin{axis}[
-    %         title={$f(x,y) = y$},
-    %         axis lines=box,
-    %         xlabel=$x$,
-    %         ylabel=$y$,
-    %         zlabel=$z$,
-    %     ]
-    %     \addplot3 [
-    %         domain=-2:2,
-    %         samples=50,
-    %         mesh,
-    %         colormap/blackwhite,
-    %     ]
-    %     {y};
-    %     \end{axis} 
-    % \end{tikzpicture}
+    \begin{tikzpicture}
+        \begin{axis}[
+            title={$f(x,y) = y$},
+            axis lines=box,
+            xlabel=$x$,
+            ylabel=$y$,
+            zlabel=$z$,
+        ]
+        \addplot3 [
+            domain=-2:2,
+            samples=50,
+            mesh,
+            colormap/blackwhite,
+        ]
+        {y};
+        \end{axis} 
+    \end{tikzpicture}
 \end{align*}
 \subsubsection*{25. $f(x,y) = 10 - 4x -5y$}
 \centerline{\textbf{Solution}}
 \begin{align*}
     \intertext{Let $x=y=0 \rr z = 10$,\quad $x = z = 0 \rr y = 2$,\quad $y = z = 0 \rr x = 2.5$}
     \intertext{This is an equation of a plane that goes through the points $(0,0,10), (0,2,0), (2.5,0,0)$ [imagine it is shaded in].}
-    % \begin{tikzpicture}
-    %     \begin{axis}[
-    %         title={$f(x,y) = 10 - 4x -5y$},
-    %         axis lines=middle,
-    %         xlabel=$x$,
-    %         ylabel=$y$,
-    %         zlabel=$z$,
-    %         view={135}{45},
-    %     ]
-    %     \addplot3[
-    %         name path=plane,
-    %         mesh,
-    %         colormap/blackwhite,
-    %     ] 
-    %     coordinates {
-    %         (0,0,0) (0,0,10) (0,2,0) (2.5,0,0) (0,0,10)
-    %     };
-    %     \addplot3[
-    %         name path =origin,
-    %         draw=none
-    %     ]
-    %     {0};
-    % \end{axis}
-    % \end{tikzpicture}
+    \begin{tikzpicture}
+        \begin{axis}[
+            title={$f(x,y) = 10 - 4x -5y$},
+            axis lines=middle,
+            xlabel=$x$,
+            ylabel=$y$,
+            zlabel=$z$,
+            view={135}{45},
+        ]
+        \addplot3[
+            name path=plane,
+            mesh,
+            colormap/blackwhite,
+        ] 
+        coordinates {
+            (0,0,0) (0,0,10) (0,2,0) (2.5,0,0) (0,0,10)
+        };
+        \addplot3[
+            name path =origin,
+            draw=none
+        ]
+        {0};
+    \end{axis}
+    \end{tikzpicture}
 \end{align*}
 \subsubsection*{27. $f(x,y) = \sin x$}
 \centerline{\textbf{Solution}}
 \begin{align*}
-    % \intertext{This is an equation of a cylinder that goes through the origin and is parallel to the $x$-axis}
-    % \begin{tikzpicture}
-    %     \begin{axis}[
-    %         title={$f(x,y) = \sin x$},
-    %         axis lines=middle,
-    %         xlabel=$x$,
-    %         ylabel=$y$,
-    %         zlabel=$z$,
-    %     ]
-    %     \addplot3 [
-    %         mesh,
-    %         samples=50,
-    %         colormap/blackwhite
-    %     ]
-    %     {sin(deg(x))};
-    %     \end{axis} 
-    % \end{tikzpicture}
+    \intertext{This is an equation of a cylinder that goes through the origin and is parallel to the $x$-axis}
+    \begin{tikzpicture}
+        \begin{axis}[
+            title={$f(x,y) = \sin x$},
+            axis lines=middle,
+            xlabel=$x$,
+            ylabel=$y$,
+            zlabel=$z$,
+        ]
+        \addplot3 [
+            mesh,
+            samples=50,
+            colormap/blackwhite
+        ]
+        {sin(deg(x))};
+        \end{axis} 
+    \end{tikzpicture}
 \end{align*}
 \subsubsection*{29. $f(x,y) = x^2 + 4y^2 + 1$}
 \centerline{\textbf{Solution}}
@@ -333,22 +333,22 @@ Sketch the graph of the function
 \centerline{\textbf{Solution}}
 \begin{align*}
     \intertext{This is the top half of ellipsoid}
-    % \begin{tikzpicture}
-    %     \begin{axis} [
-    %         title={$f(x,y) = \sqrt{4 - 4x^2 - y^2}$},
-    %         axis lines=middle,
-    %         xlabel=$x$,
-    %         ylabel=$y$,
-    %         zlabel=$z$,
-    %     ] 
-    %     \addplot3 [
-    %         surf,
-    %         samples=50,
-    %         colormap/blackwhite,
-    %     ] 
-    %     {sqrt(4 - 4*x^2 - y^2)};
-    %     \end{axis}
-    % \end{tikzpicture}
+    \begin{tikzpicture}
+        \begin{axis} [
+            title={$f(x,y) = \sqrt{4 - 4x^2 - y^2}$},
+            axis lines=middle,
+            xlabel=$x$,
+            ylabel=$y$,
+            zlabel=$z$,
+        ] 
+        \addplot3 [
+            surf,
+            samples=50,
+            colormap/blackwhite,
+        ] 
+        {sqrt(4 - 4*x^2 - y^2)};
+        \end{axis}
+    \end{tikzpicture}
 \end{align*}
 % Needs graphs or screenshot and insert as figure
 \subsection*{32. Match the function with its graph (labeled I–VI). Give reasons for your choices. \\
@@ -356,134 +356,134 @@ Sketch the graph of the function
     (\textit c) $f(x,y) = \ln (x^2 + y^2) \qquad \;(\textit d)\; f(x,y) = \cos \sqrt{x^2 + y^2}$ \\\\
     (\textit e) $f(x,y) = |xy| \qquad \qquad \quad (\textit f)\; f(x,y) = \cos (xy)$\\
 }
-% \begin{tikzpicture}
-%     \begin{axis}[
-%         title={I},
-%         axis lines=middle,
-%         xlabel=$x$,
-%         ylabel=$y$,
-%         zlabel=$z$,
-%         xmin=-4, xmax=4,
-%         ymin=-4, ymax=4,
-%         zmin=0, zmax=1.5,
-%         view={135}{45},
-%         ticks = none,
-%         colormap/hot2,
-%         ]
-%         \addplot3[
-%             surf,
-%             samples = 50,
-%             domain=-3:3,
-%         ] {1/(1+ x^2 * y^2)};
-%     \end{axis} 
-% \end{tikzpicture}
-% \begin{tikzpicture}
-%     \begin{axis}[
-%         title={II},
-%         axis lines=middle,
-%         xlabel=$x$,
-%         ylabel=$y$,
-%         zlabel=$z$,
-%         % xmin= -5, xmax= 5,
-%         % ymin= -5, ymax= 5,
-%         % zmin= 0, zmax= 5,
-%         view={110}{45},
-%         ticks = none,
-%         colormap/hot2,
-%         ]
-%         \addplot3[
-%             surf,
-%             samples = 50,
-%             domain= -3 : 3,
-%             domain y = -3 : 3,
-%         ] {cos(deg(x*y))};
-%     \end{axis} 
-% \end{tikzpicture}
-% \begin{tikzpicture}
-%     \begin{axis}[
-%         title={III},
-%         axis lines=middle,
-%         xlabel=$x$,
-%         ylabel=$y$,
-%         zlabel=$z$,
-%         xmin=-4, xmax=4,
-%         ymin=-4, ymax=4,
-%         zmin=0, zmax=1.5,
-%         view={135}{30},
-%         ticks = none,
-%         colormap/hot2,
-%         ]
-%         \addplot3[
-%             surf,
-%             samples = 50,
-%             domain=-3:3,
-%         ] {1/(1+x^2+y^2)};
-%     \end{axis} 
-% \end{tikzpicture}
-% \begin{tikzpicture}
-%     \begin{axis}[
-%         title={IV},
-%         axis lines=middle,
-%         xlabel=$x$,
-%         ylabel=$y$,
-%         zlabel=$z$,
-%         xmin=-5, xmax=5,
-%         ymin=-5, ymax=5,
-%         zmin=-0.5, zmax=3,
-%         view={135}{45},
-%         ticks = none,
-%         colormap/hot2,
-%         ]
-%         \addplot3[
-%             surf,
-%             samples = 50,
-%             domain=-5:5,
-%         ] {ln(x^2 + y^2)};
-%     \end{axis} 
-% \end{tikzpicture}
-% \begin{tikzpicture}
-%     \begin{axis}[
-%         title={V},
-%         axis lines=middle,
-%         xlabel=$x$,
-%         ylabel=$y$,
-%         zlabel=$z$,
-%         % xmin=-5, xmax=5,
-%         % ymin=-5, ymax=5,
-%         % zmin=0, zmax=4,
-%         view={110}{45},
-%         ticks = none,
-%         colormap/hot2
-%         ]
-%         \addplot3[
-%             surf,
-%             samples = 50,
-%             domain=-4:4,
-%         ] {cos(deg(sqrt(x^2 + y^2)))};
-%     \end{axis} 
-% \end{tikzpicture}
-% \begin{tikzpicture}
-%     \begin{axis}[
-%         title={VI},
-%         axis lines=middle,
-%         xlabel=$x$,
-%         ylabel=$y$,
-%         zlabel=$z$,
-%         xmin= -5, xmax= 5,
-%         ymin= -5, ymax= 5,
-%         zmin= 0, zmax= 20,
-%         view={110}{45},
-%         ticks = none,
-%         colormap/hot2,
-%         ]
-%         \addplot3[
-%             surf,
-%             samples = 50,
-%             domain= -5 : 5,
-%             domain z = 0 : 20,
-%         ] {abs(x*y)};
-%     \end{axis} 
-% \end{tikzpicture}
+\begin{tikzpicture}
+    \begin{axis}[
+        title={I},
+        axis lines=middle,
+        xlabel=$x$,
+        ylabel=$y$,
+        zlabel=$z$,
+        xmin=-4, xmax=4,
+        ymin=-4, ymax=4,
+        zmin=0, zmax=1.5,
+        view={135}{45},
+        ticks = none,
+        colormap/hot2,
+        ]
+        \addplot3[
+            surf,
+            samples = 50,
+            domain=-3:3,
+        ] {1/(1+ x^2 * y^2)};
+    \end{axis} 
+\end{tikzpicture}
+\begin{tikzpicture}
+    \begin{axis}[
+        title={II},
+        axis lines=middle,
+        xlabel=$x$,
+        ylabel=$y$,
+        zlabel=$z$,
+        % xmin= -5, xmax= 5,
+        % ymin= -5, ymax= 5,
+        % zmin= 0, zmax= 5,
+        view={110}{45},
+        ticks = none,
+        colormap/hot2,
+        ]
+        \addplot3[
+            surf,
+            samples = 50,
+            domain= -3 : 3,
+            domain y = -3 : 3,
+        ] {cos(deg(x*y))};
+    \end{axis} 
+\end{tikzpicture}
+\begin{tikzpicture}
+    \begin{axis}[
+        title={III},
+        axis lines=middle,
+        xlabel=$x$,
+        ylabel=$y$,
+        zlabel=$z$,
+        xmin=-4, xmax=4,
+        ymin=-4, ymax=4,
+        zmin=0, zmax=1.5,
+        view={135}{30},
+        ticks = none,
+        colormap/hot2,
+        ]
+        \addplot3[
+            surf,
+            samples = 50,
+            domain=-3:3,
+        ] {1/(1+x^2+y^2)};
+    \end{axis} 
+\end{tikzpicture}
+\begin{tikzpicture}
+    \begin{axis}[
+        title={IV},
+        axis lines=middle,
+        xlabel=$x$,
+        ylabel=$y$,
+        zlabel=$z$,
+        xmin=-5, xmax=5,
+        ymin=-5, ymax=5,
+        zmin=-0.5, zmax=3,
+        view={135}{45},
+        ticks = none,
+        colormap/hot2,
+        ]
+        \addplot3[
+            surf,
+            samples = 50,
+            domain=-5:5,
+        ] {ln(x^2 + y^2)};
+    \end{axis} 
+\end{tikzpicture}
+\begin{tikzpicture}
+    \begin{axis}[
+        title={V},
+        axis lines=middle,
+        xlabel=$x$,
+        ylabel=$y$,
+        zlabel=$z$,
+        % xmin=-5, xmax=5,
+        % ymin=-5, ymax=5,
+        % zmin=0, zmax=4,
+        view={110}{45},
+        ticks = none,
+        colormap/hot2
+        ]
+        \addplot3[
+            surf,
+            samples = 50,
+            domain=-4:4,
+        ] {cos(deg(sqrt(x^2 + y^2)))};
+    \end{axis} 
+\end{tikzpicture}
+\begin{tikzpicture}
+    \begin{axis}[
+        title={VI},
+        axis lines=middle,
+        xlabel=$x$,
+        ylabel=$y$,
+        zlabel=$z$,
+        xmin= -5, xmax= 5,
+        ymin= -5, ymax= 5,
+        zmin= 0, zmax= 20,
+        view={110}{45},
+        ticks = none,
+        colormap/hot2,
+        ]
+        \addplot3[
+            surf,
+            samples = 50,
+            domain= -5 : 5,
+            domain z = 0 : 20,
+        ] {abs(x*y)};
+    \end{axis} 
+\end{tikzpicture}
 \\
 \centerline{\textbf{Solution}}
 
@@ -769,10 +769,16 @@ Show that the limit does not exist
     \intertext{Let $y = -x$,}
     \limi x 0 \displaystyle\frac {(0)^2}{x^2 + (-x)^2} &= \limi x 0 \displaystyle\frac {0}{2x^2} = 0 \\
     \intertext{$\therefore$ The limit DNE}
-\subsubsection*{***17. \limit x y 0 0 \displaystyle\frac{y^2 \sin^2 x}{x^4 + y^4}}
+\subsubsection*{17. \limit x y 0 0 \displaystyle\frac{y^2 \sin^2 x}{x^4 + y^4}}
 \centerline{\textbf{Solution}}
 \begin{align*}
-    \intertext{skip} 
+    \intertext{Let $y = x$, } 
+    \limi x 0 \displaystyle\frac{x^2\sin^2x}{x^4+x^4} &\rr \limi x 0 \displaystyle\frac{x^2\sin^2x}{2x^4} = \displaystyle\frac{\sin^2 x}{2x^2} \\
+                                                      &\lh \displaystyle\frac{2\sin x\cos x}{4x} = \displaystyle\frac{\sin (2x)}{4x} \lh \limi x 0 \displaystyle\frac{2\cos (2x)}{4} = \frac 1 2 \\
+    \intertext{Let y = 0,}
+    \limi x 0 \displaystyle\frac{0 \cdot \sin^2x}{x^4 + 0^4} = \frac 0 {x^4} = 0 \\
+    \intertext{The limit when $y=x$ $\neq$ limit when $y=0$}
+    \intertext{$\therefore$ The limit DNE}
 \end{align*}
 \subsection*{19 - 25 (odd)}
 Find the limit, if it exists, or show that the limit does not exist.
@@ -788,10 +794,14 @@ Find the limit, if it exists, or show that the limit does not exist.
     \intertext{Using direct substitution}
     \displaystyle\frac{3(2) - 2(3)}{4(2)^2 - (3)^2} &= \displaystyle\frac{0}{7} = 0
 \end{align*}
-\subsubsection*{***23. \limit x y 0 0 \displaystyle\frac{xy^2\cos y}{x^2 + y^4}}
+\subsubsection*{23. \limit x y 0 0 \displaystyle\frac{xy^2\cos y}{x^2 + y^4}}
 \centerline{\textbf{Solution}}
 \begin{align*}
-    \intertext{skip} 
+    \intertext{Let $x = y^2$}
+    \limi y 0 \displaystyle\frac{y^2y^2 \cos y}{y^4 + y^4} &= \displaystyle\frac{y^4\cos y}{2y^4} = \frac 1 2 \\
+    \intertext{Let $x = 0$} 
+    \limi y 0 \displaystyle\frac{0}{y^4} = 0 \\
+    \intertext{$\therefore$ The limit DNE}
 \end{align*}
 \subsubsection*{25. \limit x y 0 0 \displaystyle\frac{x^2+y^2}{\sqrt{x^2+y^2+1}-1}}
 \centerline{\textbf{Solution}}
@@ -1009,17 +1019,79 @@ Find the indicated partial derivative(s).
 Find an equation of the tangent plane to the given surface at the specified point.
 \subsubsection*{3. $z = 2x^2 + y^2 - 5y, \quad (1, 2, -4)$}
 \solution 
+\begin{align*}
+    \intertext{Finding the partials,}
+    f_x = 4x^2 &\rr f_x(1,2) = 4 \\
+    f_y = 2y-5 &\rr f_y(1,2) = 4-5 = -1 \\
+    \intertext{Eq of tangent plane,}
+    z-z_0 &= f_x(x_0, y_0)(x-x_0) + f_y(x_0, y_0)(y-y_0) \\
+    z+4 &= 4(x-1) - (y-2) \\
+    z &= 4x - y - 2 -4 = 4x - y - 6
+\end{align*}
 \subsubsection*{5. $z = e^{x-y},\quad (2,2,1)$}
 \solution 
+\begin{align*}
+    \intertext{Finding the partials,}
+    f_x = e^{x-y} &\rr f_x(2,2) = e^0 = 1 \\
+    f_y = -e^{x-y} &\rr f_y(2,2) = -e^0 = -1 \\
+    \intertext{Eq of tangent plane,}
+    z-z_0 &= f_x(x_0, y_0)(x-x_0) + f_y(x_0, y_0)(y-y_0) \\
+    z-1 &= (x-2) - (y-2) \\
+    z &= x-y+1
+\end{align*}
 \subsubsection*{7. $z = 2\sqrt y / x,\quad (-1,1,-2)$}
 \solution 
+\begin{align*}
+    \intertext{Finding the partials,}
+    f_x = \frac{-2\sqrt y}{x^2} &\rr f_x(-1,1) = -2/1 = -2 \\
+    f_y = \frac 1 {\sqrt y} \cdot \frac 1 x &\rr f_y(-1,1) = 1/1 \cdot 1/-1 = -1 \\
+    \intertext{Eq of tangent plane,}
+    z-z_0 &= f_x(x_0, y_0)(x-x_0) + f_y(x_0, y_0)(y-y_0) \\
+    z+2 &= -2(x+1) - (y-1) \\
+    z &= -2x - y - 1 - 2 = -2x - y - 3
+\end{align*}
 \subsubsection*{9. $z = x\sin (x+y),\quad (-1, 1, 0)$}
 \solution
+\begin{align*}
+    \intertext{Finding the partials,}
+    f_x = \sin (x+y) + x\cos (x+y) &\rr f_x(-1,1) = \sin 0 + -1\cos 0 = 0 - 1 = -1 \\
+    f_y = x\cos (x+y) &\rr f_y(-1,1) = -1\cos 0 = -1 \\
+    \intertext{Eq of tangent plane,}
+    z-z_0 &= f_x(x_0, y_0)(x-x_0) + f_y(x_0, y_0)(y-y_0) \\
+    z &= -1(x+1) - (-1)(y-1) \\
+    z &= -x - y 
+\end{align*}
 \subsection*{15 - 19 odd}
 Explain why the function is differentiable at the given point. Then find the linearization $L(x,y)$ of the function at that point.
 \subsubsection*{15. $f(x,y) = x^3y^2,\quad (-2,1)$}
+\solution 
+\begin{align*}
+    f_x = 3x^2y^2 \text{ which is differentiable at (-2,1)} \\
+    f_y = 2x^3y \text{ which is differentiable at (-2,1)} \\
+    \intertext{Linearization,}
+    L(x,y) &\approx f(x_0, y_0) + f_x(x_0,y_0)(x-x_0) + f_y(x_0,y_0)(y-y_0) \\
+    L(-2,1) &\approx -8 + 12(x+2) + (-16)(y-1) \\
+    L(-2,1) &\approx -8 + 12x + 24 - 16y + 16 \\
+    L(-2,1) &\approx 12x - 16y + 32
+\end{align*}
 \subsubsection*{17. $f(x,y) = 1 + x\ln (xy-5),\quad (2,3)$}
+\solution
+\begin{align*}
+    f_x &= \ln (xy-5) + \frac {xy}{xy-5} \text{ which is differentiable at (2,3)} \\
+    f_y &= \frac {x^2} {xy-3} \text{ which is differentiable at (2,3)} \\
+    \intertext{Linearization,}
+    L(x,y) &\approx f(x_0, y_0) + f_x(x_0,y_0)(x-x_0) + f_y(x_0,y_0)(y-y_0) \\
+    L(2,3) &\approx 1 + 6(x-2) + 4(y-3) = 1 + 6x -12 + 4y \\
+    L(2,3) &\approx 6x + 4y - 23
+\end{align*}
 \subsubsection*{19. $f(x,y) = x^2e^y,\quad (1,0)$}
-
+\solution
+\begin{align*}
+    f_x = 2xe^4 &\rr f_x(1,0) = 2(1)e^0 = 2 \\
+    f_y = x^2e^4 &\rr f_y(1,0) = 1e^0 = 1 
+    \intertext{Linearization,}
+    L(x,y) &\approx f(x_0, y_0) + f_x(x_0,y_0)(x-x_0) + f_y(x_0,y_0)(y-y_0) \\
+    L(1,0) &\approx 1 + 2(x-1) + 1(y-0) = 1 + 2x - 2 + y\\
+           &= 2x + y - 1
+\end{align*}
 \end{document}
-
