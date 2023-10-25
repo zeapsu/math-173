@@ -229,6 +229,8 @@ $}
     \intertext{\textit a)}
     f(160, 70) = 0.1091(160^{0.425})(70^{0.725}) \approx 20.5 \\ 
     \intertext{The surface area of a human body that weighs 160 pounds and is 70 inches tall is about 20.5 square feet.}
+    \intertext{\textit b)}
+    f(160, 68) = 0.1091(160^{0.425})(70^{0.725}) \approx 20.5
 \end{align*}
 \subsection*{23 - 31 (odd)}
 Sketch the graph of the function
@@ -871,59 +873,148 @@ Find the first partial derivatives of the function.
 \subsubsection*{19. $f(x,y) = \displaystyle\frac{ax + by}{cx + dy}$}
 \solution
 \begin{align*}
-    \frac{\partial f}{\partial x} &= \\
-    \frac{\partial f}{\partial y} &=
+    \frac{\partial f}{\partial x} &= \displaystyle\frac{c[ax+by] - a[cx+dy]}{[cx+dy]^2} \\
+                    &= \displaystyle\frac{acx+bcy-acx-ady}{[cx+day]^2} = \displaystyle\frac{(ad-bc)y}{[cx+dy]^2} \\
+    \frac{\partial f}{\partial y} &= \displaystyle\frac{b[cx+dy] - d[ax+by]}{[cx+dy]^2} \\ 
+                                  &= \displaystyle\frac{bcx+bdy-adx-bdy}{[cx+dy]^2} = \displaystyle\frac{(bc-ad)x}{[cx+dy]^2}
 \end{align*}
 \subsubsection*{21. $g(u, v) = (u^2v-v^3)^5$}
 \solution
 \begin{align*}
-    \frac{\partial g}{\partial u} &= \\
-    \frac{\partial g}{\partial v} &=
+    \frac{\partial g}{\partial u} &= 5 \cdot 2uv(u^2v-v^3)^4 = 10uv(u^2-v^3)^4 \\
+    \frac{\partial g}{\partial v} &= 5(u^2-3v^2)(u^2v-v^3)^4) = 5u^2-15v^2(u^2v-v^3)^4
 \end{align*}
 \subsubsection*{23. $R(p, q) = \tan^{-1} (pq^2)$}
 \solution
 \begin{align*}
-    \frac{\partial R}{\partial p} &= \\
-    \frac{\partial R}{\partial q} &= 
+    \frac{\partial R}{\partial p} &= \displaystyle\frac{q^2}{1+(pq^2)^2} = \displaystyle\frac{q^2}{1+p^2q^4} \\
+    \frac{\partial R}{\partial q} &= \displaystyle\frac{2pq}{1+p^2q^4}
 \end{align*}
 \subsubsection*{25. $F(x,y) = \int_y^x \cos (e^t) dt$}
 \solution
 \begin{align*}
-    \frac{\partial F}{\partial x} &= \\
-    \frac{\partial F}{\partial y} &=
+    \intertext{First we need to resolve the integral,}
+    F(x,y) &= \int_y^x \cos (e^t) dt \\
+           &= \sin (e^x) - \sin (e^y) \\
+    \intertext{So our rewritten function would be,}
+    F(x,y) &= \sin (e^x) - \sin (e^y) \\\\
+    \frac{\partial F}{\partial x} &= \cos (e^x) \\
+    \frac{\partial F}{\partial y} &= -\cos (e^y) 
 \end{align*}
 \subsection*{37. Find the indicated partial derivative.}
 \[
     R(s,t) = te^{s/t}; \qquad R_t (0,1)
 \]
+\solution
+\begin{align*}
+    R_t(s,t) &= t\cdot\left(-\displaystyle\frac s {t^2} e^{s/t}\right) + e^{s/t} \\
+             &= -\displaystyle\frac{st}{t^2}e^{s/t} + e^{s/t} = e^{s/t} \left( 1 - \frac s t\right) \\
+    R_t(0,1) &= e^{0/1}(1-\frac 0 1) = 1(1) = 1
+\end{align*}
 \subsection*{41 \& 43}
 Use implicit differentiation to find $\partial z / \partial x$ and $\partial z / \partial y$
-\subsubsection*{41. $x^2 + 2y^2 + 3x^2 = 1$}
+\subsubsection*{41. $x^2 + 2y^2 + 3z^2 = 1$}
+\solution
+\begin{align*}
+    \frac d {dx} (x^2+2y^2+3z^2) &= \frac d {dx} (1) \\
+    2xdx + 6zdz = 0 &\rr \frac{dz}{dx} = -\frac x {3z} \\
+    \frac d {dy} (x^2+2y^2+3z^2) &= \frac d {dy} (1) \\
+    4ydy + 6zdz = 0 &\rr \frac{dz}{dy} = -\frac{2y}{3z} 
+\end{align*}
 \subsubsection*{43. $e^z = xyz$}
+\solution
+\begin{align*}
+    \frac d {dx} e^z = \frac d {dx} (xyz) &\rr e^z \frac{dz}{dx} = yz + xy\frac{dz}{dx} \\
+    (e^x - xy)\frac{dz}{dx} &= yz \\
+    \frac{dz}{dx} &= \frac{yz}{e^x-xy} \\
+\end{align*}
+\begin{align*}
+    \frac d {dy} e^z = \frac d {dy} (xyz) &\rr e^z \frac{dz}{dy} = xz + xy\frac{dz}{dy} \\
+    (e^x - xz)\frac{dz}{dy} &= xz \\
+    \frac{dz}{dy} &= \frac{xz}{e^x-xy} \\
+\end{align*}
+
 \subsection*{45. Find $\partial z / \partial x$ and $\partial z / \partial y$.}
 \[
     (a)\; z = f(x) + g(y); \qquad (b)\; z = f(x + y) 
 \]
+\solution
+\begin{align*}
+    \intertext{\textit a)}
+    \frac{\partial z}{\partial x} &= f'(x) \\
+    \frac{\partial z}{\partial y} &= g'(y) 
+    \intertext{\textit b)}
+    \frac{\partial z}{\partial x} &= f'(x+y) \\
+    \frac{\partial z}{\partial y} &= f'(x+y)
+\end{align*}
 \subsection*{47. Find all the second partial derivatives.}
 \[
-    f(x,y) = x^4y - 2x^3y^2
+f(x,y) = x^4y - 2x^3y^2
 \]
+\solution
+\begin{align*}
+    f_x = 4x^3y - 6x^2y^2 &\rr f_y = x^4 -4x^3y \\\\
+    f_{xx} = 12x^2y - 12xy^2 ,&\qquad f_{yy} = -4x^3 \\
+    f_{xy} = 4x^3 -12x^2y ,&\qquad f_{yx} = 4x^3 -12x^2y
+\end{align*}
 \subsection*{57 - 61 (odd)}
 Find the indicated partial derivative(s).
 \subsubsection*{57. $f(x,y) = x^4y^2 - x^3y;\quad f_{xxx},\: f_{xyx}$}
+\solution
+\begin{align*}
+    f_x &= 4x^3y^2 - 3x^2y \\
+    f_{xx} &= 12x^2y^2 - 6xy \\
+    f_{xxx} &= 24xy^2 - 6y \\\\
+    f_{xy} &= 8x^3y - 3x^2 \\
+    f_{xyx} &= 24xy - 6x 
+\end{align*}
 \subsubsection*{59. $f(x,y,z) = e^{xyz^2}; \quad f_{xyz}$}
+\solution
+\begin{align*}
+    f_x &= yz^2e^{xyz^2} \\
+    f_{xy} &= z^2e^{xyz^2} + yz^2\cdot xz^3r^{xyz^2} = z^2e^{xyz^2} + xyz^4e^{xyz^2} \\
+    f_{xyz} &= [2ze^{xyz^2} + 2xyz^3e^{xyz^2}] + [4xyz^3e^{xyz^2} + 2x^2y^2z^5e^{xyz^2}] \quad [\text{product rule x2}] \\
+            &= e^{xyz^2}(2z+2xyz^3) + e^{xyz^2}(4xyz^3 + 2x^2y^2z^5) \\
+            &= e^{xyz^2}(2x^2y^2z^5 + 6xyz^3 + 2z)
+\end{align*}
 \subsubsection*{61. $W = \sqrt{u + v^2}; \quad \displaystyle\frac{\partial^3 W}{\partial u^2 \partial v}$}
+\solution
+\begin{align*}
+    W_u &= \frac{1}{2}(u+v^2)^{-1/2} \\
+    W_{uu} &= -\frac 1 4 (u+v^2)^{-3/2} \\
+    W_{uuv} &= \frac 3 8 (u+v^2)^{-5/2} \cdot 2v = \frac 3 4 v (u+v^2)^{-5/2}
+\end{align*}
 \newpage
 \begin{center}
-    \section*{\underline{Section 4: Tangent Planes and Linear Approximations}}
+\section*{\underline{Section 4: Tangent Planes and Linear Approximations}}
 \end{center}
 \subsection*{1. The graph of a function $f$ is shown. Find an equation of the tangent plane to the surface $z = f(x,y)$ at the specified point}
+\centerline{$f(x,y) = 16 - x^2 - y^2$}
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{figures/3.jpg}
+    \end{center}
+\end{figure}
+\solution 
+\begin{align*}
+    \intertext{Let the graph of a surface $z = f(z,y)$ at the point $P(x_0, y_0, z_0)$ be}
+    z - z_0 &= f_x(x_0, y_0)(x-x_0) + f_y(x_0, y_0)(y-y_0)
+    \intertext{Then, if $P(2,2,8)$} 
+    f_x = -2x &\rr f_x(x_0, y_0, z_0) = -4 \\
+    f_y = -2y &\rr f_y(x_0, y_0, z_0) = -4 \\
+    z - 8 &= -4(x-2)-4(y-2) \\
+    z &= -4x -4y + 24
+\end{align*}
 \subsection*{3 - 9 (odd)}
 Find an equation of the tangent plane to the given surface at the specified point.
-\subsubsection*{3. $z = 2x^2 + y^5 - 5y, \quad (1, 2, -4)$}
+\subsubsection*{3. $z = 2x^2 + y^2 - 5y, \quad (1, 2, -4)$}
+\solution 
 \subsubsection*{5. $z = e^{x-y},\quad (2,2,1)$}
+\solution 
 \subsubsection*{7. $z = 2\sqrt y / x,\quad (-1,1,-2)$}
+\solution 
 \subsubsection*{9. $z = x\sin (x+y),\quad (-1, 1, 0)$}
+\solution
 \subsection*{15 - 19 odd}
 Explain why the function is differentiable at the given point. Then find the linearization $L(x,y)$ of the function at that point.
 \subsubsection*{15. $f(x,y) = x^3y^2,\quad (-2,1)$}
