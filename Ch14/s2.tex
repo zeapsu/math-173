@@ -1,0 +1,85 @@
+\documentclass{article}
+	
+\usepackage[margin=1in]{geometry}		% For setting margins
+\usepackage{amsmath}				% For Math
+\usepackage[]{amssymb}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{fancyhdr}				% For fancy header/footer
+\usepackage{graphicx}				% For including figure/image
+\usepackage{cancel}					% To use the slash to cancel out stuff in work
+\usepackage{wasysym}                % For cent symbol
+\usepackage{pgfplots}
+\usepackage{gnuplottex}
+
+\pgfplotsset{width=7cm,compat=newest}
+\usepgfplotslibrary{fillbetween}
+
+% We will externalize the figures
+% \usepgfplotslibrary{external}
+% \tikzexternalize
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Set up fancy header/footer
+\pagestyle{fancy}
+\fancyhead[RO,R]{{\textbf{Andry Paez}}}
+\fancyhead[LO,L]{\textbf{Chapter 14}}
+\fancyhead[CO,C]{\textbf{Problem Set 2}}
+% \fancyhead[RO,R]{\today}
+\fancyfoot[LO,L]{}
+\fancyfoot[CO,C]{\thepage}
+\fancyfoot[RO,R]{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\hmwkTitle}{Chapter 14 - Problem Set 2}
+% \newcommand{\hmwkDueDate}{February 12, 2014}
+\newcommand{\hmwkClass}{Calculus 3}
+% \newcommand{\hmwkClassTime}{}
+% \newcommand{\hmwkClassInstructor}{Professor Isaac Newton}
+\newcommand{\hmwkAuthorName}{\textbf{Andry Paez}}
+
+% math commands
+\newcommand{\ihat}{\;\hat{\textbf{\i}}}
+\newcommand{\jhat}{\;\hat{\textbf{\j}}}
+\newcommand{\khat}{\;\hat{\textbf{k}}}
+\newcommand{\rvec}{\vec{r}(t)}
+\newcommand{\drvec}{\vec{r}\;'(t)}
+\newcommand\vv[1]{\langle #1 \rangle}
+\newcommand\vc[2]{\vec{#1}(#2)}
+\newcommand\vcd[2]{\vec{#1}\;'(#2)}
+\newcommand\vcdd[2]{\vec{#1}\;''(#2)}
+\newcommand\vcddd[2]{\vec{#1}\;'''(#2)}
+\newcommand\mgv[1]{\|#1\|}
+\newcommand\mgvv[2]{\sqrt{\left(#1\right)^2 + \left(#2\right)^2}}
+\newcommand\mgvvv[3]{\sqrt{\left(#1\right)^2 + \left(#2\right)^2 + \left(#3\right)^2}}
+\newcommand\rr{\quad\Rightarrow\quad}
+\newcommand{\limit}[4]{\lim_{(#1, #2) \to (#3, #4)}}
+\newcommand{\limi}[2]{\lim_{#1 \to #2}}
+\newcommand{\such}{\; | \;}
+\newcommand{\lh}{\overset{L'H}{=}}
+\newcommand{\solution}{\centerline{\textbf{Solution}}}
+% \newcommand{\par}[2]{\frac{\partial #1}{\partial #2}}
+%
+% Title Page
+%
+\title{
+    \vspace{3in}
+    \textmd{\textbf{\hmwkTitle}}\\
+    \vspace{0.5in}
+    \textmd{\textbf{\hmwkClass}}\\
+    % \normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate\ at 3:10pm}\\
+    % \vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+    \vspace{4in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{center}
+    \section*{\underline{Section 5: }}
+\end{center}
+\end{document}
