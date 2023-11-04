@@ -11,6 +11,7 @@
 \usepackage{wasysym}                % For cent symbol
 \usepackage{pgfplots}
 \usepackage{gnuplottex}
+\usepackage{mathtools}
 
 \pgfplotsset{width=7cm,compat=newest}
 \usepgfplotslibrary{fillbetween}
@@ -63,6 +64,8 @@
 \newcommand{\pp}[2]{\displaystyle\frac{\partial #1}{\partial #2}}
 \newcommand{\dd}[2]{\displaystyle\frac{d #1}{d #2}}
 \newcommand{\spc}{\vspace{1em}\hrule\vspace{1em}}
+\newcommand{\bp}[1]{\left(#1\right)}
+\newcommand{\bb}[1]{\left[#1\right]}
 %
 % Title Page
 %
@@ -89,46 +92,196 @@
 Use The Chain Rule to find $\dd z t$ or $\dd w t$. 
 \end{center}
 \subsubsection*{3. $z=xy^3-x^2y,\quad x=t^2+1,\quad y=t^2-1$}
+\solution 
+\begin{align*}
+    \dd z t &= \dd z x \bp{\dd x t} + \dd z y \bp{\dd y t} \\
+    \dd z t &= [y^3-2xy](2t) + [3xy^2-x^2](2t) \\
+    \Aboxed{\dd z t &= 2t[y^3 - 2xy + 3xy^2 - x^2]}
+\end{align*}
 \subsubsection*{5. $z=\sin x \cos y,\quad x =\sqrt t, \quad y = 1/t$}
+\solution
+\begin{align*}
+    \dd z t &= \dd z x \bp{\dd x t} + \dd z y \bp{\dd y t} \\
+    \dd z t &= [\cos x \cos y]\bp{\frac 1 2 t^{-\frac 1 2}} + [-\sin x \sin y]
+    \bp{-t^{-2}} \\
+    \Aboxed{\dd z t &= \frac 1 {2\sqrt t} \cos x \cos y + \frac 1 {t^2}\sin x \sin y}
+\end{align*}
 \subsubsection*{7. $w = xe^{y/z},\quad x=t^2,\quad y=1-t,\quad z=1+2t$}
-\spc
+\solution
+\begin{align*}
+    \dd w t &= \dd w x \bp{\dd x t} + \dd w y \bp{\dd y t} + \dd w z \bp{\dd z t} \\
+    \dd w t &= \bb{e^{y/z}}(2t) + \bb{\frac x z e^{y/z}}(-1) +
+    \bb{-\frac {xy}{z^2}e^{y/z}}(2) \\
+    \Aboxed{\dd w t &= e^{y/z}\bb{2t - \displaystyle\frac{x}{z} -
+    \displaystyle\frac{2xy}{z^2}}}
+\end{align*}
+\newpage
 \begin{center}
 \subsection*{\textit{11-15 (odd)}}
 Use the Chain Rule to find $\pp z s$ and $\pp z t$
 \end{center}
 \subsubsection*{11. $z=(x-y)^5,\quad x=s^2t,\quad y=st^2$}
+\solution 
+\begin{align*}
+    \pp z s &= \pp z x \bp{\pp x s} + \pp z y\bp{\pp y s} \\
+    \pp z s &= \bb{5(x-y)^4}(2st)+\bb{-5(x-y)^4}(t^2) \\
+    \Aboxed{\pp z s &= 5(x-y)^4\bb{2st-t^2}}
+\end{align*}
+\begin{align*}
+    \pp z t &= \pp z x \bp{\pp x t} + \pp z y \bp{\pp y t} \\
+    \pp z t &= \bb{5(x-y)^4}(s^2)+\bb{-5(x-y)^4}(2st) \\
+    \Aboxed{\pp z t &= 5(x-y)^4\bb{s^2-2st}}
+\end{align*}
 \subsubsection*{13. $z=\ln (3x+2y),\quad x=s\sin t,\quad y=t\cos s$}
+\solution 
+\begin{align*}
+    \pp z s &= \pp z x \bp{\pp x s} + \pp z y\bp{\pp y s} \\
+    \pp z s &= \bb{\displaystyle\frac{3}{3x+2y}}(\sin t) +
+    \bb{\displaystyle\frac{2}{3x+2y}}(-t\sin s) \\
+    \Aboxed{\pp z s &= \displaystyle\frac{3\sin t - 2t\sin s}{3x+2y}}
+\end{align*}
+\begin{align*}
+    \pp z t &= \pp z x \bp{\pp x t} + \pp z y \bp{\pp y t} \\
+    \pp z t &= \bb{\displaystyle\frac{3}{3x+2y}}(s\cos t) +
+    \bb{\displaystyle\frac{2}{3x+2y}}(\cos s) \\
+    \Aboxed{\pp z t &= \displaystyle\frac{3s\cos t + 2\cos s}{3x+2y}}
+\end{align*}
+\newpage
 \subsubsection*{15. $z=(\sin\theta)/r,\quad r=st,\quad\theta = s^2 + t^2$}
-\begin{center}
+\solution
+\begin{align*}
+    \pp z s &= \pp z r \bp{\pp r s} + \pp z \theta\bp{\pp \theta s} \\
+    \pp z s &= \bb{-\displaystyle\frac{\sin\theta}{r^2}}(t) +
+    \bb{\displaystyle\frac{\cos\theta}{r}}(2s) \\
+    \Aboxed{\pp z s &= -\displaystyle\frac{t\sin\theta}{r^2} +
+    \displaystyle\frac{2s\cos\theta}{r}}
+\end{align*}
+\begin{align*}
+    \pp z t &= \pp z r \bp{\pp r t} + \pp z \theta \bp{\pp \theta t} \\
+    \pp z t &=
+    \bb{-\displaystyle\frac{\sin\theta}{r^2}}(s)+\bb{\displaystyle\frac{\cos\theta}{r}}(2t)
+    \\
+    \Aboxed{\pp z t &= -\displaystyle\frac{s\sin\theta}{r^2}+
+    \displaystyle\frac{2t\cos\theta}{r}}
+\end{align*}
 \spc
+\begin{center}
 \subsection*{\textit{25-29 (odd)}}
 Use the Chain Rule to find the indicated partial derivatives.
 \end{center}
 \subsubsection*{
     25.
     $z = x^4 + x^2y,\quad x = s+2t-u,\quad y =stu^2$;\\\\
-    $\pp z s, \pp z t, \pp z u\quad \text{when}\;s=4,t=e,u=1$
+    $\pp z s, \pp z t, \pp z u\quad \text{when}\;s=4,t=2,u=1$
 }
+\solution
+\begin{align*}
+    \intertext{When $s = 4$, $t=2$, and $u=1$ $\rr$ $x=7$, $y=8$}
+    \pp z s &= \bb{4x^3 +2xy}(1) + \bb{x^2}(tu^2) = 4x^3 + 2xy + x^2tu^2 \\
+    \pp z s &= 4(7)^3 + 2(7)(8) + (7)^2(2)(1)^2 \\
+    \Aboxed{\pp z s &= 1582}
+\end{align*}
+\begin{align*}
+    \pp z t &= \bb{4x^3+2xy}(2)+\bb{x^2}(su^2) = 8x^3+4xy+x^2su^2 \\
+    \pp z t &= 8(7)^3+4(7)(8)+(7)^2(4)(1)^2 \\
+    \Aboxed{\pp z t &= 3164}
+\end{align*}
+\begin{align*}
+    \pp z u &= \bb{4x^3+2xy}(-1)+\bb{x^2}(2stu) = -4x^3-2xy+2x^2stu \\
+    \pp z u &= -4(7)^3-2(7)(8)+2(7)^2(4)(2)(1) \\
+    \Aboxed{\pp z u &= -700}
+\end{align*}
 \subsubsection*{27. 
-    $w = xy + yz +zx,\quad x = r\cos\theta,\quad y = r\cos\theta,\quad z =
+    $w = xy + yz +zx,\quad x = r\cos\theta,\quad y = r\sin\theta,\quad z =
     r\theta$;\\\\
     $\pp w r, \pp w \theta\quad \text{when}\;r=2,\theta = \pi/2$
 }
+\solution
+\begin{align*}
+    \intertext{When $r=2$ and $\theta=\pi/2$ $\rr$ $x=0$, $y=2$, $z=\pi$}
+    \pp w r &= [y+z](\cos\theta)+[x+z](\sin\theta)+[x+y](\theta) \\
+    \pp w r &= [2+\pi](0)+[0+\pi](1)+[0+2](\pi/2) = 0+\pi+\pi \\
+    \Aboxed{\pp w r &= 2\pi}
+\end{align*}
+\begin{align*}
+    \pp w \theta &= [y+z](-r\sin\theta)+[x+z](r\cos\theta)+[x+y](r) \\
+    \pp w \theta &= [2+\pi](-2\cdot 1)+[0+\pi](0)+[0+2](2) = -4 - 2\pi + 0 + 4
+    \\
+    \Aboxed{\pp w \theta &= -2\pi}
+\end{align*}
+\newpage
 \subsubsection*{29. 
     $N = \displaystyle\frac{p+q}{p+r},\quad p=u+vw,\quad q=v+uw,\quad
     r=w+uv$\;\\\\
     $\pp N u, \pp N v, \pp N w\quad \text{when}\; u=2,v=3,w=4$
 }
-\spc
+\solution
+\begin{align*}
+    \intertext{When $u=2$, $v=3$, and $w=4$ $\rr$ $p=14$, $q=11$, $r=10$}
+    \pp N u &=
+    \bb{\displaystyle\frac{(p+r)-(p+q)}{(p+r)^2}}(1)+\bb{\displaystyle\frac{1}{p+r}}(w)+\bb{-\displaystyle\frac{p+q}{(p+r)^2}}(v)
+    \\
+    \pp N u &=
+    \displaystyle\frac{r-q}{(p+r)^2}+\displaystyle\frac{w}{p+r}-\displaystyle\frac{v(p+q)}{(p+r)^2} \\
+    \pp N u &=
+    \displaystyle\frac{10-11}{(14+10)^2}+\displaystyle\frac{4}{14+10}-\displaystyle\frac{3(14+11)}{(14+10)^2} \\
+    \pp N u &= \displaystyle\frac{-1}{576}+\displaystyle\frac{4}{24}-\displaystyle\frac{75}{576} = \displaystyle\frac{-1+96-75}{576} = \displaystyle\frac{20}{576} \\
+    \Aboxed{\pp N u &= \displaystyle\frac{5}{144}}
+\end{align*}
+\begin{align*}
+    \pp N v &=
+    \bb{\displaystyle\frac{r-q}{(p+r)^2}}(w)+\bb{\displaystyle\frac{1}{p+r}}(1)+\bb{-\displaystyle\frac{p+q}{(p+r)^2}}(u)
+    \\
+    \pp N v &=
+    \displaystyle\frac{w(r-q)}{(p+r)^2}+\displaystyle\frac{1}{p+r}-\displaystyle\frac{u(p+q)}{(p+r)^2} \\
+    \pp N v &=
+    \displaystyle\frac{4(10-11)}{(14+10)^2}+\displaystyle\frac{1}{14+10}-\displaystyle\frac{2(14+11)}{(14+10)^2} \\
+    \pp N v &= \displaystyle\frac{-4}{576}+\displaystyle\frac{1}{24}-\displaystyle\frac{50}{576}
+            = \displaystyle\frac{-4+24-50}{576}=\displaystyle\frac{-30}{576} \\
+    \Aboxed{\pp N v &= -\displaystyle\frac{5}{96}}
+\end{align*}
+\begin{align*}
+    \pp N w &=
+    \bb{\displaystyle\frac{r-q}{(p+r)^2}}(v)+\bb{\displaystyle\frac{1}{p+r}}(u)+\bb{-\displaystyle\frac{p+q}{(p+r)^2}}(1) \\
+    \pp N w &=
+    \displaystyle\frac{v(r-q)}{(p+r)^2}+\displaystyle\frac{u}{p+r}-\displaystyle\frac{p+q}{(p+r)^2} \\
+    \pp N w &=
+    \displaystyle\frac{3(10-11)}{(14+10)^2}+\displaystyle\frac{2}{(14+10)}-\displaystyle\frac{14+11}{(14+10)^2}
+    \\
+    \pp N w &=
+    \displaystyle\frac{-3}{576}+\displaystyle\frac{2}{24}-\displaystyle\frac{25}{576} = \displaystyle\frac{-3+48-25}{576}=\displaystyle\frac{20}{576} \\
+    \Aboxed{\pp N w &= \displaystyle\frac{5}{144}}
+\end{align*}
+\newpage
 \begin{center}
     Use Equation 5 to find $\dd y x$ 
 \end{center}
 \subsubsection*{31. $y\cos x = x^2 + y^2$}
+\solution 
+\begin{align*}
+    \dd y x &= -\displaystyle\frac{\pp F x}{\pp F y} = -\displaystyle\frac{F_x}{F_y}\\
+    \intertext{Let $F &= y\cos x -x^2 - y^2$}
+    F_x &= -y\sin x -2x \\
+    F_y &= \cos x -2y \\
+    \Aboxed{\dd y x = -\displaystyle\frac{F_x}{F_y} &=
+    -\displaystyle\frac{(-y\sin x -2x)}{\cos x -2y} = \displaystyle\frac{2x+y\sin
+x}{\cos x -2y}}
+\end{align*}
 \spc
 \begin{center}
     Use Equations 6 to find $\pp z x$ and $\pp z y$ 
 \end{center}
 \subsubsection*{35. $x^2+2y^2+3z^2=1$}
+\solution
+\begin{align*}
+    \pp z x = -\displaystyle\frac{F_x}{F_z} &\quad\quad \pp z y = -\displaystyle\frac{F_y}{F_z} \\
+    \intertext{Let $F = x^2+&2y^2+3z^2-1$}
+    F_x = 2x \quad\quad &F_y = 4y \quad\quad F_z = 6z \\
+    \Aboxed{\pp z x = -\displaystyle\frac{F_x}{F_z} &=
+    -\displaystyle\frac{2x}{6z} = -\displaystyle\frac{x}{3z}} \\
+    \Aboxed{\pp z y = -\displaystyle\frac{F_y}{F_z} &=
+    -\displaystyle\frac{4y}{6z} = -\displaystyle\frac{2y}{3z}} \\
+\end{align*}
 \newpage
 \begin{center}
     \section*{\underline{Section 6: Directional Derivatives and the Gradient
