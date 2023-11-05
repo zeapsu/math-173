@@ -292,42 +292,159 @@ x}{\cos x -2y}}
     Find the directional derivative of $f$ at the given point in the direction
     indicated by the angle $\theta$.
 \end{center}
-\subsubsection*{5. $f(x,y)=xy^3-x^2,\quad(1,2),\quad \theta=\pi / 3$}
-\subsubsection*{7. $f(x,y)=arctan(xy),\quad(2,-3),\quad\theta = 3\pi /4$}
-\spc 
+\subsubsection*{5. $f(x,y)=y\cos(xy),\quad(0,1),\quad \theta=\pi / 4$}
+\solution 
 \begin{align*}
+    D_u f(x,y) &= f_x(x,y) \cos\theta + f_y(x,y) \sin\theta \\
+    D_u f(x,y) &= \bb{-y^2\sin(xy)}\cos\frac \pi 4 + \bb{\cos(xy) -
+    xy\sin(xy)}\sin\frac \pi 4 \\
+    D_u f(x,y) &= \displaystyle\frac{\sqrt 2}{2}\bb{-y^2\sin(xy) +
+    \cos(xy)-xy\sin(xy)} \\
+    D_u f(0,1) &= \displaystyle\frac{\sqrt 2 }{2} \bb{0 + 1 - 0} \\
+    \Aboxed{D_u f(0,1) &= \displaystyle\frac{\sqrt 2}{2}}
+\end{align*}
+\subsubsection*{7. $f(x,y)=arctan(xy),\quad(2,-3),\quad\theta = 3\pi /4$}
+\solution
+\begin{align*}
+    D_u f(x,y) &= f_x(x,y) \cos\theta + f_y(x,y) \sin\theta \\
+    D_u f(x,y) &= \bb{\displaystyle\frac{y}{1+(xy)^2}}\cos\frac {3\pi} 4 +
+    \bb{\displaystyle\frac{x}{1+(xy)^2}}\sin\frac {3\pi} 4 \\
+    D_u f(x,y) &= \frac {\sqrt 2} 2 \bb{\displaystyle\frac{x}{1+(xy)^2} -
+    \displaystyle\frac{y}{1+(xy)^2}} \\
+    D_u f(2,-3) &= \frac {\sqrt 2} 2 \bb{\displaystyle\frac{2}{1+(2(-3))^2} - \displaystyle\frac{-3}{1+(2(-3))^2}} \\
+    D_u f(2,-3) &= \frac {\sqrt 2} 2 \bb{\displaystyle\frac{5}{37}} \\
+    \Aboxed{D_u f(2,-3) &= \displaystyle\frac{5\sqrt 2}{74}}
+\end{align*}
+\newpage
+\begin{center}
+    \subsection*{\textit{9}} 
+\end{center}
+\begin{align*}
+    &f(x,y)=x/y,\quad P(2,1),\quad \vec u = \frac{3}{5}\ihat + \frac 4 5 \jhat \\
     &\text{(a) Find the gradient of $f$} \\ 
     &\text{(b) Evaluate the gradient at the point $P$} \\
     &\text{(c) Find the rate of change of $f$ at $P$ in the direction of the vector
     $\vec u$}
 \end{align*}
-\subsubsection*{9. $f(x,y)=x/y,\quad P(2,1),\quad \vec u = \frac{3}{5}\ihat +
-\frac 4 5 \jhat$}
-\spc 
+\solution 
+\begin{align*}
+    \intertext{(a)} 
+    \nabla f(x,y) &= \vv{f_x(x,y), f_y(x,y)}\quad\text{&or}\quad \pp f x \ihat +
+    \pp f y \jhat  \\
+    \Aboxed{\nabla f(x,y) &= \vv{\frac 1 y, -\frac x {y^2}}} \\
+    \intertext{(b)} 
+    \Aboxed{\nabla f(2,1) &= \vv{\frac 1 1, -\frac 2 {1^2}} = \vv{1, -2}}
+    \intertext{(c)}
+    D_u f(x,y) &= \nabla f(x,y) \cdot \vec u \\
+    D_u f(2,1) &= \nabla f(2,1) \cdot \vec u \\ 
+    D_u f(2,1) &= \vv{1, -2} \cdot \vv{\frac 3 5, \frac 4 5} \\
+    D_u f(2,1) &= \frac 3 5 - \frac 8 5 \\
+    \Aboxed{D_u f(2,1) &= -1}
+\end{align*}
+\newpage 
 \begin{center}
     \subsection*{\textit{13, 15}} 
     Find the directional derivative of the function at the given point in the
     direction of the vector $\vec v$.
 \end{center}
 \subsubsection*{13. $f(x,y)=e^x\sin y,\quad (0,\pi /3),\quad \vec v = \vv{-6, 8}$}
+\solution 
+\begin{align*}
+    \vec u &= \displaystyle\frac{\vec v}{\mgv{\vec v}} = \displaystyle\frac{-6\ihat+8\jhat}{\mgvv{6}{8}} \\
+    \vec u &= -\frac {3}{5}\ihat + \frac 4 5\jhat \\
+    D_u f(x,y) &= \nabla f(x,y) \cdot \vec u \\
+    D_u f(x,y) &= \bp{e^x\sin y\ihat + e^x\cos y\jhat} \cdot \bp{-\frac 3 5\ihat
+    + \frac 4 5 \jhat}\\
+    D_u f(x,y) &= -\displaystyle\frac{3e^x\sin y}{5} +
+    \displaystyle\frac{4e^x\cos y}{5}\\
+    D_u f(0,\frac \pi 3) &= -\displaystyle\frac{3(\frac {\sqrt 3} 2)}{5} +
+    \displaystyle\frac{4(\frac 1 2)}{5}\\
+    \Aboxed{D_u f(0,\frac \pi 3) &= \displaystyle\frac{4-3\sqrt 3}{10}}\\
+\end{align*}
 \subsubsection*{15. $g(s,t)= s\sqrt t,\quad(2,4),\quad \vec v = 2\ihat - \jhat$}
-\spc
+\solution 
+\begin{align*}
+    \vec u &= \frac{\vec v}{\mgv{\vec v}} = \frac{2\ihat-\jhat}{\mgvv{2}{-1}} \\ 
+    \vec u &= \frac 2 {\sqrt 5}\ihat - \frac 1 {\sqrt 5}\jhat \\
+    D_u g(s,t) &= \nabla g(s,t) \cdot \vec u \\
+    D_u g(s,t) &= \bp{\sqrt t\ihat + \frac{s}{2\sqrt t}}\cdot\bp{\frac 2 {\sqrt 5}\ihat - \frac 1 {\sqrt 5}\jhat} \\
+    D_u g(s,t) &= \displaystyle\frac{2\sqrt t}{\sqrt 5} -
+    \displaystyle\frac{s}{2\sqrt t \sqrt 5} \\
+    D_u g(s,t) &= \frac 1 {\sqrt 5} \bp{2\sqrt t - \frac s {2\sqrt t}} \\
+    D_u g(2,4) &= \frac1 {\sqrt 5}\bp{2\sqrt 4 - \frac 2 {2\sqrt 4}} = \frac 1
+    {\sqrt 5}\bp{4 - \frac 1 2} \\
+    \Aboxed{D_u g(2,4) &= \frac 1 {\sqrt 5} \bp{\frac {8-1}{2}} = \frac 7 {2\sqrt 5}}
+\end{align*}
+\newpage
 \begin{center}
     \subsection*{\textit{21, 23}} 
     Find the directional derivative of the function at the point $P$ in the
     direction of the point $Q$.
 \end{center}
 \subsubsection*{21. $f(x,y) = x^2y^2-y^3,\quad P(1,2), \quad Q(-3,5)$}
+\solution
+\begin{align*}
+    \vec v &= \vec {PQ} = \vv{-3-1, 5-2} = \vv{-4, 3} \\
+    \vec u &= \frac {\vec v}{\mgv{v}} = \displaystyle\frac{\vv{-4,
+    3}}{\sqrt{16+9}} \\
+    \vec u &= \vv{-\frac 4 5, \frac 3 5} \\
+    D_u f(x,y) &= \nabla f(x,y) \cdot \vec u \\
+    D_u f(x,y) &= \vv{2xy^2, 2x^2y-3y^2}\;\cdot\;\vv{-\frac 4 5, \frac 3 5} \\
+    D_u f(x,y) &= -\displaystyle\frac{8xy^2}{5} +
+    \displaystyle\frac{3(2x^2y-3y^2)}{5} = \frac 1 5(-8xy^2+6x^2y-9y^2) \\
+    D_u f(1,2) &= \frac 1 5[-8(1)(4) + 6(1)(2)-9(4)] = \frac 1 5[-32 + 12 - 36] \\
+    \Aboxed{D_u f(1,2) &= -\frac{56}{5}}
+\end{align*}
 \subsubsection*{23. $f(x,y) = \sqrt{xy},\quad P(2,8),\quad Q(5,4)$}
-\spc 
+\solution
+\begin{align*}
+    \vec v &= \vec {PQ} = (5-2)\ihat + (4-8)\jhat = 3\ihat - 4\jhat \\
+    \vec u &= \frac {\vec v}{\mgv{v}} = \displaystyle\frac{3\ihat -
+    4\jhat}{\sqrt{9 + 16}} \\
+    \vec u &= \frac 3 5\ihat - \frac 4 5\jhat \\
+    D_u f(x,y) &= \nabla f(x,y) \cdot \vec u \\
+    D_u f(x,y) &= 
+    \bp{\displaystyle\frac{y}{2\sqrt{xy}}\ihat+\displaystyle\frac{x}{2\sqrt{xy}}\jhat}
+    \cdot \bp{\frac 3 5\ihat - \frac 4 5\jhat} \\
+    D_u f(x,y) &= \displaystyle\frac{3y}{10\sqrt{xy}} -
+    \displaystyle\frac{4x}{10\sqrt{xy}} = \displaystyle\frac{3y-4x}{10\sqrt{xy}}
+    \\
+    D_u f(2,8) &= \frac{3(8)-4(2)}{10\sqrt{2(8)}} = \frac{24-8}{10\sqrt{16}} =
+    \frac {16}{40} \\
+    \Aboxed{D_u f(x,y) &= \frac 2 5}
+\end{align*}
+\newpage 
 \begin{center}
     \subsection*{\textit{27, 29}} 
     Find the maximum rate of change of $f$ at the given point and the direction
     in which it occurs.
 \end{center}
 \subsubsection*{27. $f(x,y) = 5xy^2,\quad (3,-2)$}
+\solution
+\begin{align*}
+    \intertext{The maximum rate of change of f and its direction is given by the
+    gradient vector}
+    \nabla f(x,y) &= \vv{f_x, f_y} = \vv{5y^2, 10xy} \\
+    \nabla f(3,-2) &= \vv{5(-2)^2, 10(3)(-2)} \\
+    \intertext{Direction of the maximum rate of change,}
+    \Aboxed{\nabla f(3,-2) &= \vv{20, -60} = 20\vv{1,-3}} \\
+    \intertext{Maximum rate of change,}
+    \Aboxed{\mgv{\nabla f(3,-2)} &= 20\sqrt{1 + 9} = 20\sqrt{10}}
+\end{align*}
 \subsubsection*{29. $f(x,y) = \sin (xy),\quad (1,0)$}
-\spc 
+\solution 
+\begin{align*}
+    \intertext{The maximum rate of change of f and its direction is given by the
+    gradient vector}
+    \nabla f(x,y) &= \pp f x\ihat + \pp f y\jhat = y\cos(xy)\ihat +
+    x\cos(xy)\jhat \\
+    \nabla f(1,0) &= 0 + \jhat \\
+    \intertext{Direction of the maximum rate of change,}
+    \Aboxed{\nabla f(1,0) &= \jhat} \\
+    \intertext{Maximum rate of change,}
+    \Aboxed{\mgv{\nabla f(1,0)} &= \sqrt 1 = 1}
+\end{align*}
+\newpage 
 \begin{center}
     \subsection*{\textit{37}} 
 \end{center}
@@ -340,15 +457,99 @@ temperature at the point $(1,2,2)$ is $120\degree$
 toward the point $(2,1,3)$. \\
 (b) Show that at any point in the ball the direction of greatest
 increase in temperature is given by a vector that points toward the origin
- \spc
+
+\solution 
+\begin{align*}
+    \intertext{Since $T \propto \frac 1 d$, $T(x,y,z) =
+    \displaystyle\frac{c}{\sqrt{x^2+y^2+z^2}}$, for some constant c, and Euclidean distance to describe the distance from the origin.}
+    \intertext{If $120 = T(1,2,2) = \displaystyle\frac c {\sqrt{1^2+2^2+2^2}} = \frac c 3$, then $c = 360$}
+    \intertext{$\therefore$ Our function for temperature is,}
+    T(x,y,z) &= \displaystyle\frac{360}{\sqrt{x^2+y^2+z^2}} \\
+    \intertext{(a)}
+    \vec v &= \vv{2-1, 1-2, 3-2} = \vv{1,-1,1} \\
+    \vec u &= \frac {\vec v}{\mgv{\vec v}} = \frac {\vv{1,-1,1}}{\sqrt{1+1+1}}
+    \\
+    \vec u &= \vv{\frac 1 {\sqrt 3}, -\frac 1 {\sqrt 3}, \frac 1 {\sqrt 3}} \\
+    \intertext{Getting our gradient vector,}
+    \nabla T(x,y,z) &= \vv{T_x, T_y, T_z} \\
+    \nabla T(x,y,z) = \vv{-180\cdot
+    2x(x^2+y^2+z^2)^{-3/2}&, -180\cdot 2y(x^2+y^2+z^2)^{-3/2}, -180\cdot 2z(x^2+y^2+z^2)^{-3/2}} \\
+    \nabla T(x,y,z) &= \displaystyle\frac{360}{(x^2+y^2+z^2)^{3/2}}\vv{-x,-y,-z}
+    \intertext{so, our rate of change is}
+    D_u T(1,2,2) &= \nabla T(1,2,2) \cdot \vec u \\
+    D_u T(1,2,2) &= \frac{360}{(1+4+4)^{3/2}}\vv{-1,-2,-2} \cdot \vv{\frac 1
+    {\sqrt 3}, -\frac 1 {\sqrt 3}, \frac 1 {\sqrt 3}} \\
+    D_u T(1,2,2) &= \frac {360}{27}\bp{-\frac 1 {\sqrt 3} + \frac 2 {\sqrt
+    3} - \frac 2 {\sqrt 3}} = \frac {360}{27}\bp{-\frac 1 {\sqrt 3}} \\
+    \Aboxed{D_u T(1,2,2) &= \frac {40} 3 \bp{-\frac 1 {\sqrt 3}}-\frac {40}{3\sqrt 3}} \\
+    \intertext{(b) The direction of greatest increase at any point is the
+    direction of $\nabla T$ at that point. In part (a) we saw that $\nabla
+    T(x,y,z)$ and $\vv{-x,-y,-z}$ have the same direction and the vector
+    $\vv{-x,-y,-z}$ points towards the origin.}
+\end{align*}
+\newpage
 \begin{center}
     \subsection*{\textit{47-51 (odd)}} 
     Find equations of (a) the tangent plane and (b) the normal line to the given
     surface at the specified point.
 \end{center}
 \subsubsection*{47. $2(x-2)^2 + (y-1)^2 + (z-3)^2 = 10,\quad (3,3,5)$}
+\solution 
+\begin{align*}
+    \intertext{(a)}
+    F(x,y,z) &= 2(x-2)^2 + (y-1)^2 + (z-3)^2 - 10 \\\\
+    F_x(3,3,5) &= 4(x-2)=2(2)=4 \\ 
+    F_y(3,3,5) &= 2(y-1)=2(2)=4 \\ 
+    F_z(3,3,5) &= 2(z-3)=2(2)=4 \\
+    \intertext{The equation of the tangent plane is given by,}
+    F_x(x_0,y_0,z_0)(x-x_0)&+F_y(x_0,y_0,z_0)(y-y_0)+F_z(x_0,y_0,z_0)(z-z_0)
+    \\\\
+    4(x-3)&+4(y-3)+4(z-5) = 0 \\
+    x-3 &+ y-3 + z-5 = 0 \\
+    \Aboxed{x &+ y + z = 11}
+    \intertext{(b) The equation of the normal line is given by,}
+    \displaystyle\frac{x-x_0}{F_x(x_0,y_0,z_0)} &= \displaystyle\frac{y-y_0}{F_y(x_0,y_0,z_0)} =\displaystyle\frac{z-z_0}{F_z(x_0,y_0,z_0)} \\\\
+    \frac {x-3} 4 &= \frac {y-2} 4 = \frac {z-3} 4 \\
+    \Aboxed{x-3&=y-2=z-3} \\
+\end{align*}
 \subsubsection*{49. $xy^2z^3=8,\quad (2,2,1)$}
+\solution
+\begin{align*}
+    \intertext{(a)}
+    F(x,y,z) &= xy^2z^3 - 8 \\\\
+    F_x(2,2,1) &= y^2z^3 = (4)(1) = 4 \\
+    F_y(2,2,1) &= 2xyz^3 = 2(2)(2)(1) = 8 \\
+    F_z(2,2,1) &= 3xy^2z^2 = 3(2)(4)(1) = 24 \\
+    \intertext{The equation of the tangent plane is given by,}
+    F_x(x_0,y_0,z_0)(x-x_0)&+F_y(x_0,y_0,z_0)(y-y_0)+F_z(x_0,y_0,z_0)(z-z_0)
+    \\\\
+    4(x-2)&+8(y-2) + 24(z-1) = 0 \\
+    x-2&+2(y-2) + 6(z-1) = 0 \\
+    x-2 &+ 2y-4 + 6z-6 = 0 \\
+    \Aboxed{x&+2y+6z=12}
+    \intertext{(b) The equation of the normal line is given by,}
+    \displaystyle\frac{x-x_0}{F_x(x_0,y_0,z_0)} &= \displaystyle\frac{y-y_0}{F_y(x_0,y_0,z_0)} =\displaystyle\frac{z-z_0}{F_z(x_0,y_0,z_0)} \\\\
+    \frac {x-2} 4 &= \frac {y-2} 8 = \frac {z-1}{24} \\
+    \Aboxed{x-2&=\frac {y-2} 2 =\frac {z-1} 6}
+\end{align*}
 \subsubsection*{51. $x+y+z=e^{xyz},\quad (0,0,1)$}
+\solution
+\begin{align*}
+    \intertext{(a)}
+    F(x,y,z) &= x + y + z - e^{xyz} \\\\
+    F_x(0,0,1) &= 1-yze^{xyz} = 1-0=1 \\
+    F_y(0,0,1) &= 1-xze^{xyz} = 1-0=1 \\
+    F_z(0,0,1) &= 1-xye^{xyz} = 1-0=1 \\
+    \intertext{The equation of the tangent plane is given by,}
+    F_x(x_0,y_0,z_0)(x-x_0)&+F_y(x_0,y_0,z_0)(y-y_0)+F_z(x_0,y_0,z_0)(z-z_0)
+    \\\\
+    1(x-0) &+ 1(y-0)+ 1(z-1) = 0 \\
+    \Aboxed{x &+ y + z = 1}
+    \intertext{(b) The equation of the normal line is given by,}
+    \displaystyle\frac{x-x_0}{F_x(x_0,y_0,z_0)} &= \displaystyle\frac{y-y_0}{F_y(x_0,y_0,z_0)} =\displaystyle\frac{z-z_0}{F_z(x_0,y_0,z_0)} \\\\
+    \frac {x-0} 1 &= \frac {y-0} 1 = \frac {z-1} 1 \\
+    \Aboxed{x&=y=z-1}
+\end{align*}
 \newpage
 \begin{center}
     \section*{\underline{Section 7: Maximum and Minimum Values}}
