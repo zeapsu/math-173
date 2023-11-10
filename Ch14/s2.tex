@@ -623,13 +623,14 @@ of the function.
         -8 & 0 \\
     \end{vmatrix} =0-64=-64 \\
 \end{align*}
-\intertext{$H_f(8,4) > 0$ and $f_{xx}=4>0$ so f(8,4) is a local minima} \\
-\intertext{$H_f(-2,-1) > 0$ and $f_{xx}=4>0$ so f(8,4) is a local minima} \\
+\intertext{$H_f(8,4) > 0$ and $f_{xx}(8,4)=4>0$ so f(8,4) is a local minima} \\
+\intertext{$H_f(-2,-1) > 0$ and $f_{xx}(-2,-1)=4>0$ so f(8,4) is a local minima} \\
 \intertext{$H_f(0,0)$ so f(8,4) is a saddle point} \\\\
-\intertext{\Aboxed{\text{Minima: }f(8,4=-128),\quad f(-2,-1)=3}} \\
+\intertext{\Aboxed{\text{Minima: }f(8,4)=-128,\quad f(-2,-1)=3}} \\
 \intertext{\Aboxed{\text{Saddle Point: }f(0,0)}}
 \subsubsection*{9. $f(x,y)=(x-y)(1-xy)$}
 \solution
+\vspace{1em}
 \[
     \nabla f(x,y) &= \vv{1-2xy+y^2,\; -x^2-1+2xy}
 \]
@@ -673,7 +674,81 @@ of the function.
 \intertext{\Aboxed{\text{Saddle Points: }f(-1, -1), f(1, 1)}}
 \subsubsection*{11. $f(x,y)=y\sqrt x -y^2-2x+7y$}
 \solution
+\vspace{1em}
+\[
+    \nabla f(x,y,z) = \vv{\frac {y}{2\sqrt x} - 2,\;\sqrt x -2y+7} 
+\]
+\intertext{Finding critical values,} 
+\begin{align*}
+    0 &= \frac 1 2 x^{-1/2} -2 \\
+    y &= 2(2x^{1/2}) \\
+    y &= 4x^{1/2}
+\end{align*}
+\begin{align*}
+    x^{1/2} - 2y + 7 &= 0 \\
+    x^{1/2} -2(4x^{1/2}) + 7 &= 0 \\
+    x^{1/2} -8x^{1/2}) + 7 &= 0 \\
+    -7x^{1/2} &= -7 \\
+    x = \sqrt 1 &= 1 \rr y = 4\sqrt 1 = 4
+\end{align*}
+\intertext{Critical point at (1, 4)} \\
+\[
+    f_{xx} = -\displaystyle\frac{y}{4x^{3/2}},\quad f_{yy} = -2,\quad
+    f_{xy} = \displaystyle\frac{1}{2\sqrt x}
+\]
+\begin{align*}
+    H_{f}(1,4) &= det\begin{vmatrix} 
+    -1 & \frac 1 2 \\\\
+    \frac 1 2 & -2 \\
+    \end{vmatrix} = 2 - \frac 1 4 = \frac 7 4
+\end{align*}
+\intertext{$H_f(1,4) > 0$ and $f_{xx}(1,4)=-1 < 0$ so f(1,4) is a local maximum}
+\\\\
+\intertext{\Aboxed{\text{Maximum: }f(1, 4) = 4}}
 \subsubsection*{13. $f(x,y)=x^3-3x+3xy^2$}
+\solution
+\vspace{1em}
+\[
+    \nabla f(x,y) = \vv{3x^2-3+3y^2,\;6xy}
+\]
+\intertext{Finding critical values,}
+\begin{align*}
+    0 &= 3x^2 - 3 + 3y^2 \\
+    3 &= 3x^2 + 3y^2 \\
+    1 &= x^2 + y^2 \\
+    x &= 0, \pm 1 \rr y = \pm 1, 0
+\end{align*}
+\intertext{Critical points at (0, 1), (0, -1), (1, 0), (-1, 0)}
+\[
+    f_{xx} = 6x,\quad f_{yy} = 6x,\quad f_{xy} = 6y
+\]
+\begin{align*}
+    H_f(0, 1) &= det\begin{vmatrix}
+    0 & 6 \\\\
+    6 & 0 \\
+    \end{vmatrix} = 0-36=-36 \\
+    H_f(0, -1) &= det\begin{vmatrix}
+    0 & -6 \\\\
+    -6 & 0 \\
+    \end{vmatrix} = 0-36=-36 \\
+    H_f(1, 0) &= det\begin{vmatrix}
+    6 & 0 \\\\
+    0 & 6 \\
+    \end{vmatrix} = 36-0=36 \\
+    H_f(-1, 0) &= det\begin{vmatrix}
+    -6 & 0 \\\\
+    0 & -6 \\
+    \end{vmatrix} = 36-0=36 \\
+\end{align*}
+\intertext{$H_f(0, \pm 1) < 0$ so f(0, $\pm$1) are saddle points}
+\\
+\intertext{$H_f(1,0) > 0$ and $f_{xx}(1,0)=6 > 0$ so f(1, 0) is a local minimum} 
+\\
+\intertext{$H_f(-1,0) > 0$ and $f_{xx}(-1,0)=-6 < 0$ so f(-1, 0) is a local maximum}
+\\\\
+\intertext{\Aboxed{\text{Maximum: }f(-1, 0) = 2}}\\
+\intertext{\Aboxed{\text{Minimum: }f(1, 0) =  -2}}\\
+\intertext{\Aboxed{\text{Saddle Points: }f(0,  \pm1)}}
 \subsubsection*{15. $f(x,y)=x^4 - 2x^2+y^3-3y$}
 \subsubsection*{17. $f(x,y)=xy-x^2y-xy^2$}
 \subsubsection*{19. $f(x,y)=e^x\cos y$}
