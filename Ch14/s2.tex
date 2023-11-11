@@ -47,7 +47,7 @@
 \newcommand{\khat}{\;\hat{\textbf{k}}}
 \newcommand{\rvec}{\vec{r}(t)}
 \newcommand{\drvec}{\vec{r}\;'(t)}
-\newcommand\vv[1]{\langle #1 \rangle}
+\newcommand\vv[1]{\left\langle #1 \right\rangle}
 \newcommand\vc[2]{\vec{#1}(#2)}
 \newcommand\vcd[2]{\vec{#1}\;'(#2)}
 \newcommand\vcdd[2]{\vec{#1}\;''(#2)}
@@ -66,6 +66,7 @@
 \newcommand{\spc}{\vspace{1em}\hrule\vspace{1em}}
 \newcommand{\bp}[1]{\left(#1\right)}
 \newcommand{\bb}[1]{\left[#1\right]}
+\newcommand{\also}{,\quad}
 %
 % Title Page
 %
@@ -625,7 +626,7 @@ of the function.
 \end{align*}
 \intertext{$H_f(8,4) > 0$ and $f_{xx}(8,4)=4>0$ so f(8,4) is a local minima} \\
 \intertext{$H_f(-2,-1) > 0$ and $f_{xx}(-2,-1)=4>0$ so f(8,4) is a local minima} \\
-\intertext{$H_f(0,0)$ so f(8,4) is a saddle point} \\\\
+\intertext{$H_f(0,0) < 0$ so f(8,4) is a saddle point} \\\\
 \intertext{\Aboxed{\text{Minima: }f(8,4)=-128,\quad f(-2,-1)=3}} \\
 \intertext{\Aboxed{\text{Saddle Point: }f(0,0)}}
 \subsubsection*{9. $f(x,y)=(x-y)(1-xy)$}
@@ -671,7 +672,7 @@ of the function.
 \end{align*}
 \intertext{$H_f(-1,-1)$ and $H_f(1,1)$ are both $<$ 0, so they are saddle points.} 
 \\\\
-\intertext{\Aboxed{\text{Saddle Points: }f(-1, -1), f(1, 1)}}
+\intertext{\Aboxed{\text{Saddle Points: }f(-1, -1),\quad f(1, 1)}}
 \subsubsection*{11. $f(x,y)=y\sqrt x -y^2-2x+7y$}
 \solution
 \vspace{1em}
@@ -750,9 +751,182 @@ of the function.
 \intertext{\Aboxed{\text{Minimum: }f(1, 0) =  -2}}\\
 \intertext{\Aboxed{\text{Saddle Points: }f(0,  \pm1)}}
 \subsubsection*{15. $f(x,y)=x^4 - 2x^2+y^3-3y$}
+\solution 
+\vspace{1em}
+\[
+    \nabla f(x,y) = \vv{4x^3-4x,\; 3y^2-3}
+\]
+\intertext{Finding critical values,}
+\begin{align*}
+    0 &= 4x^3-4x \\
+    0 &= 4x(x^2-1) \\
+    0 &= 4x(x-1)(x+1) \\
+    x &= 0, \pm 1
+\end{align*}
+\begin{align*}
+    0&=3y^2-3\\
+    y^2&=1\\
+    y&=\pm 1\\
+\end{align*}
+\intertext{Critical points at (0, $\pm$1), ($\pm$ 1, $\pm$1)}
+\[
+    f_{xx} = 12x^2-4,\quad f_{yy} = 6y,\quad f_{xy} = 0
+\]
+\begin{align*}
+    H_f(0, \pm 1) &= det\begin{vmatrix}
+    -4 & 0 \\\\
+    0 & 6,-6 \\
+\end{vmatrix} = -24 - 0 = -24,\qquad 24-0 = 24\\
+    H_f(1, \pm 1) &= det\begin{vmatrix}
+    8 & 0 \\\\
+    0 & 6,-6 \\
+\end{vmatrix} = 48 - 0 = 48,\qquad -48-0 = -48\\
+    H_f(-1, \pm 1) &= det\begin{vmatrix}
+    8 & 0 \\\\
+    0 & 6,-6 \\
+\end{vmatrix} = 48 - 0 = 48,\qquad -48-0 = -48\\
+\end{align*}
+\intertext{$H_f(0, 1) < 0$ so f(0, 1) is a saddle point}
+\\
+\intertext{$H_f(0,-1) > 0$ and $f_{xx}(0,-1)=-4 < 0$ so f(0, -1) is a local maximum} 
+\\
+\intertext{$H_f(1,1) > 0$ and $f_{xx}(1,1)=8 > 0$ so f(1, 1) is a local minimum} 
+\\
+\intertext{$H_f(1, -1) < 0$ so f(1, -1) is a saddle point}
+\\
+\intertext{$H_f(-1,1) > 0$ and $f_{xx}(-1,1)=8 > 0$ so f(-1, 1) is a local minimum} 
+\\
+\intertext{$H_f(-1, -1) < 0$ so f(-1, -1) is a saddle point}
+\\\\
+\intertext{\Aboxed{\text{Maximum: }f(0, -1) = 2}} \\
+\intertext{\Aboxed{\text{Minima: }f(\pm 1, 1) =  -3}}\\
+\intertext{\Aboxed{\text{Saddle Points: }f(0, 1),\quad f(\pm 1, -1)}} 
 \subsubsection*{17. $f(x,y)=xy-x^2y-xy^2$}
+\solution 
+\vspace{1em}
+\[
+    \nabla f(x,y) = \vv{y-2xy-y^2,\;x-x^2-2xy}
+\]
+\intertext{Finding critical values,}
+\begin{align*}
+    0 &= y-2xy-y^2 \\
+    0 &= y(1-2x-y) \\
+    y &= 0 \also 0 = 1-2x-y \\
+    y &= 1 - 2x \\
+\end{align*}
+\begin{align*}
+    0 &= x-x^2-2xy \\
+    0 &= x-x^2-2x(1-2x) \\
+    0 &= x-x^2-2x-4x^2 \\
+    0 &= 3x^2 - x \\
+    0 &= x(3x - 1) \\
+    x &= 0 \also 0 = 3x - 1 \\
+    x &= \frac 1 3
+\end{align*}
+\begin{align*}
+    y &= 1 - 2x = 1 - 2\bp{\frac 1 3} = \frac 1 3\qquad \bb{\text{when x = $\frac 1
+    3$}} \\
+    y &= 1 - 2x = 1 - 2\bp{0} = 1 \qquad \bb{\text{when x = 0}}\\
+\end{align*}
+\intertext{Critical points at (0, 0), ($\frac 1 3$, $\frac 1 3$), (0, 1)}
+\[
+    f_{xx}=-2y\also f_{yy}=-2x\also f_{xy}=1-2x - 2y
+\]
+\begin{align*}
+    H_f(0, 0) &= det\begin{vmatrix}
+    0 & 1 \\\\
+    1 & 0 \\
+\end{vmatrix} = 0 - 1 = -1 \\
+    H_f(0, 1) &= det\begin{vmatrix}
+    -2 & -1 \\\\
+    -1 & 0 \\
+\end{vmatrix} = 0 - 1 = -1 \\
+    H_f\bp{\frac 1 3, \frac 1 3} &= det\begin{vmatrix}
+    -\frac 2 3  & -\frac 1 3 \\\\
+    -\frac 1 3 & -\frac 2 3 \\
+\end{vmatrix} = \frac 4 9 - \frac 1 9 = \frac 3 9 \\
+\end{align*}
+\intertext{$H_f(0, 0)$ and $H_f(0,1) < 0$ so f(0, 0) and f(0, 1) are a saddle points}
+\\
+\intertext{$H_f\bp{\frac 1 3, \frac 1 3} > 0$ and $f_{xx}\bp{\frac 1 3, \frac 1 3}= -\frac 2 3 < 0$ so f$\bp{\frac 1 3, \frac 1 3}$ is a local maximum} 
+\\\\
+\intertext{\Aboxed{\text{Maximum: }f\bp{\frac 1 3, \frac 1 3} = \frac 1 {27}}} \\
+\intertext{\Aboxed{\text{Saddle Points: }f(0, 0)\also f(0, 1)}} 
 \subsubsection*{19. $f(x,y)=e^x\cos y$}
+\solution
+\vspace{1em}
+\[
+    \nabla f(x,y) = \vv{e^x\cos y,\; -e^x\sin y}
+\]
+\intertext{Finding critical values,}
+\begin{align*}
+    0 &= e^x\cos y \\
+    0 &= -e^x\sin y \\
+\end{align*}
+\intertext{There is no value x that satisfies both $f_x = 0$ and $f_y = 0$,}
+\vspace{0.5em}
+\\
+\intertext{\Aboxed{\therefore\text{There are no critical points or saddle points}}} 
 \subsubsection*{21. $f(x,y)=y^2-2y\cos x,\quad -1 \leq x \leq 7$}
+\solution
+\vspace{1em}
+\[
+    \nabla f(x,y) = \vv{2y\sin x,\; 2y-2\cos x}
+\]
+\intertext{Finding critical values,}
+\begin{align*}
+    0 &= 2y\sin x \\
+    y &= 0\also x = 0, \pi, 2\pi
+\end{align*}
+\begin{align*}
+    0 &= 2y - 2\cos x  \qquad[\text{y = 0}] \\
+    0 &= - 2\cos x \\
+    x &= \frac \pi 2\also \frac {3\pi} 2 \\\\
+    0 &= 2y - 2\cos x  \qquad[\text{x = 0}] \\
+    0 &= 2y - 2 \\
+    y &= 1 \\\\
+    0 &= 2y - 2\cos x  \qquad[\text{x = $\pi$}] \\
+    0 &= 2y + 2 \\
+    y &= -1 \\\\
+    0 &= 2y - 2\cos x  \qquad[\text{x = 2$\pi$}] \\
+    0 &= 2y - 2 \\
+    y &= 1
+\end{align*}
+\intertext{Critical points at ($\frac \pi 2$, 0), ($\frac {3\pi} 2$, 0), (0, 1), ($\pi$, -1), ($2\pi$, 1)
+\[
+    f_{xx}= 2y\cos x\also f_{yy} = 2\also f_{xy} = 2\sin x
+\]
+\begin{align*}
+    H_f\bp{\frac \pi 2, 0} &= det\begin{vmatrix}
+    0 & 2 \\\\
+    2 & 2 \\
+\end{vmatrix} = 0 - 4 = -4 \\
+        H_f\bp{\frac {3\pi} 2, 0} &= det\begin{vmatrix}
+    0 & -2 \\\\
+    -2 & 2 \\
+\end{vmatrix} = 0 - 4= -4 \\
+    H_f(0, 1) &= det\begin{vmatrix}
+    2 & 0 \\\\
+    0 & 2 \\
+\end{vmatrix} = 4 - 0 = 4 \\
+    H_f\bp{\pi, -1} &= det\begin{vmatrix}
+    2 & 0 \\\\
+    0 & 2 \\
+\end{vmatrix} = 4 - 0 = 4 \\
+    H_f\bp{2\pi, 1} &= det\begin{vmatrix}
+    2 & 0 \\\\
+    0 & 2 \\
+\end{vmatrix} = 4 - 0 = 4 \\
+\end{align*}
+\intertext{$H_f(\frac {\pi} 2, 0)$ and $H_f(\frac {3\pi} 2, 0) < 0$ so f($\frac \pi 2$, 0) and f($\frac {3\pi} 2$, 0) are a saddle points}
+\\
+\intertext{$H_f\bp{0, 1} > 0$ and $f_{xx}\bp{0, 1}= 2 > 0$ so f$\bp{0, 1}$ is a local minimum} \\
+\intertext{$H_f\bp{\pi, -1} > 0$ and $f_{xx}\bp{\pi, -1}= 2 > 0$ so f$\bp{\pi, -1}$ is a local minimum} \\
+\intertext{$H_f\bp{2\pi, 1} > 0$ and $f_{xx}\bp{2\pi, 1}= 2 > 0$ so f$\bp{2\pi, 1}$ is a local minimum} 
+\\\\
+\intertext{\Aboxed{\text{Minima }f(0,1)=f(\pi,-1)=f(2\pi,1)=-1} \\
+\intertext{\Aboxed{\text{Saddle Points: }f\bp{\frac \pi 2, 0}\also f\bp{\frac
+{3\pi} 2, 0}}} 
 \spc
 \begin{center}
     \subsection*{\textit{33-39 (odd)}} 
@@ -760,9 +934,44 @@ of the function.
 \end{center}
 \subsubsection*{33. $f(x,y) = x^2+y^2-2x,\quad$}
 $D$ is the closed triangular
-region with vertices $(2,0)$, $(0,2)$, and $(0,-2)$
+region with vertices $(2,0)$, $(0,2)$, and $(0,-2)$ \\\\
+\solution
+\vspace{1em}
+\intertext{Since f is a polynomial, it is continuous on the bounded triangle $D$}
+\[
+    \nabla f(x,y) = \vv{2x-2,\; 2y}
+\]
+\begin{align*}
+    0 &= 2x- 2 \also 0 = 2y \\
+    x &= 1 \also y = 0
+\end{align*}
+\intertext{Critical point at (1, 0)} \\
+\[
+    f_{xx}=2\also f_{yy} = 2\also f_{xy} = 0
+\]
+\begin{align*}
+    H_f(1,0) &= det\begin{vmatrix}
+    2 & 0 \\\\
+    0 & 2 \\
+\end{vmatrix} = 4 > 0\also f_{xx}(1,0)=2 > 0 \\
+             &\therefore\text{ f(1, 0) is an absolute minimum}
+\end{align*}
+\\\\
+\intertext{Value of f(x,y) in closed region,}
+\begin{align*}
+    f(x, 2) &= x^2 + 4 - 2x = x^2 -2x+4\qquad x\in [0,2] \\
+    f(x, -2) &= x^2 + 4 - 2x = x^2 -2x+4\qquad x\in [0,2] \\\\
+    f(0,2) &= 4 \\
+    f(0,-2) &= 4
+\end{align*}
+\intertext{\Aboxed{\text{Minimum: }f(1,0)=-1} \\
+\intertext{\Aboxed{\text{Maximum: }f(0,\pm 2)=4} \\
 \subsubsection*{35. $f(x,y)=x^2+y^2+x^2y+4,$} 
-$D = \{(x,y)\such |x| \leq 1,\; |y| \leq 1\}$
+$D = \{(x,y)\such |x| \leq 1,\; |y| \leq 1\}$ \\
+\solution
+\[
+    \nabla f(x,y) = \vv{2x+2xy,\; 2y+x^2}
+\]
 \subsubsection*{37. $f(x,y)=x^2+2y^2-2x-4y+1,$}
 $D = \{(x,y)\such 0\leq x \leq 2,\;0 \leq y \leq 3\}$
 \subsubsection*{39. $f(x,y)= 2x^3+y^4,$}
